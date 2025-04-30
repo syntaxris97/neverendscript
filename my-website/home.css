@@ -1,53 +1,68 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('image/mybackground.jpg') no-repeat center center fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url("image/mybackground.jpg") no-repeat center center fixed;
   background-size: cover;
-  color: white;
+  color: #fff;
 }
 
 header {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 1rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(8px);
 }
 
-nav {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 0.5rem;
-  text-align: center;
+header h1 {
+  font-size: 24px;
+  color: #fff;
 }
 
 nav a {
-  color: white;
-  margin: 0 1rem;
+  margin: 0 10px;
   text-decoration: none;
+  color: #fff;
   font-weight: bold;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  text-decoration: underline;
+  color: #00ffff;
+}
+
+section {
+  padding: 40px 20px 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  text-shadow: 1px 1px 5px #000;
+  text-align: center;
 }
 
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 2rem;
-  gap: 1.5rem;
+  gap: 25px;
+  margin-top: 20px;
 }
 
 .card {
-  width: 300px;
-  padding: 1rem;
+  width: 280px;
+  padding: 20px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
   transition: transform 0.2s ease;
 }
 
@@ -57,30 +72,54 @@ nav a:hover {
 
 .card img {
   width: 100%;
+  height: 160px;
+  object-fit: cover;
   border-radius: 12px;
+  margin-bottom: 15px;
 }
 
 .card h3 {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  color: #fff;
+  margin: 10px 0 5px;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.card a {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #00ffff;
+  color: #000;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.card a:hover {
+  background-color: #00cccc;
 }
 
 .pagination {
-  text-align: center;
-  margin: 2rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 40px;
 }
 
 .pagination button {
-  margin: 0 0.3rem;
-  padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
   border: none;
-  color: white;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 8px;
+  font-weight: bold;
 }
 
 .pagination button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.4);
 }
