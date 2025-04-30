@@ -1,105 +1,143 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  background: url("image/mybackground.jpg") no-repeat center center fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('image/mybackround.jpg') no-repeat center center fixed;
   background-size: cover;
+  color: white;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  backdrop-filter: blur(10px);
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 1rem;
-  color: white;
   display: flex;
-  gap: 1rem;
   justify-content: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 10px 0;
+  backdrop-filter: blur(10px);
 }
 
-nav a {
+nav button {
+  background-color: transparent;
   color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.5rem 1rem;
+  border: none;
+  margin: 0 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+nav button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+#search-bar {
+  text-align: center;
+  margin: 20px 0;
 }
 
-h1 {
-  text-align: center;
-  color: white;
-  margin: 2rem 0 1rem 0;
+#searchInput {
+  padding: 10px;
+  width: 300px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 16px;
 }
 
-.section-title {
-  color: white;
+.container-title {
   text-align: center;
-  margin-top: 2rem;
-  font-size: 2rem;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
+  padding: 10px;
 }
 
 .card {
-  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 280px;
+  margin: 15px;
+  padding: 15px;
+  transition: transform 0.3s;
   color: white;
-  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 .card h3 {
-  padding: 1rem;
-  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  font-size: 18px;
 }
 
 .card p {
-  padding: 0 1rem 1rem 1rem;
-  font-size: 0.9rem;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
 }
 
 .pagination {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 20px 0;
 }
 
 .pagination button {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  margin: 0 0.2rem;
+  margin: 0 5px;
+  padding: 8px 16px;
   border-radius: 6px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .pagination button.active {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: #00ffff;
+  color: black;
   font-weight: bold;
 }
