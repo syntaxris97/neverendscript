@@ -1,4 +1,3 @@
-// Sample data
 const scripts = [
   {
     title: "🔥 NEW SCRIPT – Banana Hub",
@@ -35,7 +34,6 @@ const executors = [
   }
 ];
 
-// Pagination configuration
 const itemsPerPage = 3;
 
 function renderCards(data, containerId, page) {
@@ -86,15 +84,16 @@ function showSection(section) {
   const scriptsSection = document.getElementById("scriptsSection");
   const executorsSection = document.getElementById("executorsSection");
 
-  scriptsSection.style.display = section === "scripts" ? "block" : "none";
-  executorsSection.style.display = section === "executors" ? "block" : "none";
+  if (section === "home") {
+    scriptsSection.style.display = "block";
+    executorsSection.style.display = "block";
+  } else {
+    scriptsSection.style.display = section === "scripts" ? "block" : "none";
+    executorsSection.style.display = section === "executors" ? "block" : "none";
+  }
 
   document.querySelectorAll("nav ul a").forEach(link => link.classList.remove("active"));
-  if (section === "scripts") {
-    document.getElementById("navScripts").classList.add("active");
-  } else if (section === "executors") {
-    document.getElementById("navExecutors").classList.add("active");
-  }
+  document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
 }
 
 document.getElementById("navScripts").addEventListener("click", (e) => {
@@ -111,14 +110,9 @@ document.getElementById("navExecutors").addEventListener("click", (e) => {
 
 document.getElementById("navHome").addEventListener("click", (e) => {
   e.preventDefault();
-  showSection("scripts");
+  showSection("home");
   changeScriptPage(1);
-});
-
-document.getElementById("navMobile").addEventListener("click", (e) => {
-  e.preventDefault();
-  showSection("scripts");
-  changeScriptPage(1);
+  changeExecutorPage(1);
 });
 
 function searchContent() {
@@ -146,7 +140,7 @@ function searchContent() {
 }
 
 window.onload = () => {
+  showSection("home");
   changeScriptPage(1);
   changeExecutorPage(1);
-  showSection("scripts");
 };
