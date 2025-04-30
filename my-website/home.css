@@ -1,75 +1,138 @@
+/* General styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image: url('image/mybackground.jpg');
+  background: url("mybackground.jpg") no-repeat center center fixed;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #333;
+  color: white;
 }
 
-.card {
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 16px;
-  margin: 20px;
-  width: 280px;
-  display: inline-block;
-  vertical-align: top;
-  transition: transform 0.2s;
-}
-
-.card:hover {
-  transform: scale(1.03);
-}
-
-.card-img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.card-body {
-  margin-top: 12px;
-}
-
-#pagination {
+/* Navigation */
+nav {
+  background-color: #333;
+  padding: 15px 0;
   text-align: center;
-  margin: 20px 0;
 }
 
-#pagination button {
-  padding: 6px 12px;
-  margin: 0 5px;
-  border: none;
-  background: #eee;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#pagination .active {
-  background: aqua;
+nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  color: white;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
+nav a:hover {
+  color: aqua;
+}
+
+/* Search box */
 #searchInput {
-  padding: 6px;
+  padding: 10px;
   width: 300px;
-  margin: 20px auto;
-  display: block;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 10px;
 }
 
 #searchBtn {
-  display: block;
-  margin: 10px auto;
-  padding: 6px 12px;
+  padding: 10px 15px;
+  background-color: #00f0ff;
   border: none;
-  background-color: #444;
-  color: white;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
+  color: black;
+  font-weight: bold;
+}
+
+#searchBtn:hover {
+  background-color: #00c8d9;
+}
+
+/* Section titles */
+.section-title {
+  text-align: center;
+  color: white;
+  font-size: 26px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* Card layout */
+.card-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+/* Card style */
+.card {
+  background-color: white;
+  color: black;
+  width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 1px solid #ccc;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.card p {
+  font-size: 13px;
+  margin: 5px 15px;
+  color: #444;
+}
+
+/* Date styling */
+.card .date {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+/* Pagination */
+#pagination {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.page-button {
+  background-color: #f0f0f0;
+  color: #000;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.page-button.active {
+  background-color: cyan;
+  color: black;
+}
+
+.page-button:hover {
+  background-color: #00e1ff;
 }
