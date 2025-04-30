@@ -1,60 +1,57 @@
-const scriptsData = [
+const scripts = [
   {
     title: "Blox Fruit Script",
     image: "image/bloxfruit.jpg",
-    description: "Auto Farm | Fast Level | Free",
-    link: "https://example.com/bloxfruit"
+    description: "Auto Farm | Fast Attack | Teleport | And More",
+    link: "https://example.com/bloxfruit",
   },
   {
-    title: "Arsenal Script",
-    image: "image/arsenal.jpg",
-    description: "Aimbot | ESP | Free",
-    link: "https://example.com/arsenal"
+    title: "Pet Simulator X",
+    image: "image/petsim.jpg",
+    description: "Auto Farm | Auto Hatch | Auto Enchant",
+    link: "https://example.com/petsim",
   },
   {
-    title: "Brookhaven Script",
-    image: "image/brookhaven.jpg",
-    description: "Admin Commands | Free",
-    link: "https://example.com/brookhaven"
+    title: "Shindo Life Script",
+    image: "image/shindo.jpg",
+    description: "Auto Rank | Auto Farm | Kill Aura",
+    link: "https://example.com/shindo",
   },
-  // Add more scripts here...
+  // Add more scripts here
 ];
 
-const executorsData = [
+const executors = [
+  {
+    title: "KRNL Executor",
+    image: "image/krnl.jpg",
+    description: "Free Executor with high compatibility",
+    link: "https://krnl.place/",
+  },
+  {
+    title: "Fluxus Executor",
+    image: "image/fluxus.jpg",
+    description: "Supports Mobile and PC | Key Required",
+    link: "https://fluxteam.net/",
+  },
   {
     title: "Hydrogen Executor",
     image: "image/hydrogen.jpg",
-    description: "Android | Key System",
-    link: "https://example.com/hydrogen"
+    description: "Free mobile executor",
+    link: "https://hydrogenexecutor.com/",
   },
-  {
-    title: "Delta Executor",
-    image: "image/delta.jpg",
-    description: "Android & PC | No Key",
-    link: "https://example.com/delta"
-  },
-  {
-    title: "Codex Executor",
-    image: "image/codex.jpg",
-    description: "Lightweight | Fast Inject",
-    link: "https://example.com/codex"
-  },
-  // Add more executors here...
+  // Add more executors here
 ];
 
-const cardsPerPage = 3;
+const itemsPerPage = 3;
 
-function renderCards(data, containerId, paginationId, page) {
+function renderCards(data, containerId, page) {
   const container = document.getElementById(containerId);
-  const pagination = document.getElementById(paginationId);
   container.innerHTML = "";
-  pagination.innerHTML = "";
 
-  const start = (page - 1) * cardsPerPage;
-  const end = start + cardsPerPage;
-  const pageItems = data.slice(start, end);
+  const start = (page - 1) * itemsPerPage;
+  const paginatedItems = data.slice(start, start + itemsPerPage);
 
-  pageItems.forEach(item => {
+  paginatedItems.forEach((item) => {
     const card = document.createElement("div");
     card.className = "card glass";
     card.innerHTML = `
@@ -65,42 +62,60 @@ function renderCards(data, containerId, paginationId, page) {
     `;
     container.appendChild(card);
   });
+}
 
-  const totalPages = Math.ceil(data.length / cardsPerPage);
-  for (let i = 1; i <= totalPages; i++) {
+function renderPagination(data, containerId, renderFunc, sectionType) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  const pageCount = Math.ceil(data.length / itemsPerPage);
+
+  for (let i = 1; i <= pageCount; i++) {
     const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.onclick = () => renderCards(data, containerId, paginationId, i);
-    pagination.appendChild(btn);
+    btn.innerText = i;
+    btn.onclick = () => renderFunc(data, sectionType, i);
+    container.appendChild(btn);
   }
 }
 
-function showScripts() {
-  document.getElementById("scripts-container").style.display = "flex";
-  document.getElementById("scripts-pagination").style.display = "flex";
-  document.getElementById("executors-container").style.display = "none";
-  document.getElementById("executors-pagination").style.display = "none";
-  renderCards(scriptsData, "scripts-container", "scripts-pagination", 1);
+function showSection(section) {
+  document.getElementById("homeSection").style.display = section === "home" ? "block" : "none";
+  document.getElementById("scriptsSection").style.display = section === "scripts" ? "block" : "none";
+  document.getElementById("executorsSection").style.display = section === "executors" ? "block" : "none";
+
+  if (section === "home") {
+    renderCards(scripts, "scriptsContainer", 1);
+    renderPagination(scripts, "scriptsPagination", renderSection, "scripts");
+
+    renderCards(executors, "executorsContainer", 1);
+    renderPagination(executors, "executorsPagination", renderSection, "executors");
+  } else if (section === "scripts") {
+    renderCards(scripts, "scriptsOnlyContainer", 1);
+    renderPagination(scripts, "scriptsOnlyPagination", renderSection, "scriptsOnly");
+  } else if (section === "executors") {
+    renderCards(executors, "executorsOnlyContainer", 1);
+    renderPagination(executors, "executorsOnlyPagination", renderSection, "executorsOnly");
+  }
 }
 
-function showExecutors() {
-  document.getElementById("scripts-container").style.display = "none";
-  document.getElementById("scripts-pagination").style.display = "none";
-  document.getElementById("executors-container").style.display = "flex";
-  document.getElementById("executors-pagination").style.display = "flex";
-  renderCards(executorsData, "executors-container", "executors-pagination", 1);
+function renderSection(data, sectionType, page) {
+  const containerMap = {
+    scripts: "scriptsContainer",
+    executors: "executorsContainer",
+    scriptsOnly: "scriptsOnlyContainer",
+    executorsOnly: "executorsOnlyContainer"
+  };
+  const paginationMap = {
+    scripts: "scriptsPagination",
+    executors: "executorsPagination",
+    scriptsOnly: "scriptsOnlyPagination",
+    executorsOnly: "executorsOnlyPagination"
+  };
+
+  renderCards(data, containerMap[sectionType], page);
+  renderPagination(data, paginationMap[sectionType], renderSection, sectionType);
 }
 
-function showAll() {
-  document.getElementById("scripts-container").style.display = "flex";
-  document.getElementById("scripts-pagination").style.display = "flex";
-  document.getElementById("executors-container").style.display = "flex";
-  document.getElementById("executors-pagination").style.display = "flex";
-  renderCards(scriptsData, "scripts-container", "scripts-pagination", 1);
-  renderCards(executorsData, "executors-container", "executors-pagination", 1);
-}
-
-// Load both by default
-window.onload = () => {
-  showAll();
-};
+document.addEventListener("DOMContentLoaded", () => {
+  showSection("home");
+});
