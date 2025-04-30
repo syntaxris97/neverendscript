@@ -1,146 +1,86 @@
-const scripts = [
-  {
-    title: "🔥 NEW SCRIPT – Banana Hub",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    date: "1 May 2025",
-    image: "image/banana.png"
-  },
-  {
-    title: "BLOX FRUITS – REDz Hub",
-    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
-    date: "30 April 2025",
-    image: "image/bloxfruits.png"
-  },
-  {
-    title: "DEAD RAILS Script – Native Hub",
-    description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
-    date: "30 April 2025",
-    image: "image/deadrails.png"
-  }
-];
-
-const executors = [
-  {
-    title: "Hydrogen Executor",
-    description: "Mobile executor supporting most scripts.",
-    date: "28 April 2025",
-    image: "image/deltaexecutor.png"
-  },
-  {
-    title: "KRNL Executor",
-    description: "Popular free executor, trusted by many users.",
-    date: "25 April 2025",
-    image: "image/fluxurexecutor.png"
-  }
-];
-
-const itemsPerPage = 3;
-
-function renderCards(data, containerId, page) {
-  const container = document.getElementById(containerId);
-  container.innerHTML = "";
-
-  const start = (page - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const pageItems = data.slice(start, end);
-
-  pageItems.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}" />
-      <h3>${item.title}</h3>
-      <small>${item.date}</small>
-      <p>${item.description}</p>
-    `;
-    container.appendChild(card);
-  });
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('image/mybackground.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
-function renderPagination(data, paginationId, changePageFunc) {
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-  const pagination = document.getElementById(paginationId);
-  pagination.innerHTML = "";
-
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.addEventListener("click", () => changePageFunc(i));
-    pagination.appendChild(btn);
-  }
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-function changeScriptPage(page) {
-  renderCards(scripts, "scriptCards", page);
-  renderPagination(scripts, "scriptPagination", changeScriptPage);
+nav {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 0.5rem;
+  text-align: center;
 }
 
-function changeExecutorPage(page) {
-  renderCards(executors, "executorCards", page);
-  renderPagination(executors, "executorPagination", changeExecutorPage);
+nav a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-function showSection(section) {
-  const scriptsSection = document.getElementById("scriptsSection");
-  const executorsSection = document.getElementById("executorsSection");
-
-  if (section === "home") {
-    scriptsSection.style.display = "block";
-    executorsSection.style.display = "block";
-  } else {
-    scriptsSection.style.display = section === "scripts" ? "block" : "none";
-    executorsSection.style.display = section === "executors" ? "block" : "none";
-  }
-
-  document.querySelectorAll("nav ul a").forEach(link => link.classList.remove("active"));
-  document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
+nav a:hover {
+  text-decoration: underline;
 }
 
-document.getElementById("navScripts").addEventListener("click", (e) => {
-  e.preventDefault();
-  showSection("scripts");
-  changeScriptPage(1);
-});
-
-document.getElementById("navExecutors").addEventListener("click", (e) => {
-  e.preventDefault();
-  showSection("executors");
-  changeExecutorPage(1);
-});
-
-document.getElementById("navHome").addEventListener("click", (e) => {
-  e.preventDefault();
-  showSection("home");
-  changeScriptPage(1);
-  changeExecutorPage(1);
-});
-
-function searchContent() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
-  const filteredScripts = scripts.filter(s =>
-    s.title.toLowerCase().includes(query) ||
-    s.description.toLowerCase().includes(query)
-  );
-  const filteredExecutors = executors.filter(e =>
-    e.title.toLowerCase().includes(query) ||
-    e.description.toLowerCase().includes(query)
-  );
-
-  if (filteredScripts.length > 0) {
-    showSection("scripts");
-    renderCards(filteredScripts, "scriptCards", 1);
-    document.getElementById("scriptPagination").innerHTML = "";
-  } else if (filteredExecutors.length > 0) {
-    showSection("executors");
-    renderCards(filteredExecutors, "executorCards", 1);
-    document.getElementById("executorPagination").innerHTML = "";
-  } else {
-    alert("No matching scripts or executors found.");
-  }
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1.5rem;
 }
 
-window.onload = () => {
-  showSection("home");
-  changeScriptPage(1);
-  changeExecutorPage(1);
-};
+.card {
+  width: 300px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card h3 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.pagination {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.pagination button {
+  margin: 0 0.3rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.pagination button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
