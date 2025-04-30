@@ -1,45 +1,37 @@
 const scripts = [
   {
-    title: "Blox Fruit Script",
-    image: "image/bloxfruit.jpg",
-    description: "Auto Farm | Fast Attack | Teleport | And More",
-    link: "https://example.com/bloxfruit",
+    title: "🔥 NEW SCRIPT – Banana Hub",
+    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
+    date: "1 May 2025",
+    image: "image/banana.png"
   },
   {
-    title: "Pet Simulator X",
-    image: "image/petsim.jpg",
-    description: "Auto Farm | Auto Hatch | Auto Enchant",
-    link: "https://example.com/petsim",
+    title: "BLOX FRUITS – REDz Hub",
+    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
+    date: "30 April 2025",
+    image: "image/bloxfruits.png"
   },
   {
-    title: "Shindo Life Script",
-    image: "image/shindo.jpg",
-    description: "Auto Rank | Auto Farm | Kill Aura",
-    link: "https://example.com/shindo",
-  },
-  // Add more scripts here
+    title: "DEAD RAILS Script – Native Hub",
+    description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
+    date: "30 April 2025",
+    image: "image/deadrails.png"
+  }
 ];
 
 const executors = [
   {
-    title: "KRNL Executor",
-    image: "image/krnl.jpg",
-    description: "Free Executor with high compatibility",
-    link: "https://krnl.place/",
-  },
-  {
-    title: "Fluxus Executor",
-    image: "image/fluxus.jpg",
-    description: "Supports Mobile and PC | Key Required",
-    link: "https://fluxteam.net/",
-  },
-  {
     title: "Hydrogen Executor",
-    image: "image/hydrogen.jpg",
-    description: "Free mobile executor",
-    link: "https://hydrogenexecutor.com/",
+    description: "Mobile executor supporting most scripts.",
+    date: "28 April 2025",
+    image: "image/deltaexecutor.png"
   },
-  // Add more executors here
+  {
+    title: "KRNL Executor",
+    description: "Popular free executor, trusted by many users.",
+    date: "25 April 2025",
+    image: "image/fluxurexecutor.png"
+  }
 ];
 
 const itemsPerPage = 3;
@@ -49,73 +41,106 @@ function renderCards(data, containerId, page) {
   container.innerHTML = "";
 
   const start = (page - 1) * itemsPerPage;
-  const paginatedItems = data.slice(start, start + itemsPerPage);
+  const end = start + itemsPerPage;
+  const pageItems = data.slice(start, end);
 
-  paginatedItems.forEach((item) => {
+  pageItems.forEach(item => {
     const card = document.createElement("div");
-    card.className = "card glass";
+    card.className = "card";
     card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
+      <img src="${item.image}" alt="${item.title}" />
       <h3>${item.title}</h3>
+      <small>${item.date}</small>
       <p>${item.description}</p>
-      <a href="${item.link}" target="_blank">View Script</a>
     `;
     container.appendChild(card);
   });
 }
 
-function renderPagination(data, containerId, renderFunc, sectionType) {
-  const container = document.getElementById(containerId);
-  container.innerHTML = "";
+function renderPagination(data, paginationId, changePageFunc) {
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const pagination = document.getElementById(paginationId);
+  pagination.innerHTML = "";
 
-  const pageCount = Math.ceil(data.length / itemsPerPage);
-
-  for (let i = 1; i <= pageCount; i++) {
+  for (let i = 1; i <= totalPages; i++) {
     const btn = document.createElement("button");
-    btn.innerText = i;
-    btn.onclick = () => renderFunc(data, sectionType, i);
-    container.appendChild(btn);
+    btn.textContent = i;
+    btn.addEventListener("click", () => changePageFunc(i));
+    pagination.appendChild(btn);
   }
+}
+
+function changeScriptPage(page) {
+  renderCards(scripts, "scriptCards", page);
+  renderPagination(scripts, "scriptPagination", changeScriptPage);
+}
+
+function changeExecutorPage(page) {
+  renderCards(executors, "executorCards", page);
+  renderPagination(executors, "executorPagination", changeExecutorPage);
 }
 
 function showSection(section) {
-  document.getElementById("homeSection").style.display = section === "home" ? "block" : "none";
-  document.getElementById("scriptsSection").style.display = section === "scripts" ? "block" : "none";
-  document.getElementById("executorsSection").style.display = section === "executors" ? "block" : "none";
+  const scriptsSection = document.getElementById("scriptsSection");
+  const executorsSection = document.getElementById("executorsSection");
 
   if (section === "home") {
-    renderCards(scripts, "scriptsContainer", 1);
-    renderPagination(scripts, "scriptsPagination", renderSection, "scripts");
+    scriptsSection.style.display = "block";
+    executorsSection.style.display = "block";
+  } else {
+    scriptsSection.style.display = section === "scripts" ? "block" : "none";
+    executorsSection.style.display = section === "executors" ? "block" : "none";
+  }
 
-    renderCards(executors, "executorsContainer", 1);
-    renderPagination(executors, "executorsPagination", renderSection, "executors");
-  } else if (section === "scripts") {
-    renderCards(scripts, "scriptsOnlyContainer", 1);
-    renderPagination(scripts, "scriptsOnlyPagination", renderSection, "scriptsOnly");
-  } else if (section === "executors") {
-    renderCards(executors, "executorsOnlyContainer", 1);
-    renderPagination(executors, "executorsOnlyPagination", renderSection, "executorsOnly");
+  document.querySelectorAll("nav ul a").forEach(link => link.classList.remove("active"));
+  document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
+}
+
+document.getElementById("navScripts").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("scripts");
+  changeScriptPage(1);
+});
+
+document.getElementById("navExecutors").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("executors");
+  changeExecutorPage(1);
+});
+
+document.getElementById("navHome").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("home");
+  changeScriptPage(1);
+  changeExecutorPage(1);
+});
+
+function searchContent() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const filteredScripts = scripts.filter(s =>
+    s.title.toLowerCase().includes(query) ||
+    s.description.toLowerCase().includes(query)
+  );
+  const filteredExecutors = executors.filter(e =>
+    e.title.toLowerCase().includes(query) ||
+    e.description.toLowerCase().includes(query)
+  );
+
+  if (filteredScripts.length > 0) {
+    showSection("scripts");
+    renderCards(filteredScripts, "scriptCards", 1);
+    document.getElementById("scriptPagination").innerHTML = "";
+  } else if (filteredExecutors.length > 0) {
+    showSection("executors");
+    renderCards(filteredExecutors, "executorCards", 1);
+    document.getElementById("executorPagination").innerHTML = "";
+  } else {
+    alert("No matching scripts or executors found.");
   }
 }
 
-function renderSection(data, sectionType, page) {
-  const containerMap = {
-    scripts: "scriptsContainer",
-    executors: "executorsContainer",
-    scriptsOnly: "scriptsOnlyContainer",
-    executorsOnly: "executorsOnlyContainer"
-  };
-  const paginationMap = {
-    scripts: "scriptsPagination",
-    executors: "executorsPagination",
-    scriptsOnly: "scriptsOnlyPagination",
-    executorsOnly: "executorsOnlyPagination"
-  };
-
-  renderCards(data, containerMap[sectionType], page);
-  renderPagination(data, paginationMap[sectionType], renderSection, sectionType);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
   showSection("home");
-});
+  changeScriptPage(1);
+  changeExecutorPage(1);
+};
