@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background: white;
+    padding: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav {
+    margin: 1em 0;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #444;
+}
+
+nav a.active {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#searchBox {
+    padding: 0.5em;
+    width: 60%;
+    max-width: 300px;
+    margin: 0.5em 0;
+}
+
+#searchButton {
+    padding: 0.5em 1em;
+    margin-left: 5px;
+}
+
+#scriptsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1em;
+    padding: 1em;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-body h3 {
+    margin: 0 0 0.5em;
+    font-size: 18px;
+}
+
+.card-body p {
+    font-size: 14px;
+    color: #666;
+}
+
+#pagination {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+#pagination button {
+    margin: 0 5px;
+    padding: 0.5em 1em;
+    border: none;
+    background: #eee;
+    cursor: pointer;
+}
+
+#pagination button.active {
+    background: #007bff;
+    color: white;
+}
