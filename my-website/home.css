@@ -1,139 +1,105 @@
-/* General Reset */
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* Background */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('image/mybackround.jpg') no-repeat center center fixed;
+  background: url("image/mybackground.jpg") no-repeat center center fixed;
   background-size: cover;
-  color: white;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Navbar */
 nav {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 1rem;
+  color: white;
   display: flex;
+  gap: 1rem;
   justify-content: center;
-  gap: 2rem;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 100;
 }
 
-nav button {
-  background: transparent;
-  border: 1px solid #ffffff88;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s;
 }
 
-nav button:hover {
+nav a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Section Headings */
+h1 {
+  text-align: center;
+  color: white;
+  margin: 2rem 0 1rem 0;
+}
+
 .section-title {
+  color: white;
+  text-align: center;
+  margin-top: 2rem;
   font-size: 2rem;
-  text-align: center;
-  margin: 2rem 0 1rem;
-  text-shadow: 0 0 10px black;
 }
 
-/* Card Container */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem 2rem;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-/* Glass Effect Cards */
 .card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 1rem;
+  width: 300px;
+  border-radius: 16px;
+  overflow: hidden;
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  transition: transform 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  color: white;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .card img {
   width: 100%;
-  height: 150px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 12px;
 }
 
 .card h3 {
-  margin-top: 0.8rem;
+  padding: 1rem;
   font-size: 1.2rem;
 }
 
 .card p {
-  margin: 0.5rem 0;
-  font-size: 0.95rem;
-  color: #eee;
+  padding: 0 1rem 1rem 1rem;
+  font-size: 0.9rem;
 }
 
-.card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  background-color: #ffffff22;
-  color: white;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-.card a:hover {
-  background-color: #ffffff44;
-}
-
-/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
-  margin: 1rem 0 2rem;
+  margin: 2rem 0;
 }
 
 .pagination button {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: 1px solid #ffffff33;
-  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  border-radius: 8px;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.2rem;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-.pagination button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/* Section Visibility */
-section {
-  display: none;
-}
-
-section.active {
-  display: block;
+.pagination button.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  font-weight: bold;
 }
