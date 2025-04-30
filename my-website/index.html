@@ -11,29 +11,31 @@
     <nav>
       <h1>NeverEndScript</h1>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#" class="active">Scripts</a></li>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Scripts</a></li>
         <li><a href="#">Mobile Scripts</a></li>
         <li><a href="#">Executor</a></li>
       </ul>
     </nav>
+
+    <!-- Search Bar under nav -->
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
+      <button onclick="searchScripts()">Search</button>
+    </div>
   </header>
 
   <main>
-    <!-- Scripts Section -->
-    <section>
+    <section id="scriptsSection">
       <h2>Scripts</h2>
-      <input type="text" id="searchInput" placeholder="Search Roblox scripts..." />
-      <button onclick="searchScripts()">Search</button>
-      <div id="scriptCards" class="card-container"></div>
+      <div id="scriptsContainer" class="card-container"></div>
       <div id="pagination" class="pagination"></div>
     </section>
 
-    <!-- Executors Section -->
-    <section>
+    <section id="executorsSection">
       <h2>Executors</h2>
-      <div id="executorCards" class="card-container"></div>
-      <div id="executorPagination" class="pagination"></div>
+      <div id="executorsContainer" class="card-container"></div>
+      <div id="executorsPagination" class="pagination"></div>
     </section>
   </main>
 
