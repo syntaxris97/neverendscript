@@ -1,140 +1,165 @@
-/* General reset and background */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('image/mybackground.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-}
-
-/* Navigation Bar */
-nav {
-  background-color: #333;
-  padding: 10px 0;
-  text-align: center;
-}
-
-nav ul {
-  list-style-type: none;
+/* Reset and body styling */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('image/mybackround.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+  min-height: 100vh;
 }
 
-nav ul li a {
-  color: white;
+/* Wrapper to center everything */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Header styles */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+/* Navigation bar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+nav a {
   text-decoration: none;
   font-weight: bold;
+  color: #fff;
+  transition: color 0.2s ease;
 }
 
-nav ul li a:hover {
-  color: cyan;
+nav a:hover {
+  color: #00ffff;
 }
 
-/* Search Bar */
-.search-container {
-  text-align: center;
-  margin: 20px auto;
+nav a.active {
+  color: #00ffff;
 }
 
-#searchInput {
+/* Search bar */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.search-bar input[type="text"] {
   padding: 10px;
   width: 300px;
   border-radius: 5px;
   border: none;
+  outline: none;
 }
 
-button {
+.search-bar button {
   padding: 10px 15px;
-  background-color: cyan;
   border: none;
-  border-radius: 5px;
+  background-color: #e6e6e6;
+  color: #000;
   cursor: pointer;
+  border-radius: 5px;
   font-weight: bold;
 }
 
-button:hover {
-  background-color: #00bcd4;
+.search-bar button:hover {
+  background-color: #ccc;
 }
 
-/* Section Headers */
-h2 {
+/* Section headers */
+.section-title {
+  font-size: 1.8rem;
+  margin: 20px 0 10px;
   text-align: center;
-  margin-top: 40px;
-  color: cyan;
-  text-shadow: 0 0 5px black;
 }
 
-/* Card Layout */
-.card-container {
+/* Grid layout for cards */
+.grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
-  padding: 20px;
+  justify-content: center;
 }
 
+/* Card styles with glass effect */
 .card {
-  background-color: white;
-  color: black;
-  width: 300px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 255, 153, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  width: 280px;
+  padding: 15px;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 255, 153, 0.4);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 160px;
   object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
 }
 
-.card-content {
-  padding: 15px;
+.card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
 }
 
-.card-content h3 {
-  margin: 0 0 10px;
-  font-size: 18px;
+.card small {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.85rem;
+  color: #ccc;
 }
 
-.card-content p {
-  margin: 5px 0;
-  font-size: 14px;
-  color: #444;
+.card p {
+  font-size: 0.9rem;
+  color: #e0e0e0;
 }
 
 /* Pagination */
 .pagination {
-  text-align: center;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+  gap: 10px;
 }
 
 .pagination button {
-  margin: 0 5px;
-  padding: 8px 12px;
-  background-color: white;
-  color: black;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 8px 14px;
+  border: none;
+  background-color: #e0e0e0;
+  color: #000;
+  border-radius: 4px;
+  cursor: pointer;
   font-weight: bold;
 }
 
-.pagination button.active {
-  background-color: cyan;
-  color: white;
-}
-
+.pagination button.active,
 .pagination button:hover {
-  background-color: #00bcd4;
-  color: white;
+  background-color: #00ffcc;
+  color: #000;
 }
