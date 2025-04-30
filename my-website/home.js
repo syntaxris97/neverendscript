@@ -3,7 +3,7 @@ const scripts = [
     title: "🔥 NEW SCRIPT – Banana Hub",
     date: "1 May 2025",
     description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    image: "https://via.placeholder.com/300x150"
+    image: "image/bloxfruits.png"
   },
   {
     title: "BLOX FRUITS – REDz Hub",
