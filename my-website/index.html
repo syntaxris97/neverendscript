@@ -3,261 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScriptPasteBin - Share Your Code</title>
-    <link rel="stylesheet" href="Css/home.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <h1><i class="fas fa-code"></i> ScriptPasteBin</h1>
+    <header>
+        <div class="logo">My Dashboard</div>
+        <div class="searchbar">
+            <input type="text" placeholder="Search...">
+            <button class="searchbtn">Search</button>
+        </div>
+    </header>
+    <div class="main-container">
+        <nav class="nav">
+            <ul>
+                <li>Dashboard</li>
+                <li>Articles</li>
+                <li>Reports</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <div class="box">
+                <h2>60.5k</h2>
+                <p>Article Views</p>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Recent Pastes</a></li>
-                    <li><a href="#">Trending</a></li>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#" class="login-btn">Login</a></li>
-                    <li><a href="#" class="signup-btn">Sign Up</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <main>
-            <div class="sidebar">
-                <div class="sidebar-section">
-                    <h3>Public Pastes</h3>
-                    <ul class="recent-pastes">
-                        <li>
-                            <a href="#">
-                                <span class="paste-title">JavaScript Animation</span>
-                                <span class="paste-info">JavaScript | 2 min ago</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="paste-title">React Component</span>
-                                <span class="paste-info">JSX | 15 min ago</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="paste-title">CSS Grid Layout</span>
-                                <span class="paste-info">CSS | 32 min ago</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="paste-title">Python Data Analysis</span>
-                                <span class="paste-info">Python | 1 hour ago</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="paste-title">Node.js Server</span>
-                                <span class="paste-info">JavaScript | 2 hours ago</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="sidebar-section">
-                    <h3>Syntax Highlighting</h3>
-                    <ul class="syntax-list">
-                        <li><a href="#">JavaScript</a></li>
-                        <li><a href="#">HTML</a></li>
-                        <li><a href="#">CSS</a></li>
-                        <li><a href="#">Python</a></li>
-                        <li><a href="#">PHP</a></li>
-                        <li><a href="#">Java</a></li>
-                        <li><a href="#">C++</a></li>
-                        <li><a href="#">SQL</a></li>
-                        <li><a href="#">More...</a></li>
-                    </ul>
-                </div>
+            <div class="box">
+                <h2>150</h2>
+                <p>Likes</p>
             </div>
-
-            <div class="content">
-                <div class="create-paste">
-                    <h2>Create New Paste</h2>
-                    <div class="paste-options">
-                        <div class="option-group">
-                            <label for="syntax">Syntax Highlighting:</label>
-                            <select id="syntax">
-                                <option value="plaintext">Plain Text</option>
-                                <option value="javascript">JavaScript</option>
-                                <option value="html">HTML</option>
-                                <option value="css">CSS</option>
-                                <option value="python">Python</option>
-                                <option value="php">PHP</option>
-                                <option value="java">Java</option>
-                                <option value="cpp">C++</option>
-                                <option value="csharp">C#</option>
-                                <option value="ruby">Ruby</option>
-                                <option value="go">Go</option>
-                                <option value="rust">Rust</option>
-                                <option value="sql">SQL</option>
-                                <option value="bash">Bash</option>
-                                <option value="json">JSON</option>
-                                <option value="xml">XML</option>
-                            </select>
-                        </div>
-                        <div class="option-group">
-                            <label for="expiration">Expiration:</label>
-                            <select id="expiration">
-                                <option value="never">Never</option>
-                                <option value="10min">10 Minutes</option>
-                                <option value="1hour">1 Hour</option>
-                                <option value="1day">1 Day</option>
-                                <option value="1week">1 Week</option>
-                                <option value="2weeks">2 Weeks</option>
-                                <option value="1month">1 Month</option>
-                            </select>
-                        </div>
-                        <div class="option-group">
-                            <label for="exposure">Exposure:</label>
-                            <select id="exposure">
-                                <option value="public">Public</option>
-                                <option value="unlisted">Unlisted</option>
-                                <option value="private">Private</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="paste-title-container">
-                        <input type="text" id="paste-title" placeholder="Paste Title (optional)">
-                    </div>
-                    <div class="code-editor-container">
-                        <div class="editor-header">
-                            <span>Code Editor</span>
-                            <div class="editor-controls">
-                                <button id="theme-toggle"><i class="fas fa-moon"></i> Toggle Theme</button>
-                                <button id="fullscreen-btn"><i class="fas fa-expand"></i></button>
-                            </div>
-                        </div>
-                        <textarea id="code-editor" placeholder="Paste or type your code here..."></textarea>
-                    </div>
-                    <div class="paste-actions">
-                        <button id="create-paste-btn" class="primary-btn">Create Paste</button>
-                        <div class="additional-options">
-                            <label>
-                                <input type="checkbox" id="burn-after-read">
-                                Burn after read
-                            </label>
-                            <label>
-                                <input type="checkbox" id="password-protect">
-                                Password protect
-                            </label>
-                        </div>
-                    </div>
-                </div>
+            <div class="box">
+                <h2>320</h2>
+                <p>Comments</p>
             </div>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About ScriptPasteBin</h3>
-                    <p>ScriptPasteBin is a website where you can store and share code snippets, making it easy to share code with others.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">API</a></li>
-                        <li><a href="#">Tools</a></li>
-                        <li><a href="#">Archive</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Legal</h3>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">DMCA</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-discord"></i></a>
-                        <a href="#"><i class="fab fa-reddit"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 ScriptPasteBin. All rights reserved.</p>
-            </div>
-        </footer>
-    </div>
-
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Login</h2>
-            <form id="login-form">
-                <div class="form-group">
-                    <label for="login-username">Username or Email</label>
-                    <input type="text" id="login-username" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Password</label>
-                    <input type="password" id="login-password" required>
-                </div>
-                <div class="form-group remember-me">
-                    <label>
-                        <input type="checkbox" id="remember-me">
-                        Remember me
-                    </label>
-                    <a href="#" class="forgot-password">Forgot password?</a>
-                </div>
-                <button type="submit" class="primary-btn">Login</button>
-            </form>
-            <div class="modal-footer">
-                <p>Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+            <div class="box">
+                <h2>70</h2>
+                <p>Published</p>
             </div>
         </div>
     </div>
-
-    <div id="signup-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Sign Up</h2>
-            <form id="signup-form">
-                <div class="form-group">
-                    <label for="signup-username">Username</label>
-                    <input type="text" id="signup-username" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-email">Email</label>
-                    <input type="email" id="signup-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-password">Password</label>
-                    <input type="password" id="signup-password" required>
-                </div>
-                <div class="form-group">
-                    <label for="signup-confirm-password">Confirm Password</label>
-                    <input type="password" id="signup-confirm-password" required>
-                </div>
-                <div class="form-group terms">
-                    <label>
-                        <input type="checkbox" id="agree-terms" required>
-                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                    </label>
-                </div>
-                <button type="submit" class="primary-btn">Sign Up</button>
-            </form>
-            <div class="modal-footer">
-                <p>Already have an account? <a href="#" id="show-login">Login</a></p>
-            </div>
-        </div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script src="Js/home.js"></script>
+    <script src="home.js"></script>
 </body>
 </html>
