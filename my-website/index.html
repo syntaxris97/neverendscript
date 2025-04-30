@@ -10,36 +10,31 @@
   <header>
     <h1>NeverEndScript</h1>
     <nav>
-      <a href="#" onclick="showSection('home')">Home</a>
-      <a href="#" onclick="showSection('scripts')">Scripts</a>
-      <a href="#" onclick="showSection('executors')">Executors</a>
+      <ul>
+        <li><a href="#" id="navHome" class="active">Home</a></li>
+        <li><a href="#" id="navScripts">Scripts</a></li>
+        <li><a href="#" id="navExecutors">Executor</a></li>
+      </ul>
     </nav>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
+      <button onclick="searchContent()">Search</button>
+    </div>
   </header>
 
   <main>
-    <!-- Home View -->
-    <section id="homeSection">
+    <!-- Scripts Section -->
+    <section id="scriptsSection">
       <h2>Scripts</h2>
-      <div id="scriptsContainer" class="container"></div>
-      <div id="scriptsPagination" class="pagination"></div>
+      <div id="scriptCards" class="card-container"></div>
+      <div id="scriptPagination" class="pagination"></div>
+    </section>
 
+    <!-- Executors Section -->
+    <section id="executorsSection">
       <h2>Executors</h2>
-      <div id="executorsContainer" class="container"></div>
-      <div id="executorsPagination" class="pagination"></div>
-    </section>
-
-    <!-- Scripts View Only -->
-    <section id="scriptsSection" style="display: none;">
-      <h2>All Scripts</h2>
-      <div id="scriptsOnlyContainer" class="container"></div>
-      <div id="scriptsOnlyPagination" class="pagination"></div>
-    </section>
-
-    <!-- Executors View Only -->
-    <section id="executorsSection" style="display: none;">
-      <h2>All Executors</h2>
-      <div id="executorsOnlyContainer" class="container"></div>
-      <div id="executorsOnlyPagination" class="pagination"></div>
+      <div id="executorCards" class="card-container"></div>
+      <div id="executorPagination" class="pagination"></div>
     </section>
   </main>
 
