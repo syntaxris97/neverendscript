@@ -16,17 +16,27 @@
   </nav>
 
   <!-- Search -->
-  <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
-  <button id="searchBtn">Search</button>
+  <div style="text-align: center; margin: 20px 0;">
+    <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
+    <button id="searchBtn">Search</button>
+  </div>
 
-  <!-- Cards container -->
-  <div id="cardContainer" style="text-align: center;"></div>
+  <!-- Scripts Section -->
+  <section>
+    <h2 class="section-title">Latest Scripts</h2>
+    <div id="scriptCards" class="card-wrapper"></div>
+  </section>
+
+  <!-- Executors Section -->
+  <section>
+    <h2 class="section-title">Executors</h2>
+    <div id="executorCards" class="card-wrapper"></div>
+  </section>
 
   <!-- Pagination -->
-  <div id="pagination"></div>
+  <div id="pagination" style="text-align: center; margin: 20px 0;"></div>
 
   <!-- JS -->
   <script src="home.js"></script>
-
 </body>
 </html>
