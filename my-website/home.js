@@ -3,19 +3,19 @@ const scripts = [
     title: "🔥 NEW SCRIPT – Banana Hub",
     description: "Latest Banana Hub script with full auto-farm + anti-ban.",
     date: "1 May 2025",
-    image: "image/banana.png"
+    image: "image/bloxfruits.png"
   },
   {
     title: "🔥 NEW SCRIPT – Banana Hub",
     description: "Latest Banana Hub script with full auto-farm + anti-ban.",
     date: "1 May 2025",
-    image: "image/banana.png"
+    image: "image/bloxfruits.png"
   },
   {
     title: "🔥 NEW SCRIPT – Banana Hub",
     description: "Latest Banana Hub script with full auto-farm + anti-ban.",
     date: "1 May 2025",
-    image: "image/banana.png"
+    image: "image/bloxfruits.png"
   },
   {
     title: "BLOX FRUITS – REDz Hub",
@@ -27,7 +27,7 @@ const scripts = [
     title: "DEAD RAILS Script – Native Hub",
     description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
     date: "30 April 2025",
-    image: "image/deadrails.png"
+    image: "image/bloxfruits.png"
   }
 ];
 
