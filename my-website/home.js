@@ -1,29 +1,25 @@
 const scripts = [
   {
-    title: "Script A",
-    description: "Description for Script A",
-    image: "image/script-a.jpg"
+    title: "Blox Fruits Pastebin Script",
+    date: "30 April 2025",
+    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
+    image: "image/bloxfruits.png",
   },
-  {
-    title: "Script B",
-    description: "Description for Script B",
-    image: "image/script-b.jpg"
-  },
-  // Add more scripts here
 ];
 
 const executors = [
   {
-    title: "Executor X",
-    description: "Description for Executor X",
-    image: "image/executor-x.jpg"
+    title: "Delta Executor",
+    date: "29 April 2025",
+    description: "Powerful executor for Roblox scripts.",
+    image: "image/deltaexecutor.png",
   },
   {
-    title: "Executor Y",
-    description: "Description for Executor Y",
-    image: "image/executor-y.jpg"
+    title: "Fluxus Executor",
+    date: "28 April 2025",
+    description: "Popular Roblox executor for multiple games.",
+    image: "image/fluxurexecutor.png",
   },
-  // Add more executors here
 ];
 
 const scriptsPerPage = 3;
@@ -32,69 +28,76 @@ let currentExecutorPage = 1;
 
 function displayCards(containerId, data, page) {
   const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
   const start = (page - 1) * scriptsPerPage;
   const end = start + scriptsPerPage;
-  container.innerHTML = "";
-  data.slice(start, end).forEach(item => {
+  const paginatedItems = data.slice(start, end);
+
+  paginatedItems.forEach((item) => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
       <img src="${item.image}" alt="${item.title}">
-      <h3>${item.title}</h3>
-      <p>${item.description}</p>
+      <div class="card-body">
+        <h3>${item.title}</h3>
+        <p>${item.date}</p>
+        <p>${item.description}</p>
+      </div>
     `;
     container.appendChild(card);
   });
 }
 
-function setupPagination(paginationId, containerId, data, setPageFn) {
-  const pagination = document.getElementById(paginationId);
-  pagination.innerHTML = "";
-  const pageCount = Math.ceil(data.length / scriptsPerPage);
+function displayPagination(containerId, data, itemsPerPage, currentPage, type) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = "";
+
+  const pageCount = Math.ceil(data.length / itemsPerPage);
   for (let i = 1; i <= pageCount; i++) {
     const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.className = (i === (containerId === 'scriptCards' ? currentScriptPage : currentExecutorPage)) ? "active" : "";
+    btn.innerText = i;
+    btn.className = currentPage === i ? "active" : "";
     btn.addEventListener("click", () => {
-      setPageFn(i);
+      if (type === "scripts") {
+        currentScriptPage = i;
+        displayCards("scriptsContainer", scripts, currentScriptPage);
+        displayPagination("scriptsPagination", scripts, scriptsPerPage, currentScriptPage, "scripts");
+      } else {
+        currentExecutorPage = i;
+        displayCards("executorsContainer", executors, currentExecutorPage);
+        displayPagination("executorsPagination", executors, scriptsPerPage, currentExecutorPage, "executors");
+      }
     });
-    pagination.appendChild(btn);
+    container.appendChild(btn);
   }
 }
 
-function setScriptPage(page) {
-  currentScriptPage = page;
-  displayCards("scriptCards", scripts, currentScriptPage);
-  setupPagination("scriptPagination", "scriptCards", scripts, setScriptPage);
+function searchItems() {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+  const filteredScripts = scripts.filter(item =>
+    item.title.toLowerCase().includes(searchInput) ||
+    item.description.toLowerCase().includes(searchInput)
+  );
+
+  const filteredExecutors = executors.filter(item =>
+    item.title.toLowerCase().includes(searchInput) ||
+    item.description.toLowerCase().includes(searchInput)
+  );
+
+  displayCards("scriptsContainer", filteredScripts, 1);
+  displayPagination("scriptsPagination", filteredScripts, scriptsPerPage, 1, "scripts");
+
+  displayCards("executorsContainer", filteredExecutors, 1);
+  displayPagination("executorsPagination", filteredExecutors, scriptsPerPage, 1, "executors");
 }
 
-function setExecutorPage(page) {
-  currentExecutorPage = page;
-  displayCards("executorCards", executors, currentExecutorPage);
-  setupPagination("executorPagination", "executorCards", executors, setExecutorPage);
-}
+// ✅ Automatically run on page load
+window.onload = () => {
+  displayCards("scriptsContainer", scripts, currentScriptPage);
+  displayPagination("scriptsPagination", scripts, scriptsPerPage, currentScriptPage, "scripts");
 
-function loadAll() {
-  setScriptPage(currentScriptPage);
-  setExecutorPage(currentExecutorPage);
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  loadAll();
-
-  document.getElementById("nav-home").addEventListener("click", () => {
-    loadAll();
-  });
-
-  document.getElementById("nav-scripts").addEventListener("click", () => {
-    setScriptPage(1);
-    document.getElementById("executorCards").innerHTML = "";
-    document.getElementById("executorPagination").innerHTML = "";
-  });
-
-  document.getElementById("nav-executors").addEventListener("click", () => {
-    setExecutorPage(1);
-    document.getElementById("scriptCards").innerHTML = "";
-    document.getElementById("scriptPagination").innerHTML = "";
-  });
-});
+  displayCards("executorsContainer", executors, currentExecutorPage);
+  displayPagination("executorsPagination", executors, scriptsPerPage, currentExecutorPage, "executors");
+};
