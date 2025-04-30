@@ -1,107 +1,100 @@
-const data = [
+const scripts = [
   {
-    title: "Blox Fruits Pastebin Script",
-    date: "30 April 2025",
-    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
-    image: "image/bloxfruits.png",
-    category: "Script"
+    title: "Script A",
+    description: "Description for Script A",
+    image: "image/script-a.jpg"
   },
   {
-    title: "Delta Executor",
-    date: "29 April 2025",
-    description: "Powerful executor for Roblox scripts.",
-    image: "image/deltaexecutor.png",
-    category: "Executor"
+    title: "Script B",
+    description: "Description for Script B",
+    image: "image/script-b.jpg"
   },
-  {
-    title: "Fluxus Executor",
-    date: "28 April 2025",
-    description: "Popular Roblox executor for multiple games.",
-    image: "image/fluxurexecutor.png",
-    category: "Executor"
-  }
+  // Add more scripts here
 ];
 
-const itemsPerPage = 6;
-let currentPage = 1;
+const executors = [
+  {
+    title: "Executor X",
+    description: "Description for Executor X",
+    image: "image/executor-x.jpg"
+  },
+  {
+    title: "Executor Y",
+    description: "Description for Executor Y",
+    image: "image/executor-y.jpg"
+  },
+  // Add more executors here
+];
 
-function displayCards(category, containerId) {
+const scriptsPerPage = 3;
+let currentScriptPage = 1;
+let currentExecutorPage = 1;
+
+function displayCards(containerId, data, page) {
   const container = document.getElementById(containerId);
+  const start = (page - 1) * scriptsPerPage;
+  const end = start + scriptsPerPage;
   container.innerHTML = "";
-
-  const filtered = data.filter(item => item.category === category);
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginated = filtered.slice(startIndex, startIndex + itemsPerPage);
-
-  paginated.forEach(item => {
+  data.slice(start, end).forEach(item => {
     const card = document.createElement("div");
     card.className = "card";
-
     card.innerHTML = `
       <img src="${item.image}" alt="${item.title}">
       <h3>${item.title}</h3>
-      <p class="date">${item.date}</p>
       <p>${item.description}</p>
     `;
     container.appendChild(card);
   });
 }
 
-function setupPagination() {
-  const pagination = document.getElementById("pagination");
+function setupPagination(paginationId, containerId, data, setPageFn) {
+  const pagination = document.getElementById(paginationId);
   pagination.innerHTML = "";
-
-  const totalItems = data.length;
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
-
-  for (let i = 1; i <= totalPages; i++) {
+  const pageCount = Math.ceil(data.length / scriptsPerPage);
+  for (let i = 1; i <= pageCount; i++) {
     const btn = document.createElement("button");
-    btn.className = "page-button";
-    btn.innerText = i;
-    if (i === currentPage) btn.classList.add("active");
-
+    btn.textContent = i;
+    btn.className = (i === (containerId === 'scriptCards' ? currentScriptPage : currentExecutorPage)) ? "active" : "";
     btn.addEventListener("click", () => {
-      currentPage = i;
-      updateDisplay();
+      setPageFn(i);
     });
-
     pagination.appendChild(btn);
   }
 }
 
-function updateDisplay() {
-  displayCards("Script", "script-section");
-  displayCards("Executor", "executor-section");
-  setupPagination();
+function setScriptPage(page) {
+  currentScriptPage = page;
+  displayCards("scriptCards", scripts, currentScriptPage);
+  setupPagination("scriptPagination", "scriptCards", scripts, setScriptPage);
 }
 
-function searchItems() {
-  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = data.filter(item =>
-    item.title.toLowerCase().includes(searchTerm) ||
-    item.description.toLowerCase().includes(searchTerm)
-  );
+function setExecutorPage(page) {
+  currentExecutorPage = page;
+  displayCards("executorCards", executors, currentExecutorPage);
+  setupPagination("executorPagination", "executorCards", executors, setExecutorPage);
+}
 
-  document.getElementById("script-section").innerHTML = "";
-  document.getElementById("executor-section").innerHTML = "";
-  document.getElementById("pagination").innerHTML = "";
+function loadAll() {
+  setScriptPage(currentScriptPage);
+  setExecutorPage(currentExecutorPage);
+}
 
-  filtered.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card";
+document.addEventListener("DOMContentLoaded", () => {
+  loadAll();
 
-    card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
-      <h3>${item.title}</h3>
-      <p class="date">${item.date}</p>
-      <p>${item.description}</p>
-    `;
-
-    const containerId = item.category === "Script" ? "script-section" : "executor-section";
-    document.getElementById(containerId).appendChild(card);
+  document.getElementById("nav-home").addEventListener("click", () => {
+    loadAll();
   });
-}
 
-document.getElementById("searchBtn").addEventListener("click", searchItems);
+  document.getElementById("nav-scripts").addEventListener("click", () => {
+    setScriptPage(1);
+    document.getElementById("executorCards").innerHTML = "";
+    document.getElementById("executorPagination").innerHTML = "";
+  });
 
-updateDisplay();
+  document.getElementById("nav-executors").addEventListener("click", () => {
+    setExecutorPage(1);
+    document.getElementById("scriptCards").innerHTML = "";
+    document.getElementById("scriptPagination").innerHTML = "";
+  });
+});
