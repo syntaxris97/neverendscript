@@ -1,57 +1,69 @@
 /* Reset and body styling */
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('image/mybackround.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #fff;
+  min-height: 100vh;
 }
 
-/* Container for page content */
+/* Wrapper to center everything */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 20px;
 }
 
-/* Header Styles */
+/* Header styles */
 h1 {
   text-align: center;
   font-size: 2.5rem;
-  margin-top: 20px;
+  margin: 20px 0;
 }
 
-/* Navigation menu */
+/* Navigation bar */
 nav {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin: 15px 0;
+  margin-bottom: 20px;
 }
 
 nav a {
   text-decoration: none;
   font-weight: bold;
   color: #fff;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #00ffff;
 }
 
 nav a.active {
-  color: #00ffcc;
+  color: #00ffff;
 }
 
 /* Search bar */
 .search-bar {
   display: flex;
   justify-content: center;
-  gap: 10px;
   margin: 20px 0;
+  gap: 10px;
 }
 
 .search-bar input[type="text"] {
   padding: 10px;
   width: 300px;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: none;
+  outline: none;
 }
 
 .search-bar button {
@@ -72,9 +84,10 @@ nav a.active {
 .section-title {
   font-size: 1.8rem;
   margin: 20px 0 10px;
+  text-align: center;
 }
 
-/* Grid layout */
+/* Grid layout for cards */
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -82,25 +95,24 @@ nav a.active {
   justify-content: center;
 }
 
-/* Glass card styles */
+/* Card styles with glass effect */
 .card {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  box-shadow: 0 8px 32px 0 rgba(0, 255, 153, 0.37);
+  box-shadow: 0 8px 32px rgba(0, 255, 153, 0.2);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  overflow: hidden;
+  color: #fff;
   width: 280px;
   padding: 15px;
   text-align: center;
-  color: #ffffff;
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 255, 153, 0.5);
+  box-shadow: 0 12px 40px rgba(0, 255, 153, 0.4);
 }
 
 .card img {
