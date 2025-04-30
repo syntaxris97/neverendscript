@@ -1,32 +1,33 @@
+/* General reset and background */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url("mybackground.jpg") no-repeat center center fixed;
+  font-family: Arial, sans-serif;
+  background: url('image/mybackground.jpg') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
-  text-align: center;
+  color: white;
 }
 
+/* Navigation Bar */
 nav {
   background-color: #333;
-  padding: 12px 0;
+  padding: 10px 0;
+  text-align: center;
 }
 
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
 }
 
 nav ul li {
-  margin: 0 20px;
+  display: inline;
+  margin: 0 15px;
 }
 
 nav ul li a {
+  color: white;
   text-decoration: none;
-  color: #fff;
   font-weight: bold;
 }
 
@@ -34,91 +35,106 @@ nav ul li a:hover {
   color: cyan;
 }
 
+/* Search Bar */
 .search-container {
+  text-align: center;
   margin: 20px auto;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
 }
 
-.search-container input[type="text"] {
-  padding: 8px 10px;
-  border-radius: 6px;
-  border: none;
+#searchInput {
+  padding: 10px;
   width: 300px;
+  border-radius: 5px;
+  border: none;
 }
 
-.search-container button {
-  padding: 8px 15px;
+button {
+  padding: 10px 15px;
   background-color: cyan;
   border: none;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
 }
 
-.section-title {
-  margin-top: 40px;
-  font-size: 28px;
-  color: cyan;
-  text-shadow: 1px 1px 3px #000;
+button:hover {
+  background-color: #00bcd4;
 }
 
+/* Section Headers */
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: cyan;
+  text-shadow: 0 0 5px black;
+}
+
+/* Card Layout */
 .card-container {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
   padding: 20px;
 }
 
 .card {
   background-color: white;
-  color: #000;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  padding: 16px;
+  color: black;
   width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
-  border-radius: 10px;
 }
 
-.card h3 {
-  margin-top: 10px;
-  font-size: 20px;
+.card-content {
+  padding: 15px;
 }
 
-.card p {
+.card-content h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.card-content p {
+  margin: 5px 0;
   font-size: 14px;
   color: #444;
 }
 
+/* Pagination */
 .pagination {
-  margin-bottom: 40px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .pagination button {
-  background-color: white;
-  border: 1px solid #ccc;
-  color: #333;
-  padding: 5px 10px;
   margin: 0 5px;
-  cursor: pointer;
+  padding: 8px 12px;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
   border-radius: 5px;
   font-weight: bold;
 }
 
 .pagination button.active {
   background-color: cyan;
-  color: #000;
+  color: white;
+}
+
+.pagination button:hover {
+  background-color: #00bcd4;
+  color: white;
 }
