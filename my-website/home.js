@@ -6,6 +6,18 @@ const scripts = [
     image: "image/banana.png"
   },
   {
+    title: "🔥 NEW SCRIPT – Banana Hub",
+    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
+    date: "1 May 2025",
+    image: "image/banana.png"
+  },
+  {
+    title: "🔥 NEW SCRIPT – Banana Hub",
+    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
+    date: "1 May 2025",
+    image: "image/banana.png"
+  },
+  {
     title: "BLOX FRUITS – REDz Hub",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
     date: "30 April 2025",
@@ -20,6 +32,18 @@ const scripts = [
 ];
 
 const executors = [
+  {
+    title: "Hydrogen Executor",
+    description: "Mobile executor supporting most scripts.",
+    date: "28 April 2025",
+    image: "image/deltaexecutor.png"
+  },
+  {
+    title: "Hydrogen Executor",
+    description: "Mobile executor supporting most scripts.",
+    date: "28 April 2025",
+    image: "image/deltaexecutor.png"
+  },
   {
     title: "Hydrogen Executor",
     description: "Mobile executor supporting most scripts.",
