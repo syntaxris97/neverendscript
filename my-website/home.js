@@ -1,79 +1,107 @@
-const cardsData = [
+const data = [
   {
-    image: "bloxfruits.png",
     title: "Blox Fruits Pastebin Script",
     date: "30 April 2025",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
+    image: "image/bloxfruits.png",
+    category: "Script"
   },
   {
-    image: "deltaexecutor.png",
     title: "Delta Executor",
     date: "29 April 2025",
     description: "Powerful executor for Roblox scripts.",
+    image: "image/deltaexecutor.png",
+    category: "Executor"
   },
   {
-    image: "fluxurexecutor.png",
     title: "Fluxus Executor",
     date: "28 April 2025",
     description: "Popular Roblox executor for multiple games.",
-  },
+    image: "image/fluxurexecutor.png",
+    category: "Executor"
+  }
 ];
 
-const cardsPerPage = 3;
+const itemsPerPage = 6;
 let currentPage = 1;
 
-function renderCards(data) {
-  const container = document.getElementById("cardContainer");
+function displayCards(category, containerId) {
+  const container = document.getElementById(containerId);
   container.innerHTML = "";
 
-  const start = (currentPage - 1) * cardsPerPage;
-  const end = start + cardsPerPage;
-  const cardsToDisplay = data.slice(start, end);
+  const filtered = data.filter(item => item.category === category);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginated = filtered.slice(startIndex, startIndex + itemsPerPage);
 
-  cardsToDisplay.forEach(card => {
-    const cardElement = document.createElement("div");
-    cardElement.className = "card";
-    cardElement.innerHTML = `
-      <img src="image/${card.image}" alt="${card.title}" class="card-img" />
-      <div class="card-body">
-        <h3>${card.title}</h3>
-        <p>${card.date}</p>
-        <p>${card.description}</p>
-      </div>
+  paginated.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <h3>${item.title}</h3>
+      <p class="date">${item.date}</p>
+      <p>${item.description}</p>
     `;
-    container.appendChild(cardElement);
+    container.appendChild(card);
   });
-
-  renderPagination(data.length);
 }
 
-function renderPagination(totalItems) {
-  const totalPages = Math.ceil(totalItems / cardsPerPage);
+function setupPagination() {
   const pagination = document.getElementById("pagination");
   pagination.innerHTML = "";
 
+  const totalItems = data.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
   for (let i = 1; i <= totalPages; i++) {
     const btn = document.createElement("button");
-    btn.textContent = i;
-    btn.className = i === currentPage ? "active" : "";
-    btn.onclick = () => {
+    btn.className = "page-button";
+    btn.innerText = i;
+    if (i === currentPage) btn.classList.add("active");
+
+    btn.addEventListener("click", () => {
       currentPage = i;
-      renderCards(cardsData);
-    };
+      updateDisplay();
+    });
+
     pagination.appendChild(btn);
   }
 }
 
-function searchCards() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = cardsData.filter(card =>
-    card.title.toLowerCase().includes(query) ||
-    card.description.toLowerCase().includes(query)
-  );
-  currentPage = 1;
-  renderCards(filtered);
+function updateDisplay() {
+  displayCards("Script", "script-section");
+  displayCards("Executor", "executor-section");
+  setupPagination();
 }
 
-document.getElementById("searchBtn").addEventListener("click", searchCards);
+function searchItems() {
+  const searchTerm = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = data.filter(item =>
+    item.title.toLowerCase().includes(searchTerm) ||
+    item.description.toLowerCase().includes(searchTerm)
+  );
 
-window.onload = () => renderCards(cardsData);
+  document.getElementById("script-section").innerHTML = "";
+  document.getElementById("executor-section").innerHTML = "";
+  document.getElementById("pagination").innerHTML = "";
+
+  filtered.forEach(item => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+      <img src="${item.image}" alt="${item.title}">
+      <h3>${item.title}</h3>
+      <p class="date">${item.date}</p>
+      <p>${item.description}</p>
+    `;
+
+    const containerId = item.category === "Script" ? "script-section" : "executor-section";
+    document.getElementById(containerId).appendChild(card);
+  });
+}
+
+document.getElementById("searchBtn").addEventListener("click", searchItems);
+
+updateDisplay();
