@@ -30,60 +30,29 @@ const scripts = [
     img: "image/petsimx.png"
   },
   {
-    title: "JAILBREAK - OP AUTO FARM",
+    title: "JAILBREAK – OP AUTO FARM",
     date: "10 April 2025",
     description: "The best auto farm script for Jailbreak...",
     img: "image/jailbreak.png"
-  },
-  {
-    title: "ARCEUS X V4 - MOBILE SUPPORT",
-    date: "8 April 2025",
-    description: "Supports mobile devices for smooth performance.",
-    img: "image/arceusx.png"
   }
 ];
 
-const cardsContainer = document.querySelector(".cards");
-const pagination = document.querySelector(".pagination");
-const itemsPerPage = 3;
-let currentPage = 1;
+const container = document.getElementById("card-container");
 
-function displayScripts(page) {
-  cardsContainer.innerHTML = "";
-  const start = (page - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  const currentItems = scripts.slice(start, end);
+scripts.forEach(script => {
+  const card = document.createElement("div");
+  card.className = "col-md-4 mb-4";
 
-  currentItems.forEach(script => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${script.img}" alt="${script.title}">
-      <h3>${script.title}</h3>
-      <p>${script.date}</p>
-      <p>${script.description}</p>
-    `;
-    cardsContainer.appendChild(card);
-  });
-}
+  card.innerHTML = `
+    <div class="card h-100 shadow-sm">
+      <img src="${script.img}" class="card-img-top" alt="${script.title}" />
+      <div class="card-body">
+        <h5 class="card-title fw-bold">${script.title}</h5>
+        <p class="card-text text-muted mb-1">${script.date}</p>
+        <p class="card-text">${script.description}</p>
+      </div>
+    </div>
+  `;
 
-function setupPagination() {
-  pagination.innerHTML = "";
-  const pageCount = Math.ceil(scripts.length / itemsPerPage);
-  for (let i = 1; i <= pageCount; i++) {
-    const link = document.createElement("a");
-    link.href = "#";
-    link.textContent = i;
-    if (i === currentPage) link.classList.add("active");
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      currentPage = i;
-      displayScripts(currentPage);
-      setupPagination();
-    });
-    pagination.appendChild(link);
-  }
-}
-
-displayScripts(currentPage);
-setupPagination();
+  container.appendChild(card);
+});
