@@ -27,6 +27,18 @@ const scripts = [
 
 const executors = [
   {
+    title: "Delta Executor",
+    description: "Mobile executor supporting most scripts.",
+    date: "28 April 2025",
+    image: "image/hydrogen.png"
+  },
+  {
+    title: "Fluxus Executor",
+    description: "Mobile executor supporting most scripts.",
+    date: "28 April 2025",
+    image: "image/hydrogen.png"
+  },
+  {
     title: "Hydrogen Executor",
     description: "Mobile executor supporting most scripts.",
     date: "28 April 2025",
