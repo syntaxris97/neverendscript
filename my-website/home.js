@@ -1,4 +1,3 @@
-// Sample script data (replace with real data or fetch from server)
 const scripts = [
   {
     title: "BLOX FRUITS – REDz Hub",
