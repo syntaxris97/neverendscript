@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>NeverEndScript</title>
-  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="home.css">
 </head>
-<body style="background-image: url('image/mybackground.jpg'); background-size: cover; background-attachment: fixed;">
-
+<body>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Scripts</a>
-    <a href="#">Executor</a>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Scripts</a></li>
+      <li><a href="#">Executor</a></li>
+    </ul>
   </nav>
 
   <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
-    <button id="searchBtn">Search</button>
+    <button onclick="search()">Search</button>
   </div>
 
   <h2 class="section-title">Scripts</h2>
-  <div class="card-wrapper" id="script-section"></div>
+  <div id="scriptsContainer" class="card-container"></div>
+  <div id="scriptsPagination" class="pagination"></div>
 
   <h2 class="section-title">Executors</h2>
-  <div class="card-wrapper" id="executor-section"></div>
-
-  <div id="pagination" class="pagination"></div>
+  <div id="executorsContainer" class="card-container"></div>
+  <div id="executorsPagination" class="pagination"></div>
 
   <script src="home.js"></script>
 </body>
