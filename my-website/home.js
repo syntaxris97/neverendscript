@@ -30,7 +30,7 @@ const executors = [
     title: "KRNL Executor",
     description: "Popular free executor, trusted by many users.",
     date: "25 April 2025",
-    image: "image/fluxurexecutor.png.png"
+    image: "image/fluxurexecutor.png"
   }
 ];
 
