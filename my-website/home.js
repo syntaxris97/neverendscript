@@ -36,7 +36,7 @@ const executors = [
     title: "Fluxus Executor",
     description: "Mobile executor supporting most scripts.",
     date: "28 April 2025",
-    image: "image/hydrogen.png"
+    image: "image/fluxurexecutor.png"
   },
   {
     title: "Hydrogen Executor",
