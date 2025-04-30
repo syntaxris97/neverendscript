@@ -1,75 +1,84 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const scripts = [
-        {
-            title: "BLOX FRUITS – REDz Hub",
-            date: "30 April 2025",
-            description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
-            image: "https://via.placeholder.com/300x180?text=REDz+Hub"
-        },
-        {
-            title: "Banana Hub – Blox Fruits Script",
-            date: "30 April 2025",
-            description: "BLOX FRUITS Script Mobile UPDATE GRAVITY AUTO...",
-            image: "https://via.placeholder.com/300x180?text=Banana+Hub"
-        },
-        {
-            title: "DEAD RAILS Script – Native Hub",
-            date: "30 April 2025",
-            description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
-            image: "https://via.placeholder.com/300x180?text=Native+Hub"
-        },
-        {
-            title: "DEAD RAILS Script – Skull Hub",
-            date: "30 April 2025",
-            description: "SKULL HUB: DEAD RAILS Script Pastebin 2025 AUTO...",
-            image: "https://via.placeholder.com/300x180?text=Skull+Hub"
-        },
-        {
-            title: "Vxzee Hub – Blox Fruits Script (No Key)",
-            date: "29 April 2025",
-            description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO...",
-            image: "https://via.placeholder.com/300x180?text=Vxzee+Hub"
-        },
-        {
-            title: "GROW A GARDEN Script – Lunor Hub",
-            date: "29 April 2025",
-            description: "LUNOR HUB: GROW A GARDEN Script Pastebin 2025...",
-            image: "https://via.placeholder.com/300x180?text=Lunor+Hub"
-        },
-        {
-            title: "KRNL V669 BEST",
-            date: "23 April 2025",
-            description: "Credit: ...",
-            image: "https://via.placeholder.com/300x180?text=KRNL+V669"
-        },
-        {
-            title: "FLUXUS v66.6",
-            date: "23 April 2025",
-            description: "Credit: shower head...",
-            image: "https://via.placeholder.com/300x180?text=FLUXUS+v66.6"
-        },
-        {
-            title: "DELTA V668 BEST",
-            date: "15 April 2025",
-            description: "Credit: Lxynny...",
-            image: "https://via.placeholder.com/300x180?text=DELTA+V668"
-        }
-    ];
+// Sample script data (replace with real data or fetch from server)
+const scripts = [
+  {
+    title: "BLOX FRUITS – REDz Hub",
+    date: "30 April 2025",
+    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
+    img: "image/bloxfruits.png"
+  },
+  {
+    title: "DEAD RAILS Script – Native Hub",
+    date: "30 April 2025",
+    description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
+    img: "image/deadrails.png"
+  },
+  {
+    title: "KRNL V669 BEST",
+    date: "23 April 2025",
+    description: "Credit: ...",
+    img: "image/krnl.png"
+  },
+  {
+    title: "ARM HUB – PET SIM X",
+    date: "15 April 2025",
+    description: "Fully working script for Pet Simulator X...",
+    img: "image/petsimx.png"
+  },
+  {
+    title: "JAILBREAK - OP AUTO FARM",
+    date: "10 April 2025",
+    description: "The best auto farm script for Jailbreak...",
+    img: "image/jailbreak.png"
+  },
+  {
+    title: "ARCEUS X V4 - MOBILE SUPPORT",
+    date: "8 April 2025",
+    description: "Supports mobile devices for smooth performance.",
+    img: "image/arceusx.png"
+  }
+];
 
-    const grid = document.getElementById("scriptsGrid");
-    scripts.forEach(script => {
-        const card = document.createElement("div");
-        card.className = "card";
+const cardsContainer = document.querySelector(".cards");
+const pagination = document.querySelector(".pagination");
+const itemsPerPage = 3;
+let currentPage = 1;
 
-        card.innerHTML = `
-            <img src="${script.image}" alt="${script.title}">
-            <div class="card-body">
-                <h3>${script.title}</h3>
-                <small>${script.date}</small>
-                <p>${script.description}</p>
-            </div>
-        `;
+function displayScripts(page) {
+  cardsContainer.innerHTML = "";
+  const start = (page - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const currentItems = scripts.slice(start, end);
 
-        grid.appendChild(card);
+  currentItems.forEach(script => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img src="${script.img}" alt="${script.title}">
+      <h3>${script.title}</h3>
+      <p>${script.date}</p>
+      <p>${script.description}</p>
+    `;
+    cardsContainer.appendChild(card);
+  });
+}
+
+function setupPagination() {
+  pagination.innerHTML = "";
+  const pageCount = Math.ceil(scripts.length / itemsPerPage);
+  for (let i = 1; i <= pageCount; i++) {
+    const link = document.createElement("a");
+    link.href = "#";
+    link.textContent = i;
+    if (i === currentPage) link.classList.add("active");
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentPage = i;
+      displayScripts(currentPage);
+      setupPagination();
     });
-});
+    pagination.appendChild(link);
+  }
+}
+
+displayScripts(currentPage);
+setupPagination();
