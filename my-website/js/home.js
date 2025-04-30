@@ -1,53 +1,75 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle search functionality
-    const searchInput = document.querySelector('.search-container input');
-    const searchButton = document.querySelector('.search-btn');
-    
-    searchButton.addEventListener('click', function() {
-        performSearch();
-    });
-    
-    searchInput.addEventListener('keypress', function(e) {
-        if (e.key === 'Enter') {
-            performSearch();
+document.addEventListener("DOMContentLoaded", () => {
+    const scripts = [
+        {
+            title: "BLOX FRUITS – REDz Hub",
+            date: "30 April 2025",
+            description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
+            image: "https://via.placeholder.com/300x180?text=REDz+Hub"
+        },
+        {
+            title: "Banana Hub – Blox Fruits Script",
+            date: "30 April 2025",
+            description: "BLOX FRUITS Script Mobile UPDATE GRAVITY AUTO...",
+            image: "https://via.placeholder.com/300x180?text=Banana+Hub"
+        },
+        {
+            title: "DEAD RAILS Script – Native Hub",
+            date: "30 April 2025",
+            description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
+            image: "https://via.placeholder.com/300x180?text=Native+Hub"
+        },
+        {
+            title: "DEAD RAILS Script – Skull Hub",
+            date: "30 April 2025",
+            description: "SKULL HUB: DEAD RAILS Script Pastebin 2025 AUTO...",
+            image: "https://via.placeholder.com/300x180?text=Skull+Hub"
+        },
+        {
+            title: "Vxzee Hub – Blox Fruits Script (No Key)",
+            date: "29 April 2025",
+            description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO...",
+            image: "https://via.placeholder.com/300x180?text=Vxzee+Hub"
+        },
+        {
+            title: "GROW A GARDEN Script – Lunor Hub",
+            date: "29 April 2025",
+            description: "LUNOR HUB: GROW A GARDEN Script Pastebin 2025...",
+            image: "https://via.placeholder.com/300x180?text=Lunor+Hub"
+        },
+        {
+            title: "KRNL V669 BEST",
+            date: "23 April 2025",
+            description: "Credit: ...",
+            image: "https://via.placeholder.com/300x180?text=KRNL+V669"
+        },
+        {
+            title: "FLUXUS v66.6",
+            date: "23 April 2025",
+            description: "Credit: shower head...",
+            image: "https://via.placeholder.com/300x180?text=FLUXUS+v66.6"
+        },
+        {
+            title: "DELTA V668 BEST",
+            date: "15 April 2025",
+            description: "Credit: Lxynny...",
+            image: "https://via.placeholder.com/300x180?text=DELTA+V668"
         }
-    });
-    
-    function performSearch() {
-        const query = searchInput.value.trim();
-        if (query) {
-            console.log(`Searching for: ${query}`);
-            // In a real implementation, this would trigger an API call or page navigation
-            // For demo purposes, we'll just show an alert
-            alert(`Searching for: ${query}`);
-        }
-    }
-    
-    // Handle pagination clicks
-    const paginationLinks = document.querySelectorAll('.pagination a');
-    
-    paginationLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Remove active class from all pagination links
-            paginationLinks.forEach(l => l.classList.remove('active'));
-            
-            // Add active class to clicked link
-            this.classList.add('active');
-            
-            // In a real implementation, this would load the corresponding page
-            console.log(`Navigating to page: ${this.textContent}`);
-        });
-    });
-    
-    // Handle image loading errors by setting placeholder images
-    const images = document.querySelectorAll('.thumbnail img');
-    
-    images.forEach(img => {
-        img.addEventListener('error', function() {
-            // Replace broken images with a placeholder
-            this.src = 'data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22300%22%20height%3D%22150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20fill%3D%22%23333%22%20width%3D%22300%22%20height%3D%22150%22%2F%3E%3Ctext%20fill%3D%22%23FF9900%22%20font-family%3D%22Arial%22%20font-size%3D%2224%22%20x%3D%2250%25%22%20y%3D%2250%25%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3EScript%20Image%3C%2Ftext%3E%3C%2Fsvg%3E';
-        });
+    ];
+
+    const grid = document.getElementById("scriptsGrid");
+    scripts.forEach(script => {
+        const card = document.createElement("div");
+        card.className = "card";
+
+        card.innerHTML = `
+            <img src="${script.image}" alt="${script.title}">
+            <div class="card-body">
+                <h3>${script.title}</h3>
+                <small>${script.date}</small>
+                <p>${script.description}</p>
+            </div>
+        `;
+
+        grid.appendChild(card);
     });
 });
