@@ -6,6 +6,12 @@ const scripts = [
     image: "image/bloxfruits.png"
   },
   {
+    title: "🔥 NEW SCRIPT – Banana Hub",
+    date: "1 May 2025",
+    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
+    image: "image/bloxfruits.png"
+  },
+  {
     title: "BLOX FRUITS – REDz Hub",
     date: "30 April 2025",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
