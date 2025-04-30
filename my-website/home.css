@@ -1,59 +1,25 @@
 body {
-  background-color: #f2f2f2;
+  background-color: #f4f4f4;
   font-family: Arial, sans-serif;
 }
 
-.card {
-  margin: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: scale(1.02);
-}
-
-.card img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.card-title {
-  font-weight: bold;
-}
-
-.card-text {
-  font-size: 14px;
-}
-
-.nav-link {
+nav a {
+  text-decoration: none;
   color: #007bff;
-  margin: 0 10px;
 }
 
-.nav-link:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
-.input-group input {
-  max-width: 400px;
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
 }
 
-.pagination button {
-  margin: 0 2px;
-}
-
-/* Scripts Section Title */
-.card-section-title {
-  text-align: left;
-  margin-bottom: 15px;
-  padding-left: 10px;
-}
-
-.card-section-title h2 {
-  font-weight: bold;
+.script-section-title {
   font-size: 24px;
-  color: #333;
+  font-weight: bold;
+  text-align: left;
+  margin: 20px 0 10px;
 }
