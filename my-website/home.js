@@ -1,108 +1,152 @@
+// Sample data
 const scripts = [
   {
     title: "🔥 NEW SCRIPT – Banana Hub",
-    date: "1 May 2025",
     description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    image: "image/bloxfruits.png",
-  },
-  {
-    title: "🔥 NEW SCRIPT – Banana Hub",
     date: "1 May 2025",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    image: "image/bloxfruits.png",
+    image: "image/banana.png"
   },
   {
     title: "BLOX FRUITS – REDz Hub",
-    date: "30 April 2025",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
-    image: "https://via.placeholder.com/300x150",
+    date: "30 April 2025",
+    image: "image/bloxfruits.png"
   },
   {
     title: "DEAD RAILS Script – Native Hub",
-    date: "30 April 2025",
     description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
-    image: "https://via.placeholder.com/300x150",
-  },
+    date: "30 April 2025",
+    image: "image/deadrails.png"
+  }
 ];
 
 const executors = [
   {
     title: "Hydrogen Executor",
-    date: "28 April 2025",
     description: "Mobile executor supporting most scripts.",
-    image: "image/bloxfruits.png",
+    date: "28 April 2025",
+    image: "image/hydrogen.png"
   },
   {
     title: "KRNL Executor",
-    date: "25 April 2025",
     description: "Popular free executor, trusted by many users.",
-    image: "https://via.placeholder.com/300x150",
-  },
+    date: "25 April 2025",
+    image: "image/krnl.png"
+  }
 ];
 
-const scriptsPerPage = 3;
-const executorsPerPage = 3;
-let currentScriptPage = 1;
-let currentExecutorPage = 1;
+// Pagination configuration
+const itemsPerPage = 3;
 
-function renderCards(items, containerId, page, itemsPerPage) {
+function renderCards(data, containerId, page) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
 
   const start = (page - 1) * itemsPerPage;
   const end = start + itemsPerPage;
-  const paginatedItems = items.slice(start, end);
+  const pageItems = data.slice(start, end);
 
-  paginatedItems.forEach((item) => {
+  pageItems.forEach(item => {
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
       <img src="${item.image}" alt="${item.title}" />
       <h3>${item.title}</h3>
-      <p class="date">${item.date}</p>
+      <small>${item.date}</small>
       <p>${item.description}</p>
     `;
     container.appendChild(card);
   });
 }
 
-function renderPagination(items, paginationId, onPageChange, currentPage, itemsPerPage) {
+function renderPagination(data, paginationId, changePageFunc) {
+  const totalPages = Math.ceil(data.length / itemsPerPage);
   const pagination = document.getElementById(paginationId);
   pagination.innerHTML = "";
 
-  const totalPages = Math.ceil(items.length / itemsPerPage);
   for (let i = 1; i <= totalPages; i++) {
     const btn = document.createElement("button");
-    btn.innerText = i;
-    if (i === currentPage) btn.classList.add("active");
-    btn.onclick = () => onPageChange(i);
+    btn.textContent = i;
+    btn.addEventListener("click", () => changePageFunc(i));
     pagination.appendChild(btn);
   }
 }
 
 function changeScriptPage(page) {
-  currentScriptPage = page;
-  renderCards(scripts, "scriptsContainer", currentScriptPage, scriptsPerPage);
-  renderPagination(scripts, "pagination", changeScriptPage, currentScriptPage, scriptsPerPage);
+  renderCards(scripts, "scriptCards", page);
+  renderPagination(scripts, "scriptPagination", changeScriptPage);
 }
 
 function changeExecutorPage(page) {
-  currentExecutorPage = page;
-  renderCards(executors, "executorsContainer", currentExecutorPage, executorsPerPage);
-  renderPagination(executors, "executorsPagination", changeExecutorPage, currentExecutorPage, executorsPerPage);
+  renderCards(executors, "executorCards", page);
+  renderPagination(executors, "executorPagination", changeExecutorPage);
 }
 
-function searchScripts() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
+function showSection(section) {
+  const scriptsSection = document.getElementById("scriptsSection");
+  const executorsSection = document.getElementById("executorsSection");
 
-  const allCards = document.querySelectorAll(".card");
-  allCards.forEach((card) => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(query) ? "block" : "none";
-  });
+  scriptsSection.style.display = section === "scripts" ? "block" : "none";
+  executorsSection.style.display = section === "executors" ? "block" : "none";
+
+  document.querySelectorAll("nav ul a").forEach(link => link.classList.remove("active"));
+  if (section === "scripts") {
+    document.getElementById("navScripts").classList.add("active");
+  } else if (section === "executors") {
+    document.getElementById("navExecutors").classList.add("active");
+  }
+}
+
+document.getElementById("navScripts").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("scripts");
+  changeScriptPage(1);
+});
+
+document.getElementById("navExecutors").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("executors");
+  changeExecutorPage(1);
+});
+
+document.getElementById("navHome").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("scripts");
+  changeScriptPage(1);
+});
+
+document.getElementById("navMobile").addEventListener("click", (e) => {
+  e.preventDefault();
+  showSection("scripts");
+  changeScriptPage(1);
+});
+
+function searchContent() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const filteredScripts = scripts.filter(s =>
+    s.title.toLowerCase().includes(query) ||
+    s.description.toLowerCase().includes(query)
+  );
+  const filteredExecutors = executors.filter(e =>
+    e.title.toLowerCase().includes(query) ||
+    e.description.toLowerCase().includes(query)
+  );
+
+  if (filteredScripts.length > 0) {
+    showSection("scripts");
+    renderCards(filteredScripts, "scriptCards", 1);
+    document.getElementById("scriptPagination").innerHTML = "";
+  } else if (filteredExecutors.length > 0) {
+    showSection("executors");
+    renderCards(filteredExecutors, "executorCards", 1);
+    document.getElementById("executorPagination").innerHTML = "";
+  } else {
+    alert("No matching scripts or executors found.");
+  }
 }
 
 window.onload = () => {
   changeScriptPage(1);
   changeExecutorPage(1);
+  showSection("scripts");
 };
