@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NeverEndScript</title>
   <link rel="stylesheet" href="home.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Scripts</a></li>
-      <li><a href="#">Executor</a></li>
-    </ul>
-  </nav>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Scripts</a></li>
+        <li><a href="#">Executor</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="search-container">
-    <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
-    <button onclick="search()">Search</button>
-  </div>
+  <main>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors...">
+      <button onclick="searchItems()">Search</button>
+    </div>
 
-  <h2 class="section-title">Scripts</h2>
-  <div id="scriptsContainer" class="card-container"></div>
-  <div id="scriptsPagination" class="pagination"></div>
+    <section>
+      <h2>Scripts</h2>
+      <div id="scriptsContainer" class="card-container"></div>
+      <div id="scriptsPagination" class="pagination"></div>
+    </section>
 
-  <h2 class="section-title">Executors</h2>
-  <div id="executorsContainer" class="card-container"></div>
-  <div id="executorsPagination" class="pagination"></div>
+    <section>
+      <h2>Executors</h2>
+      <div id="executorsContainer" class="card-container"></div>
+      <div id="executorsPagination" class="pagination"></div>
+    </section>
+  </main>
 
   <script src="home.js"></script>
 </body>
