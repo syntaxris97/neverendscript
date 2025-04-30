@@ -6,37 +6,27 @@
   <title>NeverEndScript</title>
   <link rel="stylesheet" href="home.css" />
 </head>
-<body>
+<body style="background-image: url('image/mybackground.jpg'); background-size: cover; background-attachment: fixed;">
 
-  <!-- Navigation -->
-  <nav style="background-color: #444; padding: 10px 0; text-align: center;">
-    <a href="#" style="margin: 0 15px; color: white; text-decoration: none;">Home</a>
-    <a href="#" style="margin: 0 15px; color: aqua; text-decoration: none;">Scripts</a>
-    <a href="#" style="margin: 0 15px; color: aqua; text-decoration: none;">Executor</a>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Scripts</a>
+    <a href="#">Executor</a>
   </nav>
 
-  <!-- Search -->
-  <div style="text-align: center; margin: 20px 0;">
+  <div class="search-container">
     <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
     <button id="searchBtn">Search</button>
   </div>
 
-  <!-- Scripts Section -->
-  <section>
-    <h2 class="section-title">Latest Scripts</h2>
-    <div id="scriptCards" class="card-wrapper"></div>
-  </section>
+  <h2 class="section-title">Scripts</h2>
+  <div class="card-wrapper" id="script-section"></div>
 
-  <!-- Executors Section -->
-  <section>
-    <h2 class="section-title">Executors</h2>
-    <div id="executorCards" class="card-wrapper"></div>
-  </section>
+  <h2 class="section-title">Executors</h2>
+  <div class="card-wrapper" id="executor-section"></div>
 
-  <!-- Pagination -->
-  <div id="pagination" style="text-align: center; margin: 20px 0;"></div>
+  <div id="pagination" class="pagination"></div>
 
-  <!-- JS -->
   <script src="home.js"></script>
 </body>
 </html>
