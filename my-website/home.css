@@ -1,119 +1,87 @@
-* {
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
 body {
+  font-family: Arial, sans-serif;
+  background-color: #eee;
   margin: 0;
-  background-color: #f1f1f1;
-  color: #222;
-}
-
-header {
+  padding: 0;
   text-align: center;
-  padding: 20px;
-  background-color: white;
-  border-bottom: 1px solid #ccc;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 28px;
+h1 {
+  margin-top: 20px;
 }
 
 nav {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 nav a {
   margin: 0 10px;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
   color: #007bff;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.search-container {
+  margin: 20px 0;
 }
 
-.search-bar {
-  margin-top: 10px;
-}
-
-.search-bar input {
+.search-container input {
   padding: 8px;
   width: 250px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
 }
 
-.search-bar button {
+.search-container button {
   padding: 8px 12px;
-  border: none;
   background-color: #007bff;
   color: white;
-  border-radius: 4px;
+  border: none;
   cursor: pointer;
 }
 
-.search-bar button:hover {
-  background-color: #0056b3;
-}
-
-.card-container {
+.cards {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 30px 10px;
+  flex-wrap: wrap;
   gap: 20px;
+  padding: 20px;
 }
 
 .card {
   background-color: white;
-  width: 300px;
-  padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  width: 300px;
+  text-align: left;
 }
 
 .card img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
-}
-
-.card h2 {
-  font-size: 18px;
-  margin: 10px 0 5px;
-}
-
-.card .date {
-  color: gray;
-  font-size: 14px;
-  margin-bottom: 8px;
+  border-radius: 4px;
 }
 
 .pagination {
-  text-align: center;
-  margin-bottom: 40px;
+  margin: 20px;
 }
 
-.pagination button {
+.pagination a {
   margin: 5px;
-  padding: 6px 10px;
-  border: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
   background-color: white;
   border-radius: 4px;
-  cursor: pointer;
-  border: 1px solid #ccc;
+  color: black;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.pagination button:hover {
+.pagination a:hover {
   background-color: #007bff;
   color: white;
 }
 
-.pagination .active {
+.pagination a.active {
   background-color: #007bff;
   color: white;
 }
