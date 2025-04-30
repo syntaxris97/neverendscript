@@ -24,13 +24,14 @@ const executors = [
     title: "Hydrogen Executor",
     description: "Mobile executor supporting most scripts.",
     date: "28 April 2025",
-    image: "image/hydrogen.png"
+    image: "image/deltaexecutor.png"
   },
   {
     title: "KRNL Executor",
     description: "Popular free executor, trusted by many users.",
     date: "25 April 2025",
-    image: "image/krnl.png"
+    image: "image/
+fluxurexecutor.png"
   }
 ];
 
