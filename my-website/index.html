@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NeverEndScript</title>
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-  <header>NeverEndScript</header>
+  <header>
+    <h1>NeverEndScript</h1>
+    <nav>
+      <a href="#" onclick="showSection('home')">Home</a>
+      <a href="#" onclick="showSection('scripts')">Scripts</a>
+      <a href="#" onclick="showSection('executors')">Executors</a>
+    </nav>
+  </header>
 
-  <nav>
-    <a href="#" onclick="showAll()">Home</a>
-    <a href="#" onclick="showScripts()">Scripts</a>
-    <a href="#" onclick="showExecutors()">Executors</a>
-  </nav>
+  <main>
+    <!-- Home View -->
+    <section id="homeSection">
+      <h2>Scripts</h2>
+      <div id="scriptsContainer" class="container"></div>
+      <div id="scriptsPagination" class="pagination"></div>
 
-  <h2 style="text-align:center; margin-top: 20px;">Scripts</h2>
-  <div class="container" id="scripts-container"></div>
-  <div class="pagination" id="scripts-pagination"></div>
+      <h2>Executors</h2>
+      <div id="executorsContainer" class="container"></div>
+      <div id="executorsPagination" class="pagination"></div>
+    </section>
 
-  <h2 style="text-align:center; margin-top: 40px;">Executors</h2>
-  <div class="container" id="executors-container"></div>
-  <div class="pagination" id="executors-pagination"></div>
+    <!-- Scripts View Only -->
+    <section id="scriptsSection" style="display: none;">
+      <h2>All Scripts</h2>
+      <div id="scriptsOnlyContainer" class="container"></div>
+      <div id="scriptsOnlyPagination" class="pagination"></div>
+    </section>
+
+    <!-- Executors View Only -->
+    <section id="executorsSection" style="display: none;">
+      <h2>All Executors</h2>
+      <div id="executorsOnlyContainer" class="container"></div>
+      <div id="executorsOnlyPagination" class="pagination"></div>
+    </section>
+  </main>
 
   <script src="home.js"></script>
 </body>
