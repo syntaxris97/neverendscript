@@ -6,12 +6,6 @@ const scripts = [
     image: "image/bloxfruits.png"
   },
   {
-    title: "🔥 NEW SCRIPT – Banana Hub",
-    date: "1 May 2025",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    image: "image/bloxfruits.png"
-  },
-  {
     title: "BLOX FRUITS – REDz Hub",
     date: "30 April 2025",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
@@ -34,81 +28,92 @@ const scripts = [
     date: "15 April 2025",
     description: "Fully working script for Pet Simulator X...",
     image: "https://via.placeholder.com/300x150"
-  },
-  {
-    title: "JAILBREAK – OP AUTO FARM",
-    date: "10 April 2025",
-    description: "The best auto farm script for Jailbreak...",
-    image: "https://via.placeholder.com/300x150"
-  },
+  }
 ];
 
-const perPage = 3;
-let currentPage = 1;
+const executors = [
+  {
+    title: "Fluxus Executor",
+    date: "1 May 2025",
+    description: "Best free executor for Roblox with high stability.",
+    image: "image/bloxfruits.png"
+  },
+  {
+    title: "Hydrogen Executor",
+    date: "28 April 2025",
+    description: "Mobile executor supporting most scripts.",
+    image: "https://via.placeholder.com/300x150"
+  },
+  {
+    title: "KRNL Executor",
+    date: "25 April 2025",
+    description: "Popular free executor, trusted by many users.",
+    image: "https://via.placeholder.com/300x150"
+  },
+  {
+    title: "Delta Executor",
+    date: "20 April 2025",
+    description: "Stable executor with clean UI and fast injection.",
+    image: "https://via.placeholder.com/300x150"
+  }
+];
 
-function renderScripts() {
-  const container = document.getElementById("scriptsContainer");
-  container.innerHTML = "";
-  const start = (currentPage - 1) * perPage;
-  const end = start + perPage;
-  const paginated = scripts.slice(start, end);
-
-  paginated.forEach(script => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${script.image}" alt="${script.title}">
-      <h3>${script.title}</h3>
-      <div class="date">${script.date}</div>
-      <div class="desc">${script.description}</div>
-    `;
-    container.appendChild(card);
-  });
+// === Utility function to create cards ===
+function createCard(item) {
+  return `
+    <div class="card">
+      <img src="${item.image}" alt="${item.title}" />
+      <h3>${item.title}</h3>
+      <p><small>${item.date}</small></p>
+      <p>${item.description}</p>
+    </div>
+  `;
 }
 
-function renderPagination() {
-  const totalPages = Math.ceil(scripts.length / perPage);
-  const pagination = document.getElementById("pagination");
-  pagination.innerHTML = "";
+// === Render Paginated Content ===
+function renderPaginated(items, containerId, paginationId, currentPage, itemsPerPage, section) {
+  const container = document.getElementById(containerId);
+  const pagination = document.getElementById(paginationId);
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+  const currentItems = items.slice(start, end);
 
-  for (let i = 1; i <= totalPages; i++) {
-    const btn = document.createElement("button");
-    btn.textContent = i;
-    if (i === currentPage) btn.classList.add("active");
-    btn.onclick = () => {
-      currentPage = i;
-      renderScripts();
-      renderPagination();
-    };
-    pagination.appendChild(btn);
+  container.innerHTML = currentItems.map(createCard).join('');
+
+  const pageCount = Math.ceil(items.length / itemsPerPage);
+  pagination.innerHTML = '';
+
+  for (let i = 1; i <= pageCount; i++) {
+    pagination.innerHTML += `<button onclick="changePage('${section}', ${i})" class="${i === currentPage ? 'active' : ''}">${i}</button>`;
   }
 }
 
-document.getElementById("searchButton").onclick = () => {
-  const term = document.getElementById("searchInput").value.toLowerCase();
-  const filtered = scripts.filter(s => s.title.toLowerCase().includes(term));
-  currentPage = 1;
-  renderFiltered(filtered);
-};
+// === Page state ===
+let scriptPage = 1;
+let executorPage = 1;
 
-function renderFiltered(filteredList) {
-  const container = document.getElementById("scriptsContainer");
-  const pagination = document.getElementById("pagination");
-  container.innerHTML = "";
-  pagination.innerHTML = "";
-
-  filteredList.forEach(script => {
-    const card = document.createElement("div");
-    card.className = "card";
-    card.innerHTML = `
-      <img src="${script.image}" alt="${script.title}">
-      <h3>${script.title}</h3>
-      <div class="date">${script.date}</div>
-      <div class="desc">${script.description}</div>
-    `;
-    container.appendChild(card);
-  });
+// === Change Page ===
+function changePage(section, pageNum) {
+  if (section === 'scripts') {
+    scriptPage = pageNum;
+    renderPaginated(scripts, 'scriptCards', 'pagination', scriptPage, 3, 'scripts');
+  } else if (section === 'executors') {
+    executorPage = pageNum;
+    renderPaginated(executors, 'executorCards', 'executorPagination', executorPage, 3, 'executors');
+  }
 }
 
-renderScripts();
-renderPagination();
+// === Search Function (for Scripts only) ===
+function searchScripts() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const filtered = scripts.filter(s =>
+    s.title.toLowerCase().includes(query) || s.description.toLowerCase().includes(query)
+  );
+  renderPaginated(filtered, 'scriptCards', 'pagination', 1, 3, 'scripts');
+}
+
+// === Initial render ===
+document.addEventListener("DOMContentLoaded", () => {
+  renderPaginated(scripts, 'scriptCards', 'pagination', scriptPage, 3, 'scripts');
+  renderPaginated(executors, 'executorCards', 'executorPagination', executorPage, 3, 'executors');
+});
