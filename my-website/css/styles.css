@@ -9,6 +9,7 @@ header {
     background-color: #333;
     color: white;
     padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
@@ -90,11 +91,6 @@ nav ul li a {
     padding: 20px;
     text-align: center;
     width: 200px;
-}
-
-.script-card img {
-    width: 100%;
-    border-radius: 10px;
 }
 
 .script-card h2 {
