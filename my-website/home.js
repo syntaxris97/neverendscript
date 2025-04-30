@@ -1,129 +1,79 @@
-const scripts = [
+const cardsData = [
   {
-    title: "Banana Hub",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    image: "image/banana.png",
-    date: "1 May 2025",
-    type: "script"
-  },
-  {
-    title: "BLOX FRUITS Pastebin",
-    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
-    image: "image/bloxfruits.jpg",
+    image: "bloxfruits.png",
+    title: "Blox Fruits Pastebin Script",
     date: "30 April 2025",
-    type: "script"
+    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
   },
   {
+    image: "deltaexecutor.png",
     title: "Delta Executor",
-    description: "Powerful executor for Roblox scripts.",
-    image: "image/delta.png",
     date: "29 April 2025",
-    type: "executor"
+    description: "Powerful executor for Roblox scripts.",
   },
   {
-    title: "KRNL",
-    description: "Popular free Roblox executor with script support.",
-    image: "image/krnl.png",
-    date: "27 April 2025",
-    type: "executor"
-  }
+    image: "fluxurexecutor.png",
+    title: "Fluxus Executor",
+    date: "28 April 2025",
+    description: "Popular Roblox executor for multiple games.",
+  },
 ];
 
+const cardsPerPage = 3;
 let currentPage = 1;
-const itemsPerPage = 3;
-let currentView = "home"; // 'home', 'script', 'executor'
 
-function displayItems() {
-  const container = document.getElementById("contentContainer");
+function renderCards(data) {
+  const container = document.getElementById("cardContainer");
   container.innerHTML = "";
 
-  const filtered = scripts.filter(item => {
-    if (currentView === "script") return item.type === "script";
-    if (currentView === "executor") return item.type === "executor";
-    return true; // home = show all
-  });
+  const start = (currentPage - 1) * cardsPerPage;
+  const end = start + cardsPerPage;
+  const cardsToDisplay = data.slice(start, end);
 
-  const start = (currentPage - 1) * itemsPerPage;
-  const paginatedItems = filtered.slice(start, start + itemsPerPage);
-
-  paginatedItems.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card glass";
-    card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
-      <h3>${item.title}</h3>
-      <p class="date">${item.date}</p>
-      <p>${item.description}</p>
+  cardsToDisplay.forEach(card => {
+    const cardElement = document.createElement("div");
+    cardElement.className = "card";
+    cardElement.innerHTML = `
+      <img src="image/${card.image}" alt="${card.title}" class="card-img" />
+      <div class="card-body">
+        <h3>${card.title}</h3>
+        <p>${card.date}</p>
+        <p>${card.description}</p>
+      </div>
     `;
-    container.appendChild(card);
+    container.appendChild(cardElement);
   });
 
-  updatePagination(filtered.length);
+  renderPagination(data.length);
 }
 
-function updatePagination(totalItems) {
-  const pagination = document.getElementById("paginationContainer");
+function renderPagination(totalItems) {
+  const totalPages = Math.ceil(totalItems / cardsPerPage);
+  const pagination = document.getElementById("pagination");
   pagination.innerHTML = "";
 
-  const totalPages = Math.ceil(totalItems / itemsPerPage);
   for (let i = 1; i <= totalPages; i++) {
     const btn = document.createElement("button");
     btn.textContent = i;
-    if (i === currentPage) btn.classList.add("active");
+    btn.className = i === currentPage ? "active" : "";
     btn.onclick = () => {
       currentPage = i;
-      displayItems();
+      renderCards(cardsData);
     };
     pagination.appendChild(btn);
   }
 }
 
-function performSearch() {
+function searchCards() {
   const query = document.getElementById("searchInput").value.toLowerCase();
-  const container = document.getElementById("contentContainer");
-  container.innerHTML = "";
-
-  const filtered = scripts.filter(item =>
-    item.title.toLowerCase().includes(query) ||
-    item.description.toLowerCase().includes(query)
+  const filtered = cardsData.filter(card =>
+    card.title.toLowerCase().includes(query) ||
+    card.description.toLowerCase().includes(query)
   );
-
-  if (filtered.length === 0) {
-    container.innerHTML = "<p>No results found.</p>";
-    document.getElementById("paginationContainer").innerHTML = "";
-    return;
-  }
-
-  filtered.forEach(item => {
-    const card = document.createElement("div");
-    card.className = "card glass";
-    card.innerHTML = `
-      <img src="${item.image}" alt="${item.title}">
-      <h3>${item.title}</h3>
-      <p class="date">${item.date}</p>
-      <p>${item.description}</p>
-    `;
-    container.appendChild(card);
-  });
-
-  document.getElementById("paginationContainer").innerHTML = "";
+  currentPage = 1;
+  renderCards(filtered);
 }
 
-// Navigation
-document.getElementById("homeBtn").addEventListener("click", () => {
-  currentView = "home";
-  currentPage = 1;
-  displayItems();
-});
-document.getElementById("scriptsBtn").addEventListener("click", () => {
-  currentView = "script";
-  currentPage = 1;
-  displayItems();
-});
-document.getElementById("executorsBtn").addEventListener("click", () => {
-  currentView = "executor";
-  currentPage = 1;
-  displayItems();
-});
+document.getElementById("searchBtn").addEventListener("click", searchCards);
 
-window.onload = displayItems;
+window.onload = () => renderCards(cardsData);
