@@ -1,5 +1,13 @@
 // Example script list - in production, load this from your real source
 const scripts = [
+{
+  id: "4",
+  title: "Speed Hack",
+  description: "Increases player movement speed.",
+  image: "image/speedhack.png",
+  code: `-- Speed Hack\n
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100`
+}
   {
     id: "1",
     title: "Speed Hack",
