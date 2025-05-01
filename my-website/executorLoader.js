@@ -15,7 +15,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "hhttps://zentakmovies.pages.dev/landing" // ✅ Replace with your actual MediaFire or other link
+    downloadLink: "https://zentakmovies.pages.dev/" // ✅ Replace with your actual MediaFire or other link
   },
   {
     id: "2",
