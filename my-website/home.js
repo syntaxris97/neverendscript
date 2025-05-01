@@ -5,7 +5,7 @@ const scripts = [
   description: "Increases player movement speed.",
   date: "2025-05-01",
   image: "image/speedhack.png"
-}
+},
   {
     id: "1",
     title: "Infinite Yield",
