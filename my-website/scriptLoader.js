@@ -1,4 +1,11 @@
 const scripts = [
+   {
+    id: "5",
+    title: "AAim Hack",
+    description: "Increases player movement speed.",
+    image: "image/bloxfruits.png",
+    code: `-- Speed Hack\nloadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`
+  },
   {
     id: "1",
     title: "Speed Hack",
