@@ -1,15 +1,15 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NeverEndScript</title>
   <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <header>
     <h1>NeverEndScript</h1>
-    <button id="themeToggle" class="theme-toggle">🌙 Dark Mode</button>
     <nav>
       <ul>
         <li><a href="#" id="navHome" class="active">Home</a></li>
@@ -17,27 +17,20 @@
         <li><a href="#" id="navExecutors">Executor</a></li>
       </ul>
     </nav>
-
-    <!-- Modern Search Bar -->
-    <div class="search-container">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search Roblox scripts or executors..."
-      />
-      <button onclick="searchContent()">🔍 Search</button>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors...">
+      <button id="searchButton">🔍 Search</button>
     </div>
+    <button id="themeToggle">🌙 Dark Mode</button>
   </header>
 
   <main>
-    <!-- Scripts Section -->
-    <section id="scripts-section">
+    <section id="scriptsSection">
       <h2>Scripts</h2>
       <div id="scriptCards" class="card-container"></div>
       <div id="scriptPagination" class="pagination"></div>
     </section>
 
-    <!-- Executors Section -->
     <section id="executorsSection">
       <h2>Executors</h2>
       <div id="executorCards" class="card-container"></div>
