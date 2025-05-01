@@ -29,14 +29,9 @@ const scripts = [
   }
 ];
 
-// Get script ID from URL
 const params = new URLSearchParams(window.location.search);
 const scriptId = params.get('id');
-
-// Find the script
 const script = scripts.find(s => s.id === scriptId);
-
-// Display container
 const container = document.getElementById('script-details');
 
 if (script) {
@@ -48,21 +43,20 @@ if (script) {
       <h3>${script.title}</h3>
       <p>${script.description}</p>
       <pre id="code-block" style="text-align: left; background-color: #f9f9f9; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 14px;">${script.code}</pre>
-      <button onclick="copyCode()" style="margin-top: 10px; padding: 8px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer;">
+      <button id="copy-btn" style="margin-top: 10px; padding: 8px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer;">
         Copy Script
       </button>
     </section>
   `;
+
+  // Attach the event listener AFTER rendering
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    const code = document.getElementById('code-block').innerText;
+    navigator.clipboard.writeText(code)
+      .then(() => alert("✅ Script copied to clipboard!"))
+      .catch(() => alert("❌ Failed to copy script."));
+  });
+
 } else {
   container.innerHTML = `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
-}
-
-// Copy to clipboard function
-function copyCode() {
-  const codeBlock = document.getElementById('code-block').innerText;
-  navigator.clipboard.writeText(codeBlock).then(() => {
-    alert('Script copied to clipboard!');
-  }).catch(err => {
-    alert('Failed to copy script.');
-  });
 }
