@@ -5,15 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Script Viewer - NeverEndScript</title>
   <link rel="stylesheet" href="home.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('image/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-header {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px 0;
+      background-color: #ffffffcc;
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .site-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .nav-links {
+      margin-top: 8px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 20px;
+    }
+
+    .code-container {
+      background: #7b1c1c;
+      color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      overflow: auto;
+      font-family: monospace;
+      width: 100%;
+      max-width: 700px;
+      position: relative;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #e0e0e0;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="container">
-      <h1 class="site-title">NeverEndScript</h1>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-      </nav>
-    </div>
+    <h1 class="site-title">NeverEndScript</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+    </nav>
   </header>
 
   <main id="script-details">
