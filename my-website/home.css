@@ -130,7 +130,6 @@ h2 {
   text-shadow: 1px 1px 2px white;
 }
 
-/* Dark mode header outline */
 body.dark h2 {
   text-shadow: 1px 1px 2px black;
 }
@@ -215,6 +214,36 @@ body.dark h2 {
   padding: 0.4em 0.8em;
 }
 
+/* Code Viewer + Copy Button */
+.code-container {
+  position: relative;
+  background: #7b1c1c;
+  color: #fff;
+  border-radius: 6px;
+  padding: 16px;
+  overflow: auto;
+  font-family: monospace;
+  margin: 20px 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  color: #333;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.copy-btn:hover {
+  background: #e0e0e0;
+}
+
 /* Dark Theme */
 body.dark header {
   background: rgba(42, 42, 42, 0.7);
@@ -273,6 +302,20 @@ body.dark .search-bar input[type="text"]::placeholder {
 body.dark .search-bar button {
   background-color: #66b2ff;
   color: #000;
+}
+
+body.dark .code-container {
+  background: #2a2a2a;
+  color: #f1f1f1;
+}
+
+body.dark .copy-btn {
+  background: #444;
+  color: #f1f1f1;
+}
+
+body.dark .copy-btn:hover {
+  background: #666;
 }
 
 /* --- RESPONSIVE DESIGN --- */
