@@ -3,19 +3,25 @@ const scripts = [
     title: "Infinite Yield",
     description: "A powerful admin script for Roblox.",
     date: "2025-04-30",
-    image: "image/infiniteyield.png"
+    image: "bloxfruits.png"
+  },
+  {
+    title: "Infinite Yield",
+    description: "A powerful admin script for Roblox.",
+    date: "2025-04-30",
+    image: "bloxfruits.png"
   },
   {
     title: "Dark Dex Explorer",
     description: "Advanced GUI for Roblox object inspection.",
     date: "2025-04-28",
-    image: "image/darkdex.png"
+    image: "bloxfruits.png"
   },
   {
     title: "Unnamed ESP",
     description: "ESP wallhack script for player visibility.",
     date: "2025-04-25",
-    image: "image/unnamedesp.png"
+    image: "bloxfruits.png"
   }
 ];
 
@@ -24,19 +30,25 @@ const executors = [
     title: "KRNL",
     description: "Popular and reliable Roblox script executor.",
     date: "2025-04-20",
-    image: "image/krnl.png"
+    image: "deltaexecutor.png"
+  },
+  {
+    title: "KRNL",
+    description: "Popular and reliable Roblox script executor.",
+    date: "2025-04-20",
+    image: "deltaexecutor.png"
   },
   {
     title: "Fluxus",
     description: "Fast and feature-rich Roblox executor.",
     date: "2025-04-18",
-    image: "image/fluxus.png"
+    image: "deltaexecutor.png"
   },
   {
     title: "Electron",
     description: "Free executor with wide script support.",
     date: "2025-04-15",
-    image: "image/electron.png"
+    image: "deltaexecutor.png"
   }
 ];
 
