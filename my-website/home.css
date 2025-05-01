@@ -67,7 +67,7 @@ body.dark {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 /* Search Bar */
@@ -77,6 +77,8 @@ body.dark {
   background: #f1f1f1;
   border-radius: 6px;
   padding: 4px 8px;
+  gap: 6px;
+  flex: 1;
 }
 
 .search-bar input[type="text"] {
@@ -86,6 +88,7 @@ body.dark {
   font-size: 14px;
   outline: none;
   width: 180px;
+  flex: 1;
 }
 
 .search-bar button {
@@ -335,10 +338,17 @@ body.dark .copy-btn:hover {
     gap: 10px;
   }
 
-  .search-bar {
+  .header-actions {
     flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .search-bar {
     width: 100%;
     max-width: 100%;
+    flex-direction: row;
   }
 
   .search-bar input[type="text"],
@@ -347,13 +357,14 @@ body.dark .copy-btn:hover {
   }
 
   #themeToggle {
-    margin-top: 10px;
-    padding: 6px 12px;
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
   }
 
   .card {
-    width: 90%;
-    max-width: 350px;
+    width: 95%;
+    max-width: 400px;
   }
 
   h2 {
@@ -374,5 +385,20 @@ body.dark .copy-btn:hover {
 
   .pagination {
     flex-wrap: wrap;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+
+  .search-bar input[type="text"],
+  .search-bar button {
+    width: 100%;
+  }
+
+  #themeToggle {
+    margin-top: 6px;
   }
 }
