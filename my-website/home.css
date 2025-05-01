@@ -5,7 +5,14 @@ body {
   background: url('image/mybackground.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Background */
+body.dark {
+  background: url('image/dark-background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f1f1f1;
 }
 
 /* Header */
@@ -200,11 +207,6 @@ h2 {
 }
 
 /* Dark Theme */
-body.dark {
-  background: #1e1e1e;
-  color: #f1f1f1;
-}
-
 body.dark header {
   background: rgba(42, 42, 42, 0.7);
   backdrop-filter: blur(10px);
