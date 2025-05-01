@@ -7,7 +7,7 @@ const scripts = [
   image: "image/speedhack.png",
   code: `-- Speed Hack\n
 game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100`
-}
+},
   {
     id: "1",
     title: "Speed Hack",
