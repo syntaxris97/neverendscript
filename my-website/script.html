@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Script Viewer</title>
   <link rel="stylesheet" href="home.css">
+  <style>
+    .code-container {
+      position: relative;
+      background: #7b1c1c;
+      color: #fff;
+      border-radius: 6px;
+      padding: 16px;
+      overflow: auto;
+      font-family: monospace;
+      margin: 20px 0;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #fff;
+      color: #333;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background: #e0e0e0;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,9 +49,28 @@
   </header>
 
   <main id="script-details">
-    <!-- Script content will be injected here -->
+    <!-- Script details injected by scriptLoader.js -->
+    <div class="code-container">
+      <button class="copy-btn" onclick="copyCode(this)">📋</button>
+      <pre><code id="scriptCode">
+// Script will be injected here
+      </code></pre>
+    </div>
   </main>
 
   <script src="scriptLoader.js"></script>
+  <script>
+    function copyCode(button) {
+      const code = button.nextElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.textContent = "✅";
+        setTimeout(() => {
+          button.textContent = "📋";
+        }, 1500);
+      }).catch(err => {
+        console.error('Copy failed:', err);
+      });
+    }
+  </script>
 </body>
 </html>
