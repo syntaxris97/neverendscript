@@ -190,9 +190,10 @@ body.dark h2 {
   transition: background-color 0.3s ease, outline 0.3s ease;
 }
 
-/* Script Page Padding to Avoid Nav Overlap */
+/* Script Page Padding to Avoid Header Overlap */
 #script-details {
   padding-top: 100px;
+  margin-top: -60px; /* Fix for sticky header blocking clicks */
   position: relative;
   z-index: 0;
 }
