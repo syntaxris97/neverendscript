@@ -1,5 +1,3 @@
-// ========== DATA ==========
-
 const scripts = [
   {
     title: "🔥 NEW SCRIPT – Banana Hub",
@@ -62,8 +60,7 @@ const executors = [
 
 const itemsPerPage = 3;
 
-// ========== RENDERING FUNCTIONS ==========
-
+// Render card lists
 function renderCards(data, containerId, page) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -85,6 +82,7 @@ function renderCards(data, containerId, page) {
   });
 }
 
+// Render pagination
 function renderPagination(data, paginationId, changePageFunc) {
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const pagination = document.getElementById(paginationId);
@@ -99,18 +97,6 @@ function renderPagination(data, paginationId, changePageFunc) {
   }
 }
 
-// ========== PAGE CHANGERS ==========
-
-function changeScriptPage(page) {
-  renderCards(scripts, "scriptCards", page);
-  updateActivePagination("scriptPagination", page);
-}
-
-function changeExecutorPage(page) {
-  renderCards(executors, "executorCards", page);
-  updateActivePagination("executorPagination", page);
-}
-
 function updateActivePagination(paginationId, activePage) {
   const buttons = document.getElementById(paginationId).querySelectorAll("button");
   buttons.forEach((btn, index) => {
@@ -118,8 +104,20 @@ function updateActivePagination(paginationId, activePage) {
   });
 }
 
-// ========== NAVIGATION ==========
+// Page functions
+function changeScriptPage(page) {
+  renderCards(scripts, "scriptCards", page);
+  renderPagination(scripts, "scriptPagination", changeScriptPage);
+  updateActivePagination("scriptPagination", page);
+}
 
+function changeExecutorPage(page) {
+  renderCards(executors, "executorCards", page);
+  renderPagination(executors, "executorPagination", changeExecutorPage);
+  updateActivePagination("executorPagination", page);
+}
+
+// Section switcher
 function showSection(section) {
   const scriptsSection = document.getElementById("scriptsSection");
   const executorsSection = document.getElementById("executorsSection");
@@ -131,9 +129,8 @@ function showSection(section) {
   document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
 }
 
-// ========== SEARCH ==========
-
-function searchContent() {
+// Live search
+function liveSearch() {
   const query = document.getElementById("searchInput").value.toLowerCase();
   const filteredScripts = scripts.filter(s =>
     s.title.toLowerCase().includes(query) || s.description.toLowerCase().includes(query)
@@ -142,7 +139,11 @@ function searchContent() {
     e.title.toLowerCase().includes(query) || e.description.toLowerCase().includes(query)
   );
 
-  if (filteredScripts.length > 0) {
+  if (query === "") {
+    showSection("home");
+    changeScriptPage(1);
+    changeExecutorPage(1);
+  } else if (filteredScripts.length > 0) {
     showSection("scripts");
     renderCards(filteredScripts, "scriptCards", 1);
     document.getElementById("scriptPagination").innerHTML = "";
@@ -151,21 +152,21 @@ function searchContent() {
     renderCards(filteredExecutors, "executorCards", 1);
     document.getElementById("executorPagination").innerHTML = "";
   } else {
-    alert("No matching scripts or executors found.");
+    document.getElementById("scriptCards").innerHTML = "<p>No scripts found.</p>";
+    document.getElementById("executorCards").innerHTML = "<p>No executors found.</p>";
+    document.getElementById("scriptPagination").innerHTML = "";
+    document.getElementById("executorPagination").innerHTML = "";
   }
 }
 
-// ========== THEME TOGGLE ==========
-
+// Dark/light mode toggle
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
-
 const savedTheme = localStorage.getItem("theme");
 if (savedTheme === "dark") {
   body.classList.add("dark");
   themeToggle.textContent = "☀️ Light Mode";
 }
-
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark");
   const isDark = body.classList.contains("dark");
@@ -173,27 +174,26 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// ========== INIT ==========
-
+// Events
 document.getElementById("navScripts").addEventListener("click", (e) => {
   e.preventDefault();
   showSection("scripts");
   changeScriptPage(1);
 });
-
 document.getElementById("navExecutors").addEventListener("click", (e) => {
   e.preventDefault();
   showSection("executors");
   changeExecutorPage(1);
 });
-
 document.getElementById("navHome").addEventListener("click", (e) => {
   e.preventDefault();
   showSection("home");
   changeScriptPage(1);
   changeExecutorPage(1);
 });
+document.getElementById("searchInput").addEventListener("input", liveSearch);
 
+// Init
 window.onload = () => {
   showSection("home");
   changeScriptPage(1);
