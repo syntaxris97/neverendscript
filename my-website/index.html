@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>NeverEndScript</title>
   <link rel="stylesheet" href="home.css" />
+  <link rel="icon" href="image/favicon.png" type="image/png" />
 </head>
 <body>
   <header>
@@ -14,14 +15,14 @@
       <ul>
         <li><a href="#" id="navHome" class="active">Home</a></li>
         <li><a href="#" id="navScripts">Scripts</a></li>
-        <li><a href="#" id="navExecutors">Executor</a></li>
+        <li><a href="#" id="navExecutors">Executors</a></li>
       </ul>
     </nav>
     <div class="search-bar">
-      <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors...">
-      <button id="searchButton">🔍 Search</button>
+      <input type="text" id="searchInput" placeholder="Search Roblox scripts or executors..." />
+      <button id="searchButton" title="Search">🔍</button>
     </div>
-    <button id="themeToggle">🌙 Dark Mode</button>
+    <button id="themeToggle" title="Toggle light/dark mode">🌙 Dark Mode</button>
   </header>
 
   <main>
@@ -37,6 +38,10 @@
       <div id="executorPagination" class="pagination"></div>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2025 NeverEndScript. All rights reserved.</p>
+  </footer>
 
   <script src="home.js"></script>
 </body>
