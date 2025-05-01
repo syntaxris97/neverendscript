@@ -1,3 +1,4 @@
+/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,6 +7,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Header */
 header {
   background: #fff;
   padding: 20px 0;
@@ -36,6 +38,26 @@ header nav ul li a {
 
 header nav ul li a.active {
   color: #007bff;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3;
 }
 
 /* Search Bar */
@@ -80,6 +102,7 @@ header nav ul li a.active {
   background-color: #0056b3;
 }
 
+/* Main Layout */
 main {
   padding: 30px 20px;
   max-width: 1200px;
@@ -91,6 +114,7 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* Cards */
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -137,6 +161,13 @@ h2 {
   color: #999;
 }
 
+.card.highlighted {
+  outline: 2px solid #007bff;
+  background-color: #e6f0ff;
+  transition: background-color 0.3s ease, outline 0.3s ease;
+}
+
+/* Pagination */
 .pagination {
   display: flex;
   justify-content: center;
@@ -163,33 +194,6 @@ h2 {
   padding: 0.4em 0.8em;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 999px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.theme-toggle:hover {
-  background-color: #0056b3;
-}
-
-/* Highlighted Card (keyboard selection) */
-.card.highlighted {
-  outline: 2px solid #007bff;
-  background-color: #e6f0ff;
-  transition: background-color 0.3s ease, outline 0.3s ease;
-}
-
 /* Dark Theme */
 body.dark {
   background: #1e1e1e;
@@ -207,6 +211,11 @@ body.dark header nav ul li a {
 
 body.dark header nav ul li a.active {
   color: #66b2ff;
+}
+
+body.dark .theme-toggle {
+  background-color: #66b2ff;
+  color: #000;
 }
 
 body.dark .card {
