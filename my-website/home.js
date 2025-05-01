@@ -1,17 +1,20 @@
 const scripts = [
   {
+    id: "1",
     title: "Infinite Yield",
     description: "A powerful admin script for Roblox.",
     date: "2025-04-30",
     image: "image/bloxfruits.png"
   },
   {
+    id: "2",
     title: "Dark Dex Explorer",
     description: "Advanced GUI for Roblox object inspection.",
     date: "2025-04-28",
     image: "image/bloxfruits.png"
   },
   {
+    id: "3",
     title: "Unnamed ESP",
     description: "ESP wallhack script for player visibility.",
     date: "2025-04-25",
@@ -63,10 +66,9 @@ function renderCards(data, containerId, page, type) {
       <p>${item.description}</p>
     `;
 
-    // Redirect only for script cards
     if (type === "script") {
       card.addEventListener("click", () => {
-        const url = `script.html?title=${encodeURIComponent(item.title)}`;
+        const url = `script.html?id=${encodeURIComponent(item.id)}`;
         window.location.href = url;
       });
     }
@@ -115,7 +117,8 @@ function showSection(section) {
   executorsSection.style.display = section === "home" || section === "executors" ? "block" : "none";
 
   document.querySelectorAll("nav ul a").forEach(link => link.classList.remove("active"));
-  document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
+  const navLink = document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1));
+  if (navLink) navLink.classList.add("active");
 }
 
 function highlightResult(index) {
@@ -160,7 +163,6 @@ function liveSearch() {
 
 document.getElementById("searchInput").addEventListener("input", liveSearch);
 
-// Keyboard navigation
 document.getElementById("searchInput").addEventListener("keydown", (e) => {
   if (searchResults.length === 0) return;
 
