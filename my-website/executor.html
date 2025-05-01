@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Executor Viewer | NeverEndScript</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="home.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="home.css" />
 </head>
 <body>
-  <header>
-    <h1>NeverEndScript</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="hide-on-executor"><a href="index.html#scripts">Scripts</a></li>
-        <li class="hide-on-executor"><a href="index.html#executors" class="active">Executor</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">NeverEndScript</h1>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="executor-viewer">
-      <h2 id="title" style="text-align:center;"></h2>
-      <p id="author-date" style="text-align:center; color: gray;"></p>
+      <h2 id="title" style="text-align: center;"></h2>
+      <p id="author-date" style="text-align: center; color: gray;"></p>
 
-      <img id="executor-image" src="" alt="Executor Image"
-           style="width:100%; max-width:700px; border: 4px solid red; display:block; margin:auto; border-radius: 12px;">
+      <img
+        id="executor-image"
+        src=""
+        alt="Executor Image"
+        style="width: 100%; max-width: 700px; border: 4px solid red; display: block; margin: auto; border-radius: 12px;"
+      />
 
-      <p id="description" style="text-align:center; font-weight: bold; font-size: 1.1rem; margin-top: 10px;"></p>
+      <p id="description" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-top: 10px;"></p>
 
-      <div style="text-align:center; margin: 20px 0;">
-        <a id="download-btn" class="download-button" href="#" target="_blank"
-           style="background-color: #28a745; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+      <div style="text-align: center; margin: 20px 0;">
+        <a
+          id="download-btn"
+          class="download-button"
+          href="#"
+          target="_blank"
+          style="background-color: #28a745; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;"
+        >
           ⬇️ Download Executor
         </a>
       </div>
 
-      <hr style="margin: 30px 0;">
+      <hr style="margin: 30px 0;" />
 
-      <h3 style="text-align:center;">Steps to Install:</h3>
+      <h3 style="text-align: center;">Steps to Install:</h3>
       <ol id="steps" style="max-width: 700px; margin: auto; padding: 0 20px; font-size: 1rem;"></ol>
     </section>
   </main>
 
-  <footer style="text-align:center; margin-top: 50px; padding: 20px 0; font-size: 0.9rem; color: #999;">
+  <footer style="text-align: center; margin-top: 50px; padding: 20px 0; font-size: 0.9rem; color: #999;">
     © 2025 NeverEndScript. All rights reserved.
   </footer>
 
   <script src="executorLoader.js"></script>
-  <script>
-    // Hide non-Home links
-    document.querySelectorAll('.hide-on-executor').forEach(el => {
-      el.style.display = 'none';
-    });
-  </script>
 </body>
 </html>
