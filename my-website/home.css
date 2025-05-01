@@ -152,6 +152,7 @@ body.dark h2 {
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
+  z-index: 1;
 }
 
 .card:hover {
@@ -185,6 +186,11 @@ body.dark h2 {
   outline: 2px solid #007bff;
   background-color: #e6f0ff;
   transition: background-color 0.3s ease, outline 0.3s ease;
+}
+
+/* Script Page Padding to Avoid Nav Overlap */
+#script-details {
+  padding-top: 80px;
 }
 
 /* Pagination */
