@@ -176,6 +176,13 @@ h2 {
   background-color: #0056b3;
 }
 
+/* Highlighted Card (keyboard selection) */
+.card.highlighted {
+  outline: 2px solid #007bff;
+  background-color: #e6f0ff;
+  transition: background-color 0.3s ease, outline 0.3s ease;
+}
+
 /* Dark Theme */
 body.dark {
   background: #1e1e1e;
