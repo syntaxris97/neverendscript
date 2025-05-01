@@ -15,7 +15,23 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://your-download-link.com"
+    downloadLink: "https://www.mediafire.com/file/your-krnl-download" // ✅ Replace with your actual MediaFire or other link
+  },
+  {
+    id: "2",
+    title: "Fluxus Mobile Executor",
+    author: "Skays",
+    date: "2025-04-30",
+    image: "image/fluxus.png",
+    description: "Fluxus is a powerful mobile Roblox executor.",
+    steps: [
+      "Click DOWNLOAD button",
+      "Allow permissions",
+      "Install the APK",
+      "Open app and inject",
+      "Use scripts safely"
+    ],
+    downloadLink: "https://www.mediafire.com/file/your-fluxus-download"
   }
 ];
 
@@ -33,10 +49,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("download-btn").href = executor.downloadLink;
 
     const stepsList = document.getElementById("steps");
+    stepsList.innerHTML = ""; // Clear any existing content
     executor.steps.forEach(step => {
       const li = document.createElement("li");
       li.textContent = step;
       stepsList.appendChild(li);
     });
+  } else {
+    document.body.innerHTML = "<h2 style='text-align:center; margin-top: 50px;'>Executor not found.</h2>";
   }
 });
