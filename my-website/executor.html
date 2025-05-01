@@ -12,8 +12,8 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#scripts">Scripts</a></li>
-        <li><a href="index.html#executors" class="active">Executor</a></li>
+        <li class="hide-on-executor"><a href="index.html#scripts">Scripts</a></li>
+        <li class="hide-on-executor"><a href="index.html#executors" class="active">Executor</a></li>
       </ul>
     </nav>
   </header>
@@ -47,5 +47,11 @@
   </footer>
 
   <script src="executorLoader.js"></script>
+  <script>
+    // Hide non-Home links
+    document.querySelectorAll('.hide-on-executor').forEach(el => {
+      el.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
