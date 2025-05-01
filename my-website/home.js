@@ -6,12 +6,6 @@ const scripts = [
     image: "image/bloxfruits.png"
   },
   {
-    title: "Infinite Yield",
-    description: "A powerful admin script for Roblox.",
-    date: "2025-04-30",
-    image: "image/bloxfruits.png"
-  },
-  {
     title: "Dark Dex Explorer",
     description: "Advanced GUI for Roblox object inspection.",
     date: "2025-04-28",
@@ -26,12 +20,6 @@ const scripts = [
 ];
 
 const executors = [
-  {
-    title: "KRNL",
-    description: "Popular and reliable Roblox script executor.",
-    date: "2025-04-20",
-    image: "image/deltaexecutor.png"
-  },
   {
     title: "KRNL",
     description: "Popular and reliable Roblox script executor.",
@@ -56,7 +44,7 @@ const itemsPerPage = 3;
 let searchResults = [];
 let selectedIndex = -1;
 
-function renderCards(data, containerId, page) {
+function renderCards(data, containerId, page, type) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
 
@@ -74,6 +62,15 @@ function renderCards(data, containerId, page) {
       <small>${item.date}</small>
       <p>${item.description}</p>
     `;
+
+    // Only add click redirect for scripts
+    if (type === "script") {
+      card.addEventListener("click", () => {
+        const url = `script.html?title=${encodeURIComponent(item.title)}`;
+        window.location.href = url;
+      });
+    }
+
     container.appendChild(card);
   });
 }
@@ -99,13 +96,13 @@ function updateActivePagination(paginationId, activePage) {
 }
 
 function changeScriptPage(page) {
-  renderCards(scripts, "scriptCards", page);
+  renderCards(scripts, "scriptCards", page, "script");
   renderPagination(scripts, "scriptPagination", changeScriptPage);
   updateActivePagination("scriptPagination", page);
 }
 
 function changeExecutorPage(page) {
-  renderCards(executors, "executorCards", page);
+  renderCards(executors, "executorCards", page, "executor");
   renderPagination(executors, "executorPagination", changeExecutorPage);
   updateActivePagination("executorPagination", page);
 }
@@ -147,11 +144,11 @@ function liveSearch() {
     changeExecutorPage(1);
   } else if (filteredScripts.length > 0) {
     showSection("scripts");
-    renderCards(filteredScripts, "scriptCards", 1);
+    renderCards(filteredScripts, "scriptCards", 1, "script");
     document.getElementById("scriptPagination").innerHTML = "";
   } else if (filteredExecutors.length > 0) {
     showSection("executors");
-    renderCards(filteredExecutors, "executorCards", 1);
+    renderCards(filteredExecutors, "executorCards", 1, "executor");
     document.getElementById("executorPagination").innerHTML = "";
   } else {
     document.getElementById("scriptCards").innerHTML = "<p>No scripts found.</p>";
