@@ -63,7 +63,7 @@ function renderCards(data, containerId, page, type) {
       <p>${item.description}</p>
     `;
 
-    // Only add click redirect for scripts
+    // Redirect only for script cards
     if (type === "script") {
       card.addEventListener("click", () => {
         const url = `script.html?title=${encodeURIComponent(item.title)}`;
