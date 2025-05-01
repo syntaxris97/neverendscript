@@ -9,7 +9,11 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      background: url('image/bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header.site-header {
@@ -45,9 +49,13 @@
     }
 
     main {
+      flex: 1;
       padding: 30px 20px;
       max-width: 900px;
       margin: auto;
+      background-color: #ffffffcc;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     }
 
     #executor-image {
@@ -79,7 +87,7 @@
       margin-top: 50px;
       padding: 20px 0;
       font-size: 0.9rem;
-      color: #999;
+      color: #eee;
     }
 
     ol#steps {
@@ -87,6 +95,20 @@
       margin: auto;
       padding: 0 20px;
       font-size: 1rem;
+    }
+
+    #title, #author-date, #description {
+      text-align: center;
+    }
+
+    #author-date {
+      color: gray;
+    }
+
+    #description {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-top: 10px;
     }
   </style>
 </head>
@@ -100,12 +122,12 @@
 
   <main>
     <section class="executor-viewer">
-      <h2 id="title" style="text-align: center;"></h2>
-      <p id="author-date" style="text-align: center; color: gray;"></p>
+      <h2 id="title"></h2>
+      <p id="author-date"></p>
 
       <img id="executor-image" src="" alt="Executor Image" />
 
-      <p id="description" style="text-align: center; font-weight: bold; font-size: 1.1rem; margin-top: 10px;"></p>
+      <p id="description"></p>
 
       <div style="text-align: center; margin: 20px 0;">
         <a id="download-btn" class="download-button" href="#" target="_blank">⬇️ Download Executor</a>
