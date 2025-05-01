@@ -283,6 +283,19 @@ body.dark h2 {
   z-index: 0;
 }
 
+/* === FOOTER === */
+.site-footer {
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+}
+
+body.dark .site-footer {
+  color: #aaa;
+}
+
 /* === DARK MODE === */
 body.dark .site-header {
   background: rgba(42, 42, 42, 0.7);
