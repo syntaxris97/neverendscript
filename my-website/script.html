@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Script Viewer</title>
-  <link rel="stylesheet" href="home.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Script Viewer - NeverEndScript</title>
+  <link rel="stylesheet" href="home.css" />
   <style>
+    main {
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
     .code-container {
       position: relative;
       background: #7b1c1c;
@@ -37,15 +45,13 @@
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>NeverEndScript</h1>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li class="hide-on-script"><a href="index.html#scripts">Scripts</a></li>
-        <li class="hide-on-script"><a href="#">Executor</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">NeverEndScript</h1>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
   </header>
 
   <main id="script-details">
@@ -60,11 +66,6 @@
 
   <script src="scriptLoader.js"></script>
   <script>
-    // Hide non-Home links on this page
-    document.querySelectorAll('.hide-on-script').forEach(el => {
-      el.style.display = 'none';
-    });
-
     function copyCode(button) {
       const code = button.nextElementSibling.innerText;
       navigator.clipboard.writeText(code).then(() => {
