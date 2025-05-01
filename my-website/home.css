@@ -2,14 +2,14 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('image/mybackground.jpg') no-repeat center center fixed;
+  background: url('./image/mybackground.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #333;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 body.dark {
-  background: url('image/dark-background.jpg') no-repeat center center fixed;
+  background: url('./image/dark-background.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #f1f1f1;
 }
