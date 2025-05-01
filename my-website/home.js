@@ -1,11 +1,11 @@
 const scripts = [
-{
-  id: "4",
-  title: "Speed Hack",
-  description: "Increases player movement speed.",
-  date: "2025-05-01",
-  image: "image/speedhack.png"
-},
+  {
+    id: "4",
+    title: "Speed Hack",
+    description: "Increases player movement speed.",
+    date: "2025-05-01",
+    image: "image/speedhack.png"
+  },
   {
     id: "1",
     title: "Infinite Yield",
@@ -31,18 +31,21 @@ const scripts = [
 
 const executors = [
   {
+    id: "1",
     title: "KRNL",
     description: "Popular and reliable Roblox script executor.",
     date: "2025-04-20",
     image: "image/deltaexecutor.png"
   },
   {
+    id: "2",
     title: "Fluxus",
     description: "Fast and feature-rich Roblox executor.",
     date: "2025-04-18",
     image: "image/deltaexecutor.png"
   },
   {
+    id: "3",
     title: "Electron",
     description: "Free executor with wide script support.",
     date: "2025-04-15",
@@ -76,6 +79,11 @@ function renderCards(data, containerId, page, type) {
     if (type === "script") {
       card.addEventListener("click", () => {
         const url = `script.html?id=${encodeURIComponent(item.id)}`;
+        window.location.href = url;
+      });
+    } else if (type === "executor") {
+      card.addEventListener("click", () => {
+        const url = `executor.html?id=${encodeURIComponent(item.id)}`;
         window.location.href = url;
       });
     }
