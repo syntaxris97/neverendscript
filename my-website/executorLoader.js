@@ -15,7 +15,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://www.mediafire.com/file/your-krnl-download" // ✅ Replace with your actual MediaFire or other link
+    downloadLink: "hhttps://zentakmovies.pages.dev/landing" // ✅ Replace with your actual MediaFire or other link
   },
   {
     id: "2",
@@ -31,7 +31,7 @@ const executors = [
       "Open app and inject",
       "Use scripts safely"
     ],
-    downloadLink: "https://www.mediafire.com/file/your-fluxus-download"
+    downloadLink: "https://phcorner.org/threads/my-top-5-super-useful-browser-extension-tools.2279431/"
   }
 ];
 
