@@ -14,6 +14,36 @@ body.dark {
   color: #f1f1f1;
 }
 
+/* === RAINBOW TITLE EFFECT === */
+.rainbow-text {
+  font-size: 24px;
+  font-weight: bold;
+  background: linear-gradient(
+    -45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    cyan,
+    blue,
+    violet,
+    red
+  );
+  background-size: 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 8s linear infinite;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 /* === HEADER === */
 .site-header {
   background: rgba(255, 255, 255, 0.7);
