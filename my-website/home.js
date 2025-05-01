@@ -1,3 +1,5 @@
+// ========== DATA ==========
+
 const scripts = [
   {
     title: "🔥 NEW SCRIPT – Banana Hub",
@@ -60,6 +62,8 @@ const executors = [
 
 const itemsPerPage = 3;
 
+// ========== RENDERING FUNCTIONS ==========
+
 function renderCards(data, containerId, page) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -90,35 +94,86 @@ function renderPagination(data, paginationId, changePageFunc) {
     const btn = document.createElement("button");
     btn.textContent = i;
     btn.addEventListener("click", () => changePageFunc(i));
+    if (i === 1) btn.classList.add("active");
     pagination.appendChild(btn);
   }
 }
 
+// ========== PAGE CHANGERS ==========
+
 function changeScriptPage(page) {
   renderCards(scripts, "scriptCards", page);
-  renderPagination(scripts, "scriptPagination", changeScriptPage);
+  updateActivePagination("scriptPagination", page);
 }
 
 function changeExecutorPage(page) {
   renderCards(executors, "executorCards", page);
-  renderPagination(executors, "executorPagination", changeExecutorPage);
+  updateActivePagination("executorPagination", page);
 }
+
+function updateActivePagination(paginationId, activePage) {
+  const buttons = document.getElementById(paginationId).querySelectorAll("button");
+  buttons.forEach((btn, index) => {
+    btn.classList.toggle("active", index + 1 === activePage);
+  });
+}
+
+// ========== NAVIGATION ==========
 
 function showSection(section) {
   const scriptsSection = document.getElementById("scriptsSection");
   const executorsSection = document.getElementById("executorsSection");
 
-  if (section === "home") {
-    scriptsSection.style.display = "block";
-    executorsSection.style.display = "block";
-  } else {
-    scriptsSection.style.display = section === "scripts" ? "block" : "none";
-    executorsSection.style.display = section === "executors" ? "block" : "none";
-  }
+  scriptsSection.style.display = section === "home" || section === "scripts" ? "block" : "none";
+  executorsSection.style.display = section === "home" || section === "executors" ? "block" : "none";
 
   document.querySelectorAll("nav ul a").forEach(link => link.classList.remove("active"));
   document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
 }
+
+// ========== SEARCH ==========
+
+function searchContent() {
+  const query = document.getElementById("searchInput").value.toLowerCase();
+  const filteredScripts = scripts.filter(s =>
+    s.title.toLowerCase().includes(query) || s.description.toLowerCase().includes(query)
+  );
+  const filteredExecutors = executors.filter(e =>
+    e.title.toLowerCase().includes(query) || e.description.toLowerCase().includes(query)
+  );
+
+  if (filteredScripts.length > 0) {
+    showSection("scripts");
+    renderCards(filteredScripts, "scriptCards", 1);
+    document.getElementById("scriptPagination").innerHTML = "";
+  } else if (filteredExecutors.length > 0) {
+    showSection("executors");
+    renderCards(filteredExecutors, "executorCards", 1);
+    document.getElementById("executorPagination").innerHTML = "";
+  } else {
+    alert("No matching scripts or executors found.");
+  }
+}
+
+// ========== THEME TOGGLE ==========
+
+const themeToggle = document.getElementById("themeToggle");
+const body = document.body;
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark") {
+  body.classList.add("dark");
+  themeToggle.textContent = "☀️ Light Mode";
+}
+
+themeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+  const isDark = body.classList.contains("dark");
+  themeToggle.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
+  localStorage.setItem("theme", isDark ? "dark" : "light");
+});
+
+// ========== INIT ==========
 
 document.getElementById("navScripts").addEventListener("click", (e) => {
   e.preventDefault();
@@ -139,32 +194,10 @@ document.getElementById("navHome").addEventListener("click", (e) => {
   changeExecutorPage(1);
 });
 
-function searchContent() {
-  const query = document.getElementById("searchInput").value.toLowerCase();
-  const filteredScripts = scripts.filter(s =>
-    s.title.toLowerCase().includes(query) ||
-    s.description.toLowerCase().includes(query)
-  );
-  const filteredExecutors = executors.filter(e =>
-    e.title.toLowerCase().includes(query) ||
-    e.description.toLowerCase().includes(query)
-  );
-
-  if (filteredScripts.length > 0) {
-    showSection("scripts");
-    renderCards(filteredScripts, "scriptCards", 1);
-    document.getElementById("scriptPagination").innerHTML = "";
-  } else if (filteredExecutors.length > 0) {
-    showSection("executors");
-    renderCards(filteredExecutors, "executorCards", 1);
-    document.getElementById("executorPagination").innerHTML = "";
-  } else {
-    alert("No matching scripts or executors found.");
-  }
-}
-
 window.onload = () => {
   showSection("home");
   changeScriptPage(1);
+  renderPagination(scripts, "scriptPagination", changeScriptPage);
   changeExecutorPage(1);
+  renderPagination(executors, "executorPagination", changeExecutorPage);
 };
