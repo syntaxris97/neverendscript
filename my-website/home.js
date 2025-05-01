@@ -1,66 +1,15 @@
 const scripts = [
-  {
-    title: "🔥 NEW SCRIPT – Banana Hub",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    date: "1 May 2025",
-    image: "image/bloxfruits.png"
-  },
-  {
-    title: "🔥 NEW SCRIPT – Banana Hub",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    date: "1 May 2025",
-    image: "image/bloxfruits.png"
-  },
-  {
-    title: "🔥 NEW SCRIPT – Banana Hub",
-    description: "Latest Banana Hub script with full auto-farm + anti-ban.",
-    date: "1 May 2025",
-    image: "image/bloxfruits.png"
-  },
-  {
-    title: "BLOX FRUITS – REDz Hub",
-    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY...",
-    date: "30 April 2025",
-    image: "image/bloxfruits.png"
-  },
-  {
-    title: "DEAD RAILS Script – Native Hub",
-    description: "NATIVE HUB: DEAD RAILS Script Pastebin 2025...",
-    date: "30 April 2025",
-    image: "image/bloxfruits.png"
-  }
+  // your script data...
 ];
 
 const executors = [
-  {
-    title: "Hydrogen Executor",
-    description: "Mobile executor supporting most scripts.",
-    date: "28 April 2025",
-    image: "image/deltaexecutor.png"
-  },
-  {
-    title: "Hydrogen Executor",
-    description: "Mobile executor supporting most scripts.",
-    date: "28 April 2025",
-    image: "image/deltaexecutor.png"
-  },
-  {
-    title: "Hydrogen Executor",
-    description: "Mobile executor supporting most scripts.",
-    date: "28 April 2025",
-    image: "image/deltaexecutor.png"
-  },
-  {
-    title: "KRNL Executor",
-    description: "Popular free executor, trusted by many users.",
-    date: "25 April 2025",
-    image: "image/fluxurexecutor.png"
-  }
+  // your executor data...
 ];
 
 const itemsPerPage = 3;
+let searchResults = [];
+let selectedIndex = -1;
 
-// Render card lists
 function renderCards(data, containerId, page) {
   const container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -69,9 +18,10 @@ function renderCards(data, containerId, page) {
   const end = start + itemsPerPage;
   const pageItems = data.slice(start, end);
 
-  pageItems.forEach(item => {
+  pageItems.forEach((item, index) => {
     const card = document.createElement("div");
     card.className = "card";
+    card.setAttribute("data-index", index);
     card.innerHTML = `
       <img src="${item.image}" alt="${item.title}" />
       <h3>${item.title}</h3>
@@ -82,7 +32,6 @@ function renderCards(data, containerId, page) {
   });
 }
 
-// Render pagination
 function renderPagination(data, paginationId, changePageFunc) {
   const totalPages = Math.ceil(data.length / itemsPerPage);
   const pagination = document.getElementById(paginationId);
@@ -92,7 +41,6 @@ function renderPagination(data, paginationId, changePageFunc) {
     const btn = document.createElement("button");
     btn.textContent = i;
     btn.addEventListener("click", () => changePageFunc(i));
-    if (i === 1) btn.classList.add("active");
     pagination.appendChild(btn);
   }
 }
@@ -104,7 +52,6 @@ function updateActivePagination(paginationId, activePage) {
   });
 }
 
-// Page functions
 function changeScriptPage(page) {
   renderCards(scripts, "scriptCards", page);
   renderPagination(scripts, "scriptPagination", changeScriptPage);
@@ -117,7 +64,6 @@ function changeExecutorPage(page) {
   updateActivePagination("executorPagination", page);
 }
 
-// Section switcher
 function showSection(section) {
   const scriptsSection = document.getElementById("scriptsSection");
   const executorsSection = document.getElementById("executorsSection");
@@ -129,15 +75,25 @@ function showSection(section) {
   document.getElementById("nav" + section.charAt(0).toUpperCase() + section.slice(1)).classList.add("active");
 }
 
-// Live search
+function highlightResult(index) {
+  const allCards = document.querySelectorAll(".card");
+  allCards.forEach((card, i) => {
+    card.style.outline = i === index ? "2px solid #007bff" : "none";
+  });
+}
+
 function liveSearch() {
   const query = document.getElementById("searchInput").value.toLowerCase();
+  selectedIndex = -1;
+
   const filteredScripts = scripts.filter(s =>
     s.title.toLowerCase().includes(query) || s.description.toLowerCase().includes(query)
   );
   const filteredExecutors = executors.filter(e =>
     e.title.toLowerCase().includes(query) || e.description.toLowerCase().includes(query)
   );
+
+  searchResults = [...filteredScripts, ...filteredExecutors];
 
   if (query === "") {
     showSection("home");
@@ -159,7 +115,35 @@ function liveSearch() {
   }
 }
 
-// Dark/light mode toggle
+document.getElementById("searchInput").addEventListener("input", liveSearch);
+
+// Keyboard navigation
+document.getElementById("searchInput").addEventListener("keydown", (e) => {
+  if (searchResults.length === 0) return;
+
+  const cards = document.querySelectorAll(".card");
+
+  if (e.key === "ArrowDown") {
+    e.preventDefault();
+    selectedIndex = (selectedIndex + 1) % cards.length;
+    highlightResult(selectedIndex);
+  }
+
+  if (e.key === "ArrowUp") {
+    e.preventDefault();
+    selectedIndex = (selectedIndex - 1 + cards.length) % cards.length;
+    highlightResult(selectedIndex);
+  }
+
+  if (e.key === "Enter" && selectedIndex !== -1) {
+    const selectedCard = cards[selectedIndex];
+    selectedCard.scrollIntoView({ behavior: "smooth", block: "center" });
+    selectedCard.style.background = "#e6f0ff";
+    setTimeout(() => selectedCard.style.background = "", 800);
+  }
+});
+
+// Theme toggle
 const themeToggle = document.getElementById("themeToggle");
 const body = document.body;
 const savedTheme = localStorage.getItem("theme");
@@ -174,7 +158,7 @@ themeToggle.addEventListener("click", () => {
   localStorage.setItem("theme", isDark ? "dark" : "light");
 });
 
-// Events
+// Navbar events
 document.getElementById("navScripts").addEventListener("click", (e) => {
   e.preventDefault();
   showSection("scripts");
@@ -191,9 +175,8 @@ document.getElementById("navHome").addEventListener("click", (e) => {
   changeScriptPage(1);
   changeExecutorPage(1);
 });
-document.getElementById("searchInput").addEventListener("input", liveSearch);
 
-// Init
+// Initial load
 window.onload = () => {
   showSection("home");
   changeScriptPage(1);
