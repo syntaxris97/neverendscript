@@ -4,14 +4,14 @@ const scripts = [
     title: "Speed Hack",
     description: "Increases player movement speed.",
     date: "2025-05-01",
-    image: "image/speedhack.png"
+    image: "image/bloxfruits.png"
   },
   {
     id: "4",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     date: "2025-05-01",
-    image: "image/speedhack.png"
+    image: "image/bloxfruits.png"
   },
   {
     id: "1",
