@@ -1,36 +1,24 @@
-/* Background Image */
+/* Base Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f3f3f3;
+  background: url('image/mybackground.jpg') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   transition: background-color 0.3s ease, color 0.3s ease;
-  background-image: url('image/mybackground.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  position: relative;
-  z-index: 0;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-  z-index: -1;
 }
 
 /* Header */
 header {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 20px 0;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   text-align: center;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header nav h1 {
@@ -218,7 +206,9 @@ body.dark {
 }
 
 body.dark header {
-  background: #2a2a2a;
+  background: rgba(42, 42, 42, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
