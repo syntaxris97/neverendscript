@@ -60,6 +60,11 @@
 
   <script src="scriptLoader.js"></script>
   <script>
+    // Hide non-Home links on this page
+    document.querySelectorAll('.hide-on-script').forEach(el => {
+      el.style.display = 'none';
+    });
+
     function copyCode(button) {
       const code = button.nextElementSibling.innerText;
       navigator.clipboard.writeText(code).then(() => {
