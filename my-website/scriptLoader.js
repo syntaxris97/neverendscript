@@ -69,28 +69,20 @@ const scripts = [
   }
 ];
 
-window.addEventListener("DOMContentLoaded", () => {
-  const params = new URLSearchParams(window.location.search);
-  const scriptId = params.get("id");
-  const script = scripts.find(s => s.id === scriptId);
+// Get script ID from URL
+const params = new URLSearchParams(window.location.search);
+const scriptId = params.get('id');
+const script = scripts.find(s => s.id === scriptId);
 
-  if (!script) {
-    const details = document.getElementById("script-details");
-    if (details) {
-      details.innerHTML = `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
-    }
-    return;
-  }
-
+// Render script data
+if (script) {
   document.title = `${script.title} - NeverEndScript`;
 
-  // Inject script code
   const codeElement = document.getElementById("scriptCode");
   if (codeElement) {
     codeElement.innerText = script.code;
   }
 
-  // Show image
   const imageElement = document.getElementById("script-image");
   if (imageElement && script.image) {
     imageElement.src = script.image;
@@ -98,49 +90,34 @@ window.addEventListener("DOMContentLoaded", () => {
     imageElement.alt = script.title;
   }
 
-  // Features
   const featureList = document.getElementById("feature-list");
-  if (featureList && Array.isArray(script.features)) {
-    featureList.innerHTML = "";
-    script.features.forEach(feature => {
-      const li = document.createElement("li");
-      li.textContent = `+ ${feature}`;
-      featureList.appendChild(li);
-    });
-  }
+  featureList.innerHTML = "";
+  script.features.forEach(feature => {
+    const li = document.createElement("li");
+    li.textContent = `+ ${feature}`;
+    featureList.appendChild(li);
+  });
 
-  // Steps
   const stepList = document.getElementById("step-list");
-  if (stepList && Array.isArray(script.steps)) {
-    stepList.innerHTML = "";
-    script.steps.forEach(step => {
-      const li = document.createElement("li");
-      li.textContent = step;
-      stepList.appendChild(li);
-    });
-  }
+  stepList.innerHTML = "";
+  script.steps.forEach(step => {
+    const li = document.createElement("li");
+    li.textContent = step;
+    stepList.appendChild(li);
+  });
 
-  // Notes
   const noteList = document.getElementById("note-list");
-  if (noteList) {
-    noteList.innerHTML = "";
-    if (Array.isArray(script.notes) && script.notes.length > 0) {
-      script.notes.forEach(note => {
-        const li = document.createElement("li");
-        li.textContent = note;
-        noteList.appendChild(li);
-      });
-    } else {
-      noteList.innerHTML = "<li>No additional notes.</li>";
-    }
+  noteList.innerHTML = "";
+  if (script.notes && script.notes.length > 0) {
+    script.notes.forEach(note => {
+      const li = document.createElement("li");
+      li.textContent = note;
+      noteList.appendChild(li);
+    });
+  } else {
+    noteList.innerHTML = "<li>No additional notes.</li>";
   }
-
-  // Ensure Copy button is visible (if accidentally hidden or late)
-  const copyWrapper = document.querySelector(".copy-btn-wrapper");
-  if (copyWrapper) {
-    copyWrapper.style.display = "block";
-  }
-
-  // Scroll to top
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+} else {
+  document.getElementById("script-details").innerHTML = `
+    <h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
+}
