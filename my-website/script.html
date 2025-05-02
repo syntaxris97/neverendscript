@@ -68,7 +68,6 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
-      display: none;
     }
 
     .code-container {
@@ -76,30 +75,27 @@
       color: #fff;
       border-radius: 8px;
       padding: 20px;
-      overflow-x: auto;
+      overflow: auto;
       font-family: monospace;
-      white-space: pre-wrap;
-      word-break: break-word;
-      min-height: 60px;
-      margin-bottom: 10px;
+      position: relative;
+      margin-bottom: 20px;
     }
 
     .copy-btn {
       display: block;
-      margin: 0 auto 30px auto;
-      background: #ff5722;
-      color: #fff;
+      margin: 20px auto 0;
+      background: #fff;
+      color: #333;
       border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 14px;
       transition: background 0.3s ease;
     }
 
     .copy-btn:hover {
-      background: #e64a19;
+      background: #e0e0e0;
     }
 
     h3 {
@@ -126,10 +122,12 @@
 
   <main id="script-details">
     <div class="content-wrapper">
-      <img id="script-image" class="script-image" src="" alt="Script Image" />
-
-      <div class="code-container" id="scriptCode">// Script will be injected here</div>
-      <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
+      <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
+      
+      <div class="code-container">
+        <pre><code id="scriptCode">// Script will be injected here</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
+      </div>
 
       <h3>🔹 Features:</h3>
       <ul id="feature-list"></ul>
@@ -142,6 +140,7 @@
     </div>
   </main>
 
+  <script src="scriptLoader.js"></script>
   <script>
     function copyCode(button) {
       const code = document.getElementById("scriptCode").innerText;
@@ -154,56 +153,6 @@
         console.error('Copy failed:', err);
       });
     }
-
-    window.onload = () => {
-      const params = new URLSearchParams(window.location.search);
-
-      const image = params.get("image");
-      const code = params.get("code");
-      const features = params.get("features");
-      const steps = params.get("steps");
-      const notes = params.get("notes");
-
-      if (image) {
-        const img = document.getElementById("script-image");
-        img.src = decodeURIComponent(image);
-        img.style.display = "block";
-      }
-
-      if (code) {
-        document.getElementById("scriptCode").textContent = decodeURIComponent(code);
-      }
-
-      if (features) {
-        const list = decodeURIComponent(features).split("||");
-        const ul = document.getElementById("feature-list");
-        list.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          ul.appendChild(li);
-        });
-      }
-
-      if (steps) {
-        const list = decodeURIComponent(steps).split("||");
-        const ol = document.getElementById("step-list");
-        list.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          ol.appendChild(li);
-        });
-      }
-
-      if (notes) {
-        const list = decodeURIComponent(notes).split("||");
-        const ul = document.getElementById("note-list");
-        list.forEach(item => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          ul.appendChild(li);
-        });
-      }
-    };
   </script>
 </body>
 </html>
