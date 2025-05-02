@@ -84,11 +84,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
   document.title = `${script.title} - NeverEndScript`;
 
+  // Inject script code
   const codeElement = document.getElementById("scriptCode");
   if (codeElement) {
     codeElement.innerText = script.code;
   }
 
+  // Show image
   const imageElement = document.getElementById("script-image");
   if (imageElement && script.image) {
     imageElement.src = script.image;
@@ -96,6 +98,7 @@ window.addEventListener("DOMContentLoaded", () => {
     imageElement.alt = script.title;
   }
 
+  // Features
   const featureList = document.getElementById("feature-list");
   if (featureList && Array.isArray(script.features)) {
     featureList.innerHTML = "";
@@ -106,6 +109,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Steps
   const stepList = document.getElementById("step-list");
   if (stepList && Array.isArray(script.steps)) {
     stepList.innerHTML = "";
@@ -116,6 +120,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Notes
   const noteList = document.getElementById("note-list");
   if (noteList) {
     noteList.innerHTML = "";
@@ -130,6 +135,12 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Scroll to top to ensure all elements are visible
+  // Ensure Copy button is visible (if accidentally hidden or late)
+  const copyWrapper = document.querySelector(".copy-btn-wrapper");
+  if (copyWrapper) {
+    copyWrapper.style.display = "block";
+  }
+
+  // Scroll to top
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
