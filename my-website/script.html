@@ -142,7 +142,6 @@
     </div>
   </main>
 
-  <script src="scriptLoader.js"></script>
   <script>
     function copyCode(button) {
       const code = document.getElementById("scriptCode").innerText;
@@ -155,6 +154,56 @@
         console.error('Copy failed:', err);
       });
     }
+
+    window.onload = () => {
+      const params = new URLSearchParams(window.location.search);
+
+      const image = params.get("image");
+      const code = params.get("code");
+      const features = params.get("features");
+      const steps = params.get("steps");
+      const notes = params.get("notes");
+
+      if (image) {
+        const img = document.getElementById("script-image");
+        img.src = decodeURIComponent(image);
+        img.style.display = "block";
+      }
+
+      if (code) {
+        document.getElementById("scriptCode").textContent = decodeURIComponent(code);
+      }
+
+      if (features) {
+        const list = decodeURIComponent(features).split("||");
+        const ul = document.getElementById("feature-list");
+        list.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+      }
+
+      if (steps) {
+        const list = decodeURIComponent(steps).split("||");
+        const ol = document.getElementById("step-list");
+        list.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          ol.appendChild(li);
+        });
+      }
+
+      if (notes) {
+        const list = decodeURIComponent(notes).split("||");
+        const ul = document.getElementById("note-list");
+        list.forEach(item => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          ul.appendChild(li);
+        });
+      }
+    };
   </script>
 </body>
 </html>
