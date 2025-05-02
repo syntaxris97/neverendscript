@@ -64,6 +64,13 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
+    .script-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: none;
+    }
+
     .code-container {
       background: #7b1c1c;
       color: #fff;
@@ -117,6 +124,7 @@
 
   <main id="script-details">
     <div class="content-wrapper">
+      <img id="script-image" class="script-image" alt="Script Image" />
       <div class="code-container">
         <button class="copy-btn" onclick="copyCode(this)">📋</button>
         <pre><code id="scriptCode">// Script will be injected here</code></pre>
