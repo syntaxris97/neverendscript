@@ -74,7 +74,6 @@ const params = new URLSearchParams(window.location.search);
 const scriptId = params.get('id');
 const script = scripts.find(s => s.id === scriptId);
 
-// Render script data
 if (script) {
   document.title = `${script.title} - NeverEndScript`;
 
@@ -91,33 +90,45 @@ if (script) {
   }
 
   const featureList = document.getElementById("feature-list");
-  featureList.innerHTML = "";
-  script.features.forEach(feature => {
-    const li = document.createElement("li");
-    li.textContent = `+ ${feature}`;
-    featureList.appendChild(li);
-  });
+  if (featureList) {
+    featureList.innerHTML = "";
+    script.features.forEach(feature => {
+      const li = document.createElement("li");
+      li.textContent = `+ ${feature}`;
+      featureList.appendChild(li);
+    });
+  }
 
   const stepList = document.getElementById("step-list");
-  stepList.innerHTML = "";
-  script.steps.forEach(step => {
-    const li = document.createElement("li");
-    li.textContent = step;
-    stepList.appendChild(li);
-  });
+  if (stepList) {
+    stepList.innerHTML = "";
+    script.steps.forEach(step => {
+      const li = document.createElement("li");
+      li.textContent = step;
+      stepList.appendChild(li);
+    });
+  }
 
   const noteList = document.getElementById("note-list");
-  noteList.innerHTML = "";
-  if (script.notes && script.notes.length > 0) {
-    script.notes.forEach(note => {
-      const li = document.createElement("li");
-      li.textContent = note;
-      noteList.appendChild(li);
-    });
-  } else {
-    noteList.innerHTML = "<li>No additional notes.</li>";
+  if (noteList) {
+    noteList.innerHTML = "";
+    if (script.notes && script.notes.length > 0) {
+      script.notes.forEach(note => {
+        const li = document.createElement("li");
+        li.textContent = note;
+        noteList.appendChild(li);
+      });
+    } else {
+      noteList.innerHTML = "<li>No additional notes.</li>";
+    }
   }
+
+  // Scroll to top to ensure button and script are visible
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
 } else {
-  document.getElementById("script-details").innerHTML = `
-    <h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
+  const details = document.getElementById("script-details");
+  if (details) {
+    details.innerHTML = `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
+  }
 }
