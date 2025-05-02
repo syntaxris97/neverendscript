@@ -82,20 +82,21 @@
     }
 
     .copy-btn {
-      display: block;
+      display: inline-block;
       margin: 20px auto 0;
-      background: #fff;
-      color: #333;
+      background: #28a745;
+      color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
+      padding: 10px 20px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 14px;
+      font-size: 16px;
+      text-align: center;
       transition: background 0.3s ease;
     }
 
     .copy-btn:hover {
-      background: #e0e0e0;
+      background: #218838;
     }
 
     h3 {
@@ -122,25 +123,32 @@
 
   <main id="script-details">
     <div class="content-wrapper">
+      <!-- Copy Script Button Above the Code -->
       <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
       
+      <!-- Script Image -->
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
       
+      <!-- Code Container -->
       <div class="code-container">
         <pre><code id="scriptCode">// Script will be injected here</code></pre>
       </div>
 
+      <!-- Features Section -->
       <h3>🔹 Features:</h3>
       <ul id="feature-list"></ul>
 
+      <!-- Steps Section -->
       <h3>🛠️ Steps:</h3>
       <ol id="step-list"></ol>
 
+      <!-- Notes Section -->
       <h3>📝 Notes:</h3>
       <ul id="note-list"></ul>
     </div>
   </main>
 
+  <!-- Script for Loading Content and Copying the Script -->
   <script src="scriptLoader.js"></script>
   <script>
     function copyCode(button) {
