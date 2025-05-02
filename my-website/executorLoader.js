@@ -15,7 +15,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://zentakmovies.pages.dev/" // ✅ Replace with your actual MediaFire or other link
+    downloadLink: "https://zentakmovies.pages.dev/" // Replace with actual link
   },
   {
     id: "2",
@@ -35,13 +35,13 @@ const executors = [
   }
 ];
 
-// Load data when page loads
 document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const id = params.get("id");
   const executor = executors.find(e => e.id === id);
 
   if (executor) {
+    // Fill content on the page
     document.getElementById("title").innerText = executor.title;
     document.getElementById("author-date").innerText = `${executor.date} by ${executor.author}`;
     document.getElementById("executor-image").src = executor.image;
@@ -49,12 +49,27 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("download-btn").href = executor.downloadLink;
 
     const stepsList = document.getElementById("steps");
-    stepsList.innerHTML = ""; // Clear any existing content
+    stepsList.innerHTML = "";
     executor.steps.forEach(step => {
       const li = document.createElement("li");
       li.textContent = step;
       stepsList.appendChild(li);
     });
+
+    // Handle "Copy Download Link" button
+    const copyBtn = document.getElementById("copyLinkBtn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(executor.downloadLink).then(() => {
+          copyBtn.textContent = "Link Copied!";
+          setTimeout(() => {
+            copyBtn.textContent = "Copy Download Link";
+          }, 2000);
+        }).catch(() => {
+          alert("Failed to copy link.");
+        });
+      });
+    }
   } else {
     document.body.innerHTML = "<h2 style='text-align:center; margin-top: 50px;'>Executor not found.</h2>";
   }
