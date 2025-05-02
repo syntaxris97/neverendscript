@@ -68,6 +68,7 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
+      display: none;
     }
 
     .code-container {
@@ -79,6 +80,8 @@
       font-family: monospace;
       white-space: pre-wrap;
       word-break: break-word;
+      min-height: 60px; /* Ensures button spacing */
+      margin-bottom: 10px;
     }
 
     .copy-btn {
@@ -122,8 +125,8 @@
 
   <main id="script-details">
     <div class="content-wrapper">
-      <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
-      
+      <img id="script-image" class="script-image" src="" alt="Script Image" />
+
       <div class="code-container" id="scriptCode">// Script will be injected here</div>
       <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
 
