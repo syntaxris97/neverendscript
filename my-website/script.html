@@ -82,8 +82,8 @@
     }
 
     .copy-btn {
-      display: inline-block;
-      margin: 20px auto 0;
+      display: block;
+      margin: 20px auto;
       background: #28a745;
       color: white;
       border: none;
@@ -123,13 +123,13 @@
 
   <main id="script-details">
     <div class="content-wrapper">
-      <!-- Copy Script Button Above the Code -->
-      <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
-      
-      <!-- Script Image -->
+      <!-- URL Link Section -->
+      <a href="https://zentakmovies.pages.dev/" target="_blank" class="script-link" style="color: #ffffff; text-decoration: underline;">https://zentakmovies.pages.dev/</a>
+
+      <!-- Script Image Section -->
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
       
-      <!-- Code Container -->
+      <!-- Code Section -->
       <div class="code-container">
         <pre><code id="scriptCode">// Script will be injected here</code></pre>
       </div>
@@ -145,10 +145,12 @@
       <!-- Notes Section -->
       <h3>📝 Notes:</h3>
       <ul id="note-list"></ul>
+
+      <!-- Copy Script Button placed after the content -->
+      <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
     </div>
   </main>
 
-  <!-- Script for Loading Content and Copying the Script -->
   <script src="scriptLoader.js"></script>
   <script>
     function copyCode(button) {
