@@ -82,8 +82,8 @@
     }
 
     .copy-btn {
-      display: block;
-      margin: 20px auto;
+      display: inline-block;
+      margin-top: 20px;
       background: #28a745;
       color: white;
       border: none;
@@ -111,6 +111,14 @@
     li {
       margin-bottom: 6px;
     }
+
+    .script-link {
+      display: block;
+      margin-bottom: 20px;
+      color: #007bff;
+      text-decoration: underline;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -124,7 +132,7 @@
   <main id="script-details">
     <div class="content-wrapper">
       <!-- URL Link Section -->
-      <a href="https://zentakmovies.pages.dev/" target="_blank" class="script-link" style="color: #ffffff; text-decoration: underline;">https://zentakmovies.pages.dev/</a>
+      <a href="https://zentakmovies.pages.dev/" target="_blank" class="script-link">https://zentakmovies.pages.dev/</a>
 
       <!-- Script Image Section -->
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
@@ -146,7 +154,7 @@
       <h3>📝 Notes:</h3>
       <ul id="note-list"></ul>
 
-      <!-- Copy Script Button placed after the content -->
+      <!-- Copy Script Button placed at the bottom -->
       <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
     </div>
   </main>
