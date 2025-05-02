@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Script Viewer - NeverEndScript</title>
   <link rel="stylesheet" href="home.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
       margin: 0;
@@ -78,24 +79,26 @@
       overflow: auto;
       font-family: monospace;
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
 
     .copy-btn {
       display: block;
-      margin: 20px auto 0;
+      margin: 0 auto 30px;
       background: #fff;
       color: #333;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
+      border: 1px solid #ccc;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
       cursor: pointer;
       font-size: 14px;
       transition: background 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .copy-btn:hover {
-      background: #e0e0e0;
+      background: #f0f0f0;
     }
 
     h3 {
@@ -123,11 +126,12 @@
   <main id="script-details">
     <div class="content-wrapper">
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
-      
+
       <div class="code-container">
         <pre><code id="scriptCode">// Script will be injected here</code></pre>
       </div>
 
+      <!-- Button moved outside of code container -->
       <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
 
       <h3>🔹 Features:</h3>
