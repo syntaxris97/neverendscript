@@ -31,7 +31,7 @@ const executors = [
       "Open app and inject",
       "Use scripts safely"
     ],
-    downloadLink: "https://phcorner.org/threads/my-top-5-super-useful-browser-extension-tools.2279431/"
+    downloadLink: "https://www.mediafire.com/file/gdff4vk2skb7z86/ML+MOD+MENU+2025+NO+KEY.apk/file"
   }
 ];
 
