@@ -158,7 +158,8 @@
     </div>
   </main>
 
-  <script src="scriptLoader.js"></script>
+  <!-- ✅ DEFER ensures the script loads after the page is parsed -->
+  <script src="scriptLoader.js" defer></script>
   <script>
     function copyCode(button) {
       const code = document.getElementById("scriptCode").innerText;
