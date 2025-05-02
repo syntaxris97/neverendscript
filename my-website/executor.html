@@ -82,6 +82,21 @@
       background-color: #218838;
     }
 
+    .copy-button {
+      background-color: #6c757d;
+      color: white;
+      padding: 10px 20px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .copy-button:hover {
+      background-color: #5a6268;
+    }
+
     footer {
       text-align: center;
       margin-top: 50px;
@@ -130,7 +145,8 @@
       <p id="description"></p>
 
       <div style="text-align: center; margin: 20px 0;">
-        <a id="download-btn" class="download-button" href="#" target="_blank">⬇️ Download Executor</a>
+        <a id="download-btn" class="download-button" href="#" target="_blank">⬇️ Download Executor</a><br />
+        <button id="copyLinkBtn" class="copy-button">Copy Download Link</button>
       </div>
 
       <hr style="margin: 30px 0;" />
