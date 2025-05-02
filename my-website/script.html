@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="shortcut icon" type="x-icon" href="copa.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Script Viewer - NeverEndScript</title>
   <link rel="stylesheet" href="home.css" />
@@ -69,7 +68,6 @@
       width: 100%;
       border-radius: 10px;
       margin-bottom: 20px;
-      display: none;
     }
 
     .code-container {
@@ -84,13 +82,12 @@
     }
 
     .copy-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+      display: block;
+      margin: 20px auto 0;
       background: #fff;
       color: #333;
       border: none;
-      padding: 5px 8px;
+      padding: 8px 16px;
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
@@ -125,10 +122,11 @@
 
   <main id="script-details">
     <div class="content-wrapper">
-      <img id="script-image" class="script-image" alt="Script Image" />
+      <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
+      
       <div class="code-container">
-        <button class="copy-btn" onclick="copyCode(this)">📋</button>
         <pre><code id="scriptCode">// Script will be injected here</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
       </div>
 
       <h3>🔹 Features:</h3>
@@ -145,11 +143,11 @@
   <script src="scriptLoader.js"></script>
   <script>
     function copyCode(button) {
-      const code = button.nextElementSibling.innerText;
+      const code = document.getElementById("scriptCode").innerText;
       navigator.clipboard.writeText(code).then(() => {
-        button.textContent = "✅";
+        button.textContent = "✅ Copied!";
         setTimeout(() => {
-          button.textContent = "📋";
+          button.textContent = "📋 Copy Script";
         }, 1500);
       }).catch(err => {
         console.error('Copy failed:', err);
