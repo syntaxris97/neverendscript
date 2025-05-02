@@ -83,7 +83,7 @@
 
     .copy-btn {
       display: inline-block;
-      margin-top: 20px;
+      margin: 20px auto; /* This ensures the button stays in the center */
       background: #28a745;
       color: white;
       border: none;
@@ -127,7 +127,9 @@
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: block; margin: 0 auto;" />
       
       <!-- Copy Script Button placed directly below the image -->
-      <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
+      </div>
 
       <!-- Code Section -->
       <div class="code-container">
