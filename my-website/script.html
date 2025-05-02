@@ -80,6 +80,16 @@
       font-family: monospace;
       overflow: auto;
       margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #scriptCode {
+      min-height: 60px;
+      display: inline-block;
+      white-space: pre-wrap;
+      word-wrap: break-word;
     }
 
     .copy-btn {
@@ -157,6 +167,11 @@
         console.error('Copy failed:', err);
       });
     }
+
+    // Optional: scroll to top when loading script
+    window.onload = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
   </script>
 </body>
 </html>
