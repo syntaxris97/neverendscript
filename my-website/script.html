@@ -165,8 +165,14 @@
     </div>
   </main>
 
-  <script src="scriptLoader.js" defer></script>
   <script>
+    // This ensures scriptLoader runs AFTER all DOM elements are ready
+    document.addEventListener("DOMContentLoaded", () => {
+      const loader = document.createElement("script");
+      loader.src = "scriptLoader.js";
+      document.body.appendChild(loader);
+    });
+
     function copyCode(button) {
       const code = document.getElementById("scriptCode").innerText;
       navigator.clipboard.writeText(code).then(() => {
@@ -178,10 +184,6 @@
         console.error('Copy failed:', err);
       });
     }
-
-    window.onload = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    };
   </script>
 </body>
 </html>
