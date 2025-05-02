@@ -1,114 +1,69 @@
 const scripts = [
-  {
+   {
     id: "5",
     title: "AAim Hack",
     description: "Increases player movement speed.",
     image: "image/bloxfruits.png",
-    code: `https://zentakmovies.pages.dev/`,
-    features: [
-      "Best Sea Event",
-      "No Key",
-      "Smooth Farm",
-      "Volcano Event",
-      "Prehistoric",
-      "Dojo Quest",
-      "Dragon Race",
-      "Draco Race",
-      "Auto Belt",
-      "Kitsune Event",
-      "Mastery Gun & Fruit",
-      "Fully Auto Raid",
-      "Script Mobile & PC"
-    ],
-    steps: [
-      "Click COPY button for auto copy script",
-      "Paste the script into your executor",
-      "Run and done"
-    ],
-    notes: []
+    code: `https://zentakmovies.pages.dev/`
   },
   {
     id: "1",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/bloxfruits.png",
-    code: `-- Speed Hack\nloadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`,
-    features: ["Increases movement speed instantly."],
-    steps: ["Copy the script", "Paste into your executor", "Execute"],
-    notes: ["Make sure you’re in-game before executing."]
+    code: `-- Speed Hack\nloadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`
   },
   {
     id: "2",
     title: "Fly Script",
     description: "Gives the player the ability to fly.",
     image: "image/fly.jpg",
-    code: `-- Fly Script\nloadstring(game:HttpGet("https://pastebin.com/raw/abcd1234"))()`,
-    features: ["Fly ability", "Toggle on/off"],
-    steps: ["Copy the script", "Paste into your executor", "Press 'F' to toggle fly"],
-    notes: []
+    code: `-- Fly Script\nloadstring(game:HttpGet("https://pastebin.com/raw/abcd1234"))()`
   },
   {
     id: "3",
     title: "ESP Script",
     description: "Reveals other players through walls.",
     image: "image/esp.jpg",
-    code: `-- ESP Script\nloadstring(game:HttpGet("https://pastebin.com/raw/esp12345"))()`,
-    features: ["Wallhack/ESP"],
-    steps: ["Copy and run script in executor"],
-    notes: ["Useful in PvP environments"]
+    code: `-- ESP Script\nloadstring(game:HttpGet("https://pastebin.com/raw/esp12345"))()`
   },
   {
     id: "4",
     title: "WalkSpeed Hack",
     description: "Set WalkSpeed to 100 for fast movement.",
     image: "image/speedhack.png",
-    code: `-- WalkSpeed Hack\ngame.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100`,
-    features: ["Custom speed boost"],
-    steps: ["Paste and execute in console"],
-    notes: ["Only works in some games"]
+    code: `-- WalkSpeed Hack\ngame.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 100`
   }
 ];
 
 const params = new URLSearchParams(window.location.search);
 const scriptId = params.get('id');
 const script = scripts.find(s => s.id === scriptId);
+const container = document.getElementById('script-details');
 
 if (script) {
-  document.title = `${script.title} - NeverEndScript`;
+  document.title = script.title;
 
-  // Fill in code block
-  const codeElement = document.getElementById("scriptCode");
-  if (codeElement) codeElement.innerText = script.code;
+  container.innerHTML = `
+    <section class="card" style="margin: 20px auto; max-width: 600px;">
+      <img src="${script.image}" alt="${script.title}" style="width: 100%; border-radius: 6px; margin-bottom: 15px;">
+      <h3>${script.title}</h3>
+      <p>${script.description}</p>
+      <pre id="code-block" style="text-align: left; background-color: #f9f9f9; padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 14px;">${script.code}</pre>
+      <button id="copy-btn" style="margin-top: 10px; padding: 8px 12px; background-color: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer;">
+        Copy Script
+      </button>
+    </section>
+  `;
 
-  // Populate features
-  const featureList = document.getElementById("feature-list");
-  script.features.forEach(feature => {
-    const li = document.createElement("li");
-    li.textContent = `+ ${feature}`;
-    featureList.appendChild(li);
+  // Attach the event listener AFTER rendering
+  document.getElementById('copy-btn').addEventListener('click', () => {
+    const code = document.getElementById('code-block').innerText;
+    navigator.clipboard.writeText(code)
+      .then(() => alert("✅ Script copied to clipboard!"))
+      .catch(() => alert("❌ Failed to copy script."));
   });
-
-  // Populate steps
-  const stepList = document.getElementById("step-list");
-  script.steps.forEach(step => {
-    const li = document.createElement("li");
-    li.textContent = step;
-    stepList.appendChild(li);
-  });
-
-  // Populate notes
-  const noteList = document.getElementById("note-list");
-  if (script.notes.length > 0) {
-    script.notes.forEach(note => {
-      const li = document.createElement("li");
-      li.textContent = note;
-      noteList.appendChild(li);
-    });
-  } else {
-    noteList.innerHTML = "<li>No additional notes.</li>";
-  }
 
 } else {
-  document.getElementById("script-details").innerHTML =
-    `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
+  container.innerHTML = `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
 }
