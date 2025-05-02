@@ -69,12 +69,19 @@ const scripts = [
   }
 ];
 
-// Get script ID from URL
-const params = new URLSearchParams(window.location.search);
-const scriptId = params.get('id');
-const script = scripts.find(s => s.id === scriptId);
+window.addEventListener("DOMContentLoaded", () => {
+  const params = new URLSearchParams(window.location.search);
+  const scriptId = params.get("id");
+  const script = scripts.find(s => s.id === scriptId);
 
-if (script) {
+  if (!script) {
+    const details = document.getElementById("script-details");
+    if (details) {
+      details.innerHTML = `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
+    }
+    return;
+  }
+
   document.title = `${script.title} - NeverEndScript`;
 
   const codeElement = document.getElementById("scriptCode");
@@ -90,7 +97,7 @@ if (script) {
   }
 
   const featureList = document.getElementById("feature-list");
-  if (featureList) {
+  if (featureList && Array.isArray(script.features)) {
     featureList.innerHTML = "";
     script.features.forEach(feature => {
       const li = document.createElement("li");
@@ -100,7 +107,7 @@ if (script) {
   }
 
   const stepList = document.getElementById("step-list");
-  if (stepList) {
+  if (stepList && Array.isArray(script.steps)) {
     stepList.innerHTML = "";
     script.steps.forEach(step => {
       const li = document.createElement("li");
@@ -112,7 +119,7 @@ if (script) {
   const noteList = document.getElementById("note-list");
   if (noteList) {
     noteList.innerHTML = "";
-    if (script.notes && script.notes.length > 0) {
+    if (Array.isArray(script.notes) && script.notes.length > 0) {
       script.notes.forEach(note => {
         const li = document.createElement("li");
         li.textContent = note;
@@ -123,12 +130,6 @@ if (script) {
     }
   }
 
-  // Scroll to top to ensure button and script are visible
+  // Scroll to top to ensure all elements are visible
   window.scrollTo({ top: 0, behavior: "smooth" });
-
-} else {
-  const details = document.getElementById("script-details");
-  if (details) {
-    details.innerHTML = `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
-  }
-}
+});
