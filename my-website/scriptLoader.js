@@ -69,36 +69,46 @@ const scripts = [
   }
 ];
 
+// Get script ID from URL
 const params = new URLSearchParams(window.location.search);
 const scriptId = params.get('id');
 const script = scripts.find(s => s.id === scriptId);
 
+// Render script data
 if (script) {
   document.title = `${script.title} - NeverEndScript`;
 
-  // Fill in code block
   const codeElement = document.getElementById("scriptCode");
-  if (codeElement) codeElement.innerText = script.code;
+  if (codeElement) {
+    codeElement.innerText = script.code;
+  }
 
-  // Populate features
+  const imageElement = document.getElementById("script-image");
+  if (imageElement && script.image) {
+    imageElement.src = script.image;
+    imageElement.style.display = "block";
+    imageElement.alt = script.title;
+  }
+
   const featureList = document.getElementById("feature-list");
+  featureList.innerHTML = "";
   script.features.forEach(feature => {
     const li = document.createElement("li");
     li.textContent = `+ ${feature}`;
     featureList.appendChild(li);
   });
 
-  // Populate steps
   const stepList = document.getElementById("step-list");
+  stepList.innerHTML = "";
   script.steps.forEach(step => {
     const li = document.createElement("li");
     li.textContent = step;
     stepList.appendChild(li);
   });
 
-  // Populate notes
   const noteList = document.getElementById("note-list");
-  if (script.notes.length > 0) {
+  noteList.innerHTML = "";
+  if (script.notes && script.notes.length > 0) {
     script.notes.forEach(note => {
       const li = document.createElement("li");
       li.textContent = note;
@@ -107,8 +117,7 @@ if (script) {
   } else {
     noteList.innerHTML = "<li>No additional notes.</li>";
   }
-
 } else {
-  document.getElementById("script-details").innerHTML =
-    `<h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
+  document.getElementById("script-details").innerHTML = `
+    <h2 style="text-align: center; margin-top: 50px;">Script not found.</h2>`;
 }
