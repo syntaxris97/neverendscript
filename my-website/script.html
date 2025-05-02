@@ -82,21 +82,20 @@
     }
 
     .copy-btn {
-      display: inline-block;
-      margin-top: 20px; /* This ensures the button stays below the image */
-      background: #28a745;
-      color: white;
+      display: block;
+      margin: 20px auto 0;
+      background: #fff;
+      color: #333;
       border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
+      padding: 8px 16px;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 16px;
-      text-align: center;
+      font-size: 14px;
       transition: background 0.3s ease;
     }
 
     .copy-btn:hover {
-      background: #218838;
+      background: #e0e0e0;
     }
 
     h3 {
@@ -123,26 +122,19 @@
 
   <main id="script-details">
     <div class="content-wrapper">
-      <!-- Script Image Section -->
-      <img id="script-image" class="script-image" src="" alt="Script Image" style="display: block; margin: 0 auto;" />
+      <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
       
-      <!-- Copy Script Button placed directly below the image -->
-      <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
-
-      <!-- Code Section -->
       <div class="code-container">
         <pre><code id="scriptCode">// Script will be injected here</code></pre>
+        <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
       </div>
 
-      <!-- Features Section -->
       <h3>🔹 Features:</h3>
       <ul id="feature-list"></ul>
 
-      <!-- Steps Section -->
       <h3>🛠️ Steps:</h3>
       <ol id="step-list"></ol>
 
-      <!-- Notes Section -->
       <h3>📝 Notes:</h3>
       <ul id="note-list"></ul>
     </div>
