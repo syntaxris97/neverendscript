@@ -62,7 +62,6 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      position: relative;
     }
 
     .script-image {
@@ -70,11 +69,6 @@
       border-radius: 10px;
       margin-bottom: 20px;
       display: none;
-    }
-
-    .code-section {
-      position: relative;
-      margin-bottom: 40px;
     }
 
     .code-container {
@@ -87,13 +81,10 @@
       white-space: pre-wrap;
       word-break: break-word;
       min-height: 60px;
+      margin-bottom: 16px;
     }
 
     .copy-btn {
-      position: absolute;
-      bottom: -35px;
-      left: 50%;
-      transform: translateX(-50%);
       background: #fff;
       color: #333;
       border: none;
@@ -102,7 +93,8 @@
       cursor: pointer;
       font-size: 14px;
       transition: background 0.3s ease;
-      z-index: 5;
+      display: block;
+      margin: 0 auto 30px auto;
     }
 
     .copy-btn:hover {
@@ -135,10 +127,8 @@
     <div class="content-wrapper">
       <img id="script-image" class="script-image" src="" alt="Script Image" />
 
-      <div class="code-section">
-        <div class="code-container" id="scriptCode">// Script will be injected here</div>
-        <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
-      </div>
+      <div class="code-container" id="scriptCode">// Script will be injected here</div>
+      <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
 
       <h3>🔹 Features:</h3>
       <ul id="feature-list"></ul>
