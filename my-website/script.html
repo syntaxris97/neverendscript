@@ -75,14 +75,14 @@
       color: #fff;
       border-radius: 8px;
       padding: 20px;
-      overflow: auto;
+      overflow-x: auto;
       font-family: monospace;
-      margin-bottom: 10px;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
 
     .copy-btn {
-      display: block;
-      margin: 0 auto 20px;
+      margin: 16px auto;
       background: #fff;
       color: #333;
       border: none;
@@ -91,6 +91,7 @@
       cursor: pointer;
       font-size: 14px;
       transition: background 0.3s ease;
+      display: block;
     }
 
     .copy-btn:hover {
@@ -123,9 +124,7 @@
     <div class="content-wrapper">
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
       
-      <div class="code-container">
-        <pre><code id="scriptCode">// Script will be injected here</code></pre>
-      </div>
+      <div class="code-container" id="scriptCode">// Script will be injected here</div>
       <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
 
       <h3>🔹 Features:</h3>
