@@ -71,6 +71,10 @@
       margin-bottom: 20px;
     }
 
+    .script-block {
+      margin-bottom: 30px;
+    }
+
     .code-container {
       background: #7b1c1c;
       color: #fff;
@@ -81,7 +85,6 @@
       overflow-x: auto;
       word-break: break-word;
       white-space: pre-wrap;
-      margin-bottom: 10px;
       text-align: center;
       display: flex;
       align-items: center;
@@ -104,7 +107,7 @@
       font-weight: bold;
       cursor: pointer;
       font-size: 14px;
-      margin-bottom: 30px;
+      margin-top: 15px;
       transition: background 0.3s ease;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
@@ -139,12 +142,13 @@
     <div class="content-wrapper">
       <img id="script-image" class="script-image" src="" alt="Script Image" style="display: none;" />
 
-      <div class="code-container">
-        <pre><code id="scriptCode">// Script will be injected here</code></pre>
-      </div>
-
-      <div style="text-align: center;">
-        <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
+      <div class="script-block">
+        <div class="code-container">
+          <pre><code id="scriptCode">// Script will be injected here</code></pre>
+        </div>
+        <div style="text-align: center;">
+          <button class="copy-btn" onclick="copyCode(this)">📋 Copy Script</button>
+        </div>
       </div>
 
       <h3>🔹 Features:</h3>
@@ -158,7 +162,7 @@
     </div>
   </main>
 
-  <!-- ✅ DEFER ensures the script loads after the page is parsed -->
+  <!-- ✅ DEFER ensures the script loads after DOM -->
   <script src="scriptLoader.js" defer></script>
   <script>
     function copyCode(button) {
