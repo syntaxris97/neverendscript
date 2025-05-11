@@ -33,7 +33,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://zentakmovies.pages.dev/" // Replace with actual link
+    downloadLink: "https://myflixerz.to/" // Replace with actual link
   },
   {
     id: "2",
