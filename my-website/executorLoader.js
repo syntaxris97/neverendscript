@@ -15,7 +15,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://imggen.ai/tools/upscale-image" // Replace with actual link
+    downloadLink: "https://scriptpastebin.com/" // Replace with actual link
   },
   {
     id: "1",
