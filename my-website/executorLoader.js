@@ -1,5 +1,23 @@
 const executors = [
   {
+    id: "3",
+    title: "KRNL V669 BEST",
+    author: "Skays",
+    date: "2025-04-23",
+    image: "image/fluxurexecutor.png",
+    description: "KRNL Executor Mobile and Emulator (FREE)",
+    steps: [
+      "Click DOWNLOAD button",
+      "Complete the task",
+      "Download file",
+      "Install file",
+      "Get Key",
+      "Paste the script",
+      "Run and done"
+    ],
+    downloadLink: "https://imggen.ai/tools/upscale-image" // Replace with actual link
+  },
+  {
     id: "1",
     title: "KRNL V669 BEST",
     author: "Skays",
