@@ -15,7 +15,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "http://xhamster.com/" // Replace with actual link
+    downloadLink: "https://google.com/" // Replace with actual link
   },
   {
     id: "1",
