@@ -42,21 +42,21 @@ const executors = [
     title: "KRNL",
     description: "Popular and reliable Roblox script executor.",
     date: "2025-04-20",
-    image: "image/deltaexecutor.png"
+    image: "image/executorroblox1.png"
   },
   {
     id: "2",
     title: "Fluxus",
     description: "Fast and feature-rich Roblox executor.",
     date: "2025-04-18",
-    image: "image/deltaexecutor.png"
+    image: "image/executorroblox2.png"
   },
   {
     id: "3",
     title: "Electron",
     description: "Free executor with wide script support.",
     date: "2025-04-15",
-    image: "image/deltaexecutor.png"
+    image: "image/executorroblox3.png"
   }
 ];
 
