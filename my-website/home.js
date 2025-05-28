@@ -4,35 +4,35 @@ const scripts = [
     title: "Speed Hack",
     description: "Increases player movement speed.",
     date: "2025-05-01",
-    image: "image/bloxfruits.png"
+    image: "image/scriptroblox1.png"
   },
   {
     id: "4",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     date: "2025-05-01",
-    image: "image/bloxfruits.png"
+    image: "image/scriptroblox2.png"
   },
   {
     id: "1",
     title: "Infinite Yield",
     description: "A powerful admin script for Roblox.",
     date: "2025-04-30",
-    image: "image/bloxfruits.png"
+    image: "image/scriptroblox3.png"
   },
   {
     id: "2",
     title: "Dark Dex Explorer",
     description: "Advanced GUI for Roblox object inspection.",
     date: "2025-04-28",
-    image: "image/bloxfruits.png"
+    image: "image/scriptroblox1.png"
   },
   {
     id: "3",
     title: "Unnamed ESP",
     description: "ESP wallhack script for player visibility.",
     date: "2025-04-25",
-    image: "image/bloxfruits.png"
+    image: "image/scriptroblox1.png"
   }
 ];
 
