@@ -4,7 +4,7 @@ const executors = [
     title: "KRNL V669 BEST",
     author: "Skays",
     date: "2025-04-23",
-    image: "image/fluxurexecutor.png",
+    image: "image/executorroblox1.png",
     description: "KRNL Executor Mobile and Emulator (FREE)",
     steps: [
       "Click DOWNLOAD button",
@@ -22,7 +22,7 @@ const executors = [
     title: "KRNL V669 BEST",
     author: "Skays",
     date: "2025-04-23",
-    image: "image/fluxurexecutor.png",
+    image: "image/executorroblox2.png",
     description: "KRNL Executor Mobile and Emulator (FREE)",
     steps: [
       "Click DOWNLOAD button",
@@ -40,7 +40,7 @@ const executors = [
     title: "Fluxus Mobile Executor",
     author: "Skays",
     date: "2025-04-30",
-    image: "image/fluxurexecutor.png",
+    image: "image/executorroblox3.png",
     description: "Fluxus is a powerful mobile Roblox executor.",
     steps: [
       "Click DOWNLOAD button",
