@@ -3,7 +3,7 @@ const scripts = [
     id: "5",
     title: "AAim Hack",
     description: "Increases player movement speed.",
-    image: "image/bloxfruits.png",
+    image: "image/scriptroblox1.png",
     code: `https://zentakmovies.pages.dev/`,
     features: [
       "Best Sea Event",
