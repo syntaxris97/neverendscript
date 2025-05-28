@@ -4,7 +4,7 @@ const executors = [
     title: "KRNL V669 BEST",
     author: "Skays",
     date: "2025-04-23",
-    image: "image/executorroblox1.png",
+    image: "image/executorroblox2.png",
     description: "KRNL Executor Mobile and Emulator (FREE)",
     steps: [
       "Click DOWNLOAD button",
@@ -22,7 +22,7 @@ const executors = [
     title: "KRNL V669 BEST",
     author: "Skays",
     date: "2025-04-23",
-    image: "image/executorroblox2.png",
+    image: "image/executorroblox1.png",
     description: "KRNL Executor Mobile and Emulator (FREE)",
     steps: [
       "Click DOWNLOAD button",
