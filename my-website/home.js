@@ -1,23 +1,23 @@
 const scripts = [
   {
     id: "5",
-    title: "Speed Hack",
-    description: "Increases player movement speed.",
-    date: "2025-05-01",
+    title: "Rabaya V1 Script",
+    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
+    date: "2025-05-28",
     image: "image/scriptroblox1.png"
   },
   {
     id: "4",
-    title: "Speed Hack",
-    description: "Increases player movement speed.",
-    date: "2025-05-01",
+    title: "Rabaya v3 Script",
+    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY…",
+    date: "2025-05-28",
     image: "image/scriptroblox2.png"
   },
   {
     id: "1",
-    title: "Infinite Yield",
-    description: "A powerful admin script for Roblox.",
-    date: "2025-04-30",
+    title: "Rabaya V3 Script",
+    description: "BLOX FRUITS Script No Key AUTO FARM, PREHISTORIC…",
+    date: "2025-05-28",
     image: "image/scriptroblox3.png"
   },
   {
