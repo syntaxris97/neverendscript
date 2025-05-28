@@ -4,14 +4,14 @@ const scripts = [
     title: "Rabaya V1 Script",
     description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
     date: "2025-05-28",
-    image: "image/scriptroblox1.png"
+    image: "image/scriptroblox2.png"
   },
   {
     id: "4",
     title: "Rabaya v3 Script",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY…",
     date: "2025-05-28",
-    image: "image/scriptroblox2.png"
+    image: "image/scriptroblox1.png"
   },
   {
     id: "1",
