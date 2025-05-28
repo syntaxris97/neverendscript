@@ -1,7 +1,23 @@
 /*
-  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; font-src 'self' https:; img-src 'self' data: blob: https:; connect-src 'self' https:; frame-ancestors 'none'
-  X-Frame-Options: DENY
-  X-Content-Type-Options: nosniff
-  Referrer-Policy: no-referrer
-  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), clipboard-read=(), clipboard-write=()
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+Content-Security-Policy:
+  default-src 'self';
+  script-src 'self' 'unsafe-inline';
+  style-src 'self' 'unsafe-inline';
+  font-src 'self';
+  img-src 'self' data: blob:;
+  connect-src 'self';
+  frame-ancestors 'none';
+
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: no-referrer
+
+Permissions-Policy: 
+  geolocation=(), 
+  microphone=(), 
+  camera=(), 
+  payment=(), 
+  clipboard-read=(self), 
+  clipboard-write=(self)
