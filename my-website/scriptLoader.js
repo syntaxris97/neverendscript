@@ -76,7 +76,7 @@ const script = scripts.find(s => s.id === scriptId);
 
 // Render script data
 if (script) {
-  document.title = `${script.title} - Rabaya ( Script & Executor )`;
+  document.title = `${script.title} - NeverEndScript`;
 
   const codeElement = document.getElementById("scriptCode");
   if (codeElement) {
