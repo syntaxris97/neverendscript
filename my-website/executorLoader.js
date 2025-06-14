@@ -2,7 +2,7 @@ const executors = [
   {
     id: "6",
     title: "DELTA V675 BEST",
-    author: "Credit : reaperscripts…",
+    author: "reaperscripts…",
     date: "2025-06-03",
     image: "image/deltaexe.jpg",
     description: "DELTA Executor Mobile and Emulator (FREE)",
@@ -20,7 +20,7 @@ const executors = [
   {
     id: "5",
     title: "VEGA X V674",
-    author: "Credit : reaperscripts…",
+    author: "reaperscripts…",
     date: "2025-06-03",
     image: "image/vegaxexe.jpg",
     description: "VEGA X Executor Mobile and Emulator (FREE)",
@@ -38,7 +38,7 @@ const executors = [
   {
     id: "4",
     title: "CODEX V675",
-    author: "Credit : reaperscripts…",
+    author: "reaperscripts…",
     date: "2025-06-03",
     image: "image/codexexe.jpg",
     description: "CODEX Executor Mobile and Emulator (FREE)",
@@ -56,7 +56,7 @@ const executors = [
   {
     id: "3",
     title: "CRYPTIC V674",
-    author: "Credit : reaperscripts…",
+    author: "reaperscripts…",
     date: "2025-06-03",
     image: "image/crypticexe.jpg",
     description: "CRYPTIC Executor Mobile and Emulator (FREE)",
@@ -74,7 +74,7 @@ const executors = [
   {
     id: "1",
     title: "FLUXUS V673",
-    author: "Credit : shower head…",
+    author: "shower head…",
     date: "2025-05-27",
     image: "image/fluxusexe.jpg",
     description: "FLUXUS Executor Mobile and Emulator",
@@ -92,7 +92,7 @@ const executors = [
   {
     id: "2",
     title: "KRNL V673",
-    author: "Credit : valentinodev…",
+    author: "valentinodev…",
     date: "2025-5-22",
     image: "image/krnlexe.jpg",
     description: "KRNL is a powerful mobile Roblox executor.",
