@@ -98,6 +98,24 @@
       background-color: #5a6268;
     }
 
+    .youtube-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #FF0000;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 12px;
+    }
+
+    .youtube-button img {
+      width: 20px;
+      height: 20px;
+    }
+
     footer {
       text-align: center;
       margin-top: 50px;
@@ -148,9 +166,14 @@
       <div style="text-align: center; margin: 20px 0;">
         <a id="download-btn" class="download-button" href="#" target="_blank">⬇️ Download Executor</a>
         <p style="margin: 10px 0; font-weight: bold;">or</p>
-        <button id="copyLinkBtn" style="padding: 10px 20px; background-color: #444; color: white; border: none; border-radius: 6px; cursor: pointer;">Copy Download Link ( paste on your browser )</button>
+        <button id="copyLinkBtn" class="copy-button">Copy Download Link ( paste on your browser )</button>
+        
+        <!-- YouTube Button -->
+        <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" class="youtube-button">
+          <img src="https://www.youtube.com/s/desktop/d4e5b85b/img/favicon_144.png" alt="YouTube Icon">
+          Watch Tutorial on YouTube
+        </a>
       </div>
-
 
       <hr style="margin: 30px 0;" />
 
