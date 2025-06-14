@@ -18,17 +18,7 @@ body.dark {
 .rainbow-text {
   font-size: 24px;
   font-weight: bold;
-  background: linear-gradient(
-    -45deg,
-    red,
-    orange,
-    yellow,
-    green,
-    cyan,
-    blue,
-    violet,
-    red
-  );
+  background: linear-gradient(-45deg, red, orange, yellow, green, cyan, blue, violet, red);
   background-size: 400%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,12 +26,8 @@ body.dark {
 }
 
 @keyframes rainbow {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 /* === HEADER === */
@@ -275,6 +261,30 @@ body.dark h2 {
   background: #e0e0e0;
 }
 
+/* === YOUTUBE BUTTON === */
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FF0000;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+  transition: background 0.3s ease;
+}
+
+.youtube-button:hover {
+  background-color: #cc0000;
+}
+
+.youtube-button img {
+  width: 20px;
+  height: 20px;
+}
+
 /* === FIX FOR SCRIPT PAGE STICKY HEADER === */
 #script-details {
   padding-top: 100px;
@@ -368,25 +378,6 @@ body.dark .copy-btn {
 
 body.dark .copy-btn:hover {
   background: #666;
-}
-
-/* === YOUTUBE BUTTON === */
-.youtube-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #FF0000;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 12px;
-}
-
-.youtube-button img {
-  width: 20px;
-  height: 20px;
 }
 
 /* === RESPONSIVE DESIGN === */
