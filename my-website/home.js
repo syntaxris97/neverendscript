@@ -38,25 +38,46 @@ const scripts = [
 
 const executors = [
   {
-    id: "1",
-    title: "KRNL",
+    id: "6",
+    title: "DELTA Executor",
     description: "Popular and reliable Roblox script executor.",
     date: "2025-04-20",
-    image: "image/fluxurexecutor.png"
+    image: "image/deltaexe.jpg"
+  },
+  {
+    id: "5",
+    title: "VEGA X Executor",
+    description: "Popular and reliable Roblox script executor.",
+    date: "2025-04-20",
+    image: "image/vegaxexe.jpg"
+  },
+  {
+    id: "4",
+    title: "CODEX Executor",
+    description: "Popular and reliable Roblox script executor.",
+    date: "2025-04-20",
+    image: "image/codexexe.jpg"
+  },
+  {
+    id: "1",
+    title: "CRYPTIC Executor",
+    description: "Popular and reliable Roblox script executor.",
+    date: "2025-04-20",
+    image: "image/crypticexe.jpg"
   },
   {
     id: "2",
-    title: "Fluxus",
+    title: "FLUXUS Executor",
     description: "Fast and feature-rich Roblox executor.",
     date: "2025-04-18",
-    image: "image/fluxurexecutor.png"
+    image: "image/fluxusexe.jpg"
   },
   {
     id: "3",
-    title: "Electron",
+    title: "KRNL Executor",
     description: "Free executor with wide script support.",
     date: "2025-04-15",
-    image: "image/fluxurexecutor.png"
+    image: "image/krnlexe.jpg"
   }
 ];
 
