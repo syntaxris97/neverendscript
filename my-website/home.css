@@ -370,6 +370,25 @@ body.dark .copy-btn:hover {
   background: #666;
 }
 
+/* === YOUTUBE BUTTON === */
+.youtube-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FF0000;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 12px;
+}
+
+.youtube-button img {
+  width: 20px;
+  height: 20px;
+}
+
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
   .container {
