@@ -15,7 +15,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://google.com/" // Replace with actual link
+    downloadLink: "https://www.mediafire.com/file/4mmopck1m3qc7fs/Delta-2.675.715.apk/file"
   },
   {
     id: "5",
@@ -33,7 +33,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://google.com/" // Replace with actual link
+    downloadLink: "https://www.mediafire.com/file/oii8wt2zkvkgr96/Vega-X+674.apk/file"
   },
   {
     id: "4",
@@ -51,7 +51,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://google.com/" // Replace with actual link
+    downloadLink: "https://www.mediafire.com/file/26y4geu9v3dk9ul/Codex_v2.675.apk/file"
   },
   {
     id: "1",
@@ -69,7 +69,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://google.com/" // Replace with actual link
+    downloadLink: "https://www.mediafire.com/file/rruut5uxog8hf59/Cryptic+2.674.2789+APK.apk/file"
   },
   {
     id: "2",
@@ -87,7 +87,7 @@ const executors = [
       "Paste the script",
       "Run and done"
     ],
-    downloadLink: "https://myflixerhd.tv/" // Replace with actual link
+    downloadLink: "https://www.mediafire.com/file/bgm4rz0tow6ieuz/Fluxus+673.apk/file"
   },
   {
     id: "3",
@@ -103,7 +103,7 @@ const executors = [
       "Open app and inject",
       "Use scripts safely"
     ],
-    downloadLink: "https://www.mediafire.com/file/gdff4vk2skb7z86/ML+MOD+MENU+2025+NO+KEY.apk/file"
+    downloadLink: "https://www.mediafire.com/file/vfoum72vv4hoajv/krnl_release_2.673.710_2025.5.17_26.apk/file"
   }
 ];
 
