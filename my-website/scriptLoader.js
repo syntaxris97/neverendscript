@@ -53,7 +53,7 @@ const scripts = [
     id: "2",
     title: "Speed Hack",
     description: "Increases player movement speed.",
-    image: "image/image/scriptroblox1.png",
+    image: "image/nathub2.jpg",
     code: `loadstring(game:HttpGet('https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua'))()`,
     features: ["Increases movement speed instantly."],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
