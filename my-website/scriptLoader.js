@@ -41,17 +41,20 @@ const scripts = [
   },
   {
     id: "3",
-    title: "Speed Hack",
+    title: "Xero Hub – Blox Fruits Script (No Key)",
     description: "Increases player movement speed.",
-    image: "image/image/scriptroblox1.png",
-    code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
+    image: "image/xerohub.jpg",
+    code: `getgenv().Team = "Marines"
+getgenv().Hide_Menu = false
+getgenv().Auto_Execute = false
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/main.lua"))()`,
     features: ["No key"],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
   },
   {
     id: "2",
-    title: "Speed Hack",
+    title: "DEAD RAILS Script – Skull Hub",
     description: "Increases player movement speed.",
     image: "image/nathub2.jpg",
     code: `loadstring(game:HttpGet('https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua'))()`,
@@ -61,7 +64,7 @@ const scripts = [
   },
   {
     id: "1",
-    title: "Speed Hack",
+    title: "DEAD RAILS Script – Nat Hub",
     description: "Increases player movement speed.",
     image: "image/nathub.jpg",
     code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();`,
