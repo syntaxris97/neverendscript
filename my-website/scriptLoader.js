@@ -5,6 +5,20 @@ const scripts = [
     description: "Increases player movement speed.",
     image: "image/deltaexe.jpg",
     code: `loadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`,
+    features: [
+      "Best Sea Event",
+      "No Key",
+      "Smooth Farm",
+      "Volcano Event",
+      "Prehistoric",Add commentMore actions
+      "Dojo Quest",
+      "Dragon Race",
+      "Draco Race",
+      "Auto Belt",
+      "Kitsune Event",
+      "Mastery Gun & Fruit",
+      "Fully Auto Raid",
+      "Script Mobile & PC"
     ],
     steps: [
       "Click COPY button for auto copy script",
