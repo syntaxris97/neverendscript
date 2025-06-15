@@ -11,14 +11,14 @@ const scripts = [
     title: "GROW A GARDEN Script – Lunor Hub",
     description: "LUNOR HUB: GROW A GARDEN Script",
     date: "2025-06-15",
-    image: "image/scriptroblox2.png"
+    image: "image/lunorhub.jpg"
   },
   {
     id: "5",
     title: "GROW A GARDEN Script – No Lag Hub",
     description: "NO LAG HUB: GROW A GARDEN Script",
     date: "2025-06-15",
-    image: "image/scriptroblox2.png"
+    image: "image/nolaghub.jpg"
   },
   {
     id: "4",
