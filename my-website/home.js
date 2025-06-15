@@ -1,5 +1,19 @@
 const scripts = [
   {
+    id: "7",
+    title: "WQeqd V1 Script",
+    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
+    date: "2025-05-28",
+    image: "image/scriptroblox2.png"
+  },
+  {
+    id: "6",
+    title: "WQeqd V1 Script",
+    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
+    date: "2025-05-28",
+    image: "image/scriptroblox2.png"
+  },
+  {
     id: "5",
     title: "WQeqd V1 Script",
     description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
@@ -14,7 +28,7 @@ const scripts = [
     image: "image/scriptroblox1.png"
   },
   {
-    id: "1",
+    id: "3",
     title: "Sdaw V3 Script",
     description: "BLOX FRUITS Script No Key AUTO FARM, PREHISTORIC…",
     date: "2025-05-28",
@@ -28,7 +42,7 @@ const scripts = [
     image: "image/scriptroblox1.png"
   },
   {
-    id: "3",
+    id: "1",
     title: "Unnamed ESP",
     description: "ESP wallhack script for player visibility.",
     date: "2025-04-25",
