@@ -39,7 +39,7 @@ const scripts = [
     title: "Dark Dex Explorer",
     description: "Advanced GUI for Roblox object inspection.",
     date: "2025-04-28",
-    image: "image/scriptroblox1.png"
+    image: "image/snathub2.jpg"
   },
   {
     id: "1",
