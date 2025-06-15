@@ -3,7 +3,7 @@ const scripts = [
     id: "7",
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "Increases player movement speed.",
-    image: "image/image/scriptroblox1.png",
+    image: "image/fruitfinder.jpg",
     code: `repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
 _G.VxezeConfig = {
     Main = {
