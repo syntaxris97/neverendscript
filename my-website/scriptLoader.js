@@ -3,14 +3,14 @@ const scripts = [
     id: "5",
     title: "AAim Hack",
     description: "Increases player movement speed.",
-    image: "image/deltaexe.jpg",
+    image: "image/scriptroblox2.png",
     code: `loadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`,
     features: [
       "Best Sea Event",
       "No Key",
       "Smooth Farm",
       "Volcano Event",
-      "Prehistoric",Add commentMore actions
+      "Prehistoric",
       "Dojo Quest",
       "Dragon Race",
       "Draco Race",
