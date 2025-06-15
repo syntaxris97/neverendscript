@@ -25,7 +25,7 @@ const scripts = [
     title: "GROW A GARDEN Script – Speed Hub",
     description: "SPEED HUB: GROW A GARDEN Script",
     date: "2025-06-15",
-    image: "image/scriptroblox1.png"
+    image: "image/speedhub.jpg"
   },
   {
     id: "3",
