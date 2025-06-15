@@ -1,7 +1,7 @@
 const scripts = [
   {
     id: "7",
-    title: "Speed Hack",
+    title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
     code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
@@ -11,7 +11,7 @@ const scripts = [
   },
   {
     id: "6",
-    title: "Speed Hack",
+    title: "GROW A GARDEN Script – Lunor Hub",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
     code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
@@ -21,7 +21,7 @@ const scripts = [
   },
   {
     id: "5",
-    title: "Speed Hack",
+    title: "GROW A GARDEN Script – No Lag Hub",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
     code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
@@ -31,7 +31,7 @@ const scripts = [
   },
   {
     id: "4",
-    title: "Speed Hack",
+    title: "GROW A GARDEN Script – Speed Hub",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
     code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
