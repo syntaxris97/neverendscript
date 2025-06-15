@@ -3,7 +3,7 @@ const scripts = [
     id: "5",
     title: "AAim Hack",
     description: "Increases player movement speed.",
-    image: "image/scriptroblox2.png",
+    image: "image/deltaexe.jpg",
     code: `loadstring(game:HttpGet("https://pastefy.app/ACOX6D6h/raw"))()`,
     ],
     steps: [
