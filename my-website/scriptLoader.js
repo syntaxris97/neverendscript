@@ -4,7 +4,32 @@ const scripts = [
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
-    code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
+    code: `repeat wait() until game:IsLoaded() and game.Players.LocalPlayer
+_G.VxezeConfig = {
+    Main = {
+        ["Team"] = "Marines",
+        ["Auto Farm"] = true,
+        ["Choose Mode"] = "Tween Fruit", -- Tween Fruit/Teleport Fruit
+        ["Auto Random Fruit"] = true,
+        ["Auto Store Fruit"] = true
+    },
+    Items = {
+        ["Auto Buy Legendary Sword"] = true,
+        ["Auto Buy Haki Color"] = true
+    },
+    Chat = {
+        ["Enabled"] = false,
+        ["Message"] = {""},
+        ["Delay"] = 2
+    },
+    Misc = {
+        ["White Screen"] = false,
+        ["Disabled Notify"] = true,
+        ["Boots FPS"] = false,
+        ["Auto Rejoin"] = true
+    }
+}
+loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/e50b45018b39ad3e"))()`,
     features: ["****"],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
@@ -14,7 +39,7 @@ const scripts = [
     title: "GROW A GARDEN Script – Lunor Hub",
     description: "Increases player movement speed.",
     image: "image/lunorhub.jpg",
-    code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
+    code: `loadstring(game:HttpGet('https://lunor.dev/loader'))()`,
     features: ["****"],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
