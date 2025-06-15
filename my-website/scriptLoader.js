@@ -33,7 +33,7 @@ const scripts = [
     id: "4",
     title: "GROW A GARDEN Script – Speed Hub",
     description: "Increases player movement speed.",
-    image: "image/image/scriptroblox1.png",
+    image: "image/speedhub.jpg",
     code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()`,
     features: ["Increases movement speed instantly."],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
