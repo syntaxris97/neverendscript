@@ -63,7 +63,7 @@ const scripts = [
     id: "1",
     title: "Speed Hack",
     description: "Increases player movement speed.",
-    image: "image/image/nathub.jpg",
+    image: "image/nathub.jpg",
     code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();`,
     features: ["Increases movement speed instantly."],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
