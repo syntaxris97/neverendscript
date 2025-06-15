@@ -64,7 +64,7 @@ const scripts = [
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
-    code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();`,
     features: ["Increases movement speed instantly."],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
