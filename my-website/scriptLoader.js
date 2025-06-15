@@ -45,7 +45,7 @@ const scripts = [
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
     code: `https://www.mediafire.com/file/noy2d9ll2gh0zn4/ML+MOD+MENU+2025.apk/file`,
-    features: ["Increases movement speed instantly."],
+    features: ["No key"],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
   },
@@ -55,7 +55,7 @@ const scripts = [
     description: "Increases player movement speed.",
     image: "image/nathub2.jpg",
     code: `loadstring(game:HttpGet('https://raw.githubusercontent.com/hungquan99/SkullHub/main/loader.lua'))()`,
-    features: ["Increases movement speed instantly."],
+    features: ["No key"],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
   },
@@ -65,7 +65,7 @@ const scripts = [
     description: "Increases player movement speed.",
     image: "image/nathub.jpg",
     code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/ArdyBotzz/NatHub/refs/heads/master/NatHub.lua"))();`,
-    features: ["Increases movement speed instantly."],
+    features: ["No key"],
     steps: ["Copy the script", "Paste into your executor", "Execute"],
     notes: ["Make sure you’re in-game before executing."]
   }
