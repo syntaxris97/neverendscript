@@ -2,28 +2,28 @@ const scripts = [
   {
     id: "7",
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
-    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
+    description: "BLOX FRUITS Script No Key",
     date: "2025-06-15",
     image: "image/scriptroblox2.png"
   },
   {
     id: "6",
     title: "GROW A GARDEN Script – Lunor Hub",
-    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
+    description: "LUNOR HUB: GROW A GARDEN Script",
     date: "2025-06-15",
     image: "image/scriptroblox2.png"
   },
   {
     id: "5",
     title: "GROW A GARDEN Script – No Lag Hub",
-    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
+    description: "NO LAG HUB: GROW A GARDEN Script",
     date: "2025-06-15",
     image: "image/scriptroblox2.png"
   },
   {
     id: "4",
     title: "GROW A GARDEN Script – Speed Hub",
-    description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY…",
+    description: "SPEED HUB: GROW A GARDEN Script",
     date: "2025-06-15",
     image: "image/scriptroblox1.png"
   },
@@ -37,14 +37,14 @@ const scripts = [
   {
     id: "2",
     title: "DEAD RAILS Script – Skull Hub",
-    description: "Advanced GUI for Roblox object inspection.",
+    description: "SKULL HUB: DEAD RAILS Script",
     date: "2025-06-14",
     image: "image/nathub2.jpg"
   },
   {
     id: "1",
     title: "DEAD RAILS Script – Nat Hub",
-    description: "ESP wallhack script for player visibility.",
+    description: "NAT HUB: DEAD RAILS Script",
     date: "2025-06-14",
     image: "image/nathub.jpg"
   }
