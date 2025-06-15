@@ -1,49 +1,49 @@
 const scripts = [
   {
     id: "7",
-    title: "WQeqd V1 Script",
+    title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
     date: "2025-05-28",
     image: "image/scriptroblox2.png"
   },
   {
     id: "6",
-    title: "WQeqd V1 Script",
+    title: "GROW A GARDEN Script – Lunor Hub",
     description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
     date: "2025-05-28",
     image: "image/scriptroblox2.png"
   },
   {
     id: "5",
-    title: "WQeqd V1 Script",
+    title: "GROW A GARDEN Script – No Lag Hub",
     description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO…",
     date: "2025-05-28",
     image: "image/scriptroblox2.png"
   },
   {
     id: "4",
-    title: "Dwqe v3 Script",
+    title: "GROW A GARDEN Script – Speed Hub",
     description: "BLOX FRUITS Script Pastebin 2025 UPDATE GRAVITY…",
     date: "2025-05-28",
     image: "image/scriptroblox1.png"
   },
   {
     id: "3",
-    title: "Sdaw V3 Script",
-    description: "BLOX FRUITS Script No Key AUTO FARM, PREHISTORIC…",
+    title: "Xero Hub – Blox Fruits Script (No Key)",
+    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO FARM, SEA EVENT, GUN MASTERY, AUTO RAID, VOLCANO",
     date: "2025-05-28",
     image: "image/scriptroblox3.png"
   },
   {
     id: "2",
-    title: "Dark Dex Explorer",
+    title: "DEAD RAILS Script – Skull Hub",
     description: "Advanced GUI for Roblox object inspection.",
     date: "2025-04-28",
     image: "image/nathub2.jpg"
   },
   {
     id: "1",
-    title: "Unnamed ESP",
+    title: "DEAD RAILS Script – Nat Hub",
     description: "ESP wallhack script for player visibility.",
     date: "2025-04-25",
     image: "image/nathub.jpg"
