@@ -1,6 +1,6 @@
 const scripts = [
   {
-    id: "1",
+    id: "7",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
@@ -10,7 +10,7 @@ const scripts = [
     notes: ["Make sure you’re in-game before executing."]
   },
   {
-    id: "1",
+    id: "6",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
@@ -20,7 +20,7 @@ const scripts = [
     notes: ["Make sure you’re in-game before executing."]
   },
   {
-    id: "1",
+    id: "5",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
@@ -30,7 +30,7 @@ const scripts = [
     notes: ["Make sure you’re in-game before executing."]
   },
   {
-    id: "1",
+    id: "4",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
@@ -40,7 +40,7 @@ const scripts = [
     notes: ["Make sure you’re in-game before executing."]
   },
   {
-    id: "1",
+    id: "3",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
@@ -50,7 +50,7 @@ const scripts = [
     notes: ["Make sure you’re in-game before executing."]
   },
   {
-    id: "1",
+    id: "2",
     title: "Speed Hack",
     description: "Increases player movement speed.",
     image: "image/image/scriptroblox1.png",
