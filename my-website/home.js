@@ -32,7 +32,7 @@ const scripts = [
     title: "Xero Hub – Blox Fruits Script (No Key)",
     description: "BLOX FRUITS Script No Key",
     date: "2025-06-14",
-    image: "image/scriptroblox3.png"
+    image: "image/xerohub.jpg"
   },
   {
     id: "2",
