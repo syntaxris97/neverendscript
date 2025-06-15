@@ -46,7 +46,7 @@ const scripts = [
     title: "Unnamed ESP",
     description: "ESP wallhack script for player visibility.",
     date: "2025-04-25",
-    image: "image/scriptroblox1.png"
+    image: "image/nathub.jpg"
   }
 ];
 
