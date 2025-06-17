@@ -52,6 +52,13 @@ const scripts = [
 
 const executors = [
   {
+    id: "7",
+    title: "TRIGON V676",
+    description: "Popular and reliable Roblox script executor.",
+    date: "2025-06-03",
+    image: "image/deltaexe.jpg"
+  },
+  {
     id: "6",
     title: "DELTA Executor",
     description: "Popular and reliable Roblox script executor.",
