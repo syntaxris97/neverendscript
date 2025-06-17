@@ -1,16 +1,10 @@
-const scripts = [
-  {
-    id: "8",
-    title: "GROW A GARDEN Script – NAT Hub",
-    description: "BLOX FRUITS Script No Key",
-    date: "2025-06-17",
-    image: "image/nathub17.jpg"
-  },
+const scripts = [More actions
   {
     id: "7",
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "BLOX FRUITS Script No Key",
     date: "2025-06-15",
+    image: "image/scriptroblox2.png"
     image: "image/fruitfinder.jpg"
   },
   {
@@ -59,52 +53,45 @@ const scripts = [
 
 const executors = [
   {
-    id: "7",
-    title: "TRIGON Executor",
-    description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-17,
-    image: "image/trigon617.jpg"
-  },
-  {
     id: "6",
     title: "DELTA Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-17",
+    date: "2025-06-06",
     image: "image/deltaexe.jpg"
   },
   {
     id: "5",
     title: "VEGA X Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-17",
+    date: "2025-06-03",
     image: "image/vegaxexe.jpg"
   },
   {
     id: "4",
     title: "CODEX Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-17",
+    date: "2025-06-03",
     image: "image/codexexe.jpg"
   },
   {
     id: "1",
     title: "CRYPTIC Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-17",
+    date: "2025-06-03",
     image: "image/crypticexe.jpg"
   },
   {
     id: "2",
     title: "FLUXUS Executor",
     description: "Fast and feature-rich Roblox executor.",
-    date: "2025-06-09",
+    date: "2025-05-27",
     image: "image/fluxusexe.jpg"
   },
   {
     id: "3",
     title: "KRNL Executor",
     description: "Free executor with wide script support.",
-    date: "2025-06-17",
+    date: "2025-05-22",
     image: "image/krnlexe.jpg"
   }
 ];
