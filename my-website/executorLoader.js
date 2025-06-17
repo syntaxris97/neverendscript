@@ -19,7 +19,7 @@ const executors = [
   },
   {
     id: "6",
-    title: "DELTA V675 BEST",
+    title: "DELTA V676 BEST",
     author: "reaperscripts…",
     date: "2025-06-17",
     image: "image/deltaexe.jpg",
@@ -37,7 +37,7 @@ const executors = [
   },
   {
     id: "5",
-    title: "VEGA X V674",
+    title: "VEGA X V676",
     author: "reaperscripts…",
     date: "2025-06-17",
     image: "image/vegaxexe.jpg",
@@ -55,7 +55,7 @@ const executors = [
   },
   {
     id: "4",
-    title: "CODEX V675",
+    title: "CODEX V676",
     author: "reaperscripts…",
     date: "2025-06-17",
     image: "image/codexexe.jpg",
@@ -73,7 +73,7 @@ const executors = [
   },
   {
     id: "1",
-    title: "CRYPTIC V674",
+    title: "CRYPTIC V676",
     author: "reaperscripts…",
     date: "2025-06-17",
     image: "image/crypticexe.jpg",
@@ -109,7 +109,7 @@ const executors = [
   },
   {
     id: "3",
-    title: "KRNL V673",
+    title: "KRNL V677 BEST",
     author: "valentinodev…",
     date: "2025-6-17",
     image: "image/krnlexe.jpg",
