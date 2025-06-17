@@ -1,4 +1,4 @@
-const scripts = [More actions
+const scripts = [
   {
     id: "7",
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
