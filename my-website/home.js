@@ -87,18 +87,18 @@ const executors = [
     image: "image/crypticexe.jpg"
   },
   {
-    id: "2",
-    title: "FLUXUS Executor",
-    description: "Fast and feature-rich Roblox executor.",
-    date: "2025-06-10",
-    image: "image/fluxusexe.jpg"
-  },
-  {
     id: "3",
     title: "KRNL Executor",
     description: "Free executor with wide script support.",
     date: "2025-06-17",
     image: "image/krnlexe.jpg"
+  },
+  {
+    id: "2",
+    title: "FLUXUS Executor",
+    description: "Fast and feature-rich Roblox executor.",
+    date: "2025-06-10",
+    image: "image/fluxusexe.jpg"
   }
 ];
 
