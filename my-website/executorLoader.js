@@ -21,7 +21,7 @@ const executors = [
     id: "6",
     title: "DELTA V675 BEST",
     author: "reaperscripts…",
-    date: "2025-06-017",
+    date: "2025-06-17",
     image: "image/deltaexe.jpg",
     description: "DELTA Executor Mobile and Emulator (FREE)",
     steps: [
