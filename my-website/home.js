@@ -55,7 +55,7 @@ const executors = [
     id: "7",
     title: "TRIGON V676",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-03",
+    date: "2025-17-03",
     image: "image/deltaexe.jpg"
   },
   {
