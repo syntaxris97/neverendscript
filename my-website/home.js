@@ -55,49 +55,49 @@ const executors = [
     id: "7",
     title: "TRIGON V676",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-03",
+    date: "2025-06-17",
     image: "image/deltaexe.jpg"
   },
   {
     id: "6",
     title: "DELTA Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-06",
+    date: "2025-06-17",
     image: "image/deltaexe.jpg"
   },
   {
     id: "5",
     title: "VEGA X Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-03",
+    date: "2025-06-17,
     image: "image/vegaxexe.jpg"
   },
   {
     id: "4",
     title: "CODEX Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-03",
+    date: "2025-06-17",
     image: "image/codexexe.jpg"
   },
   {
     id: "1",
     title: "CRYPTIC Executor",
     description: "Popular and reliable Roblox script executor.",
-    date: "2025-06-03",
+    date: "2025-06-17",
     image: "image/crypticexe.jpg"
   },
   {
     id: "2",
     title: "FLUXUS Executor",
     description: "Fast and feature-rich Roblox executor.",
-    date: "2025-05-27",
+    date: "2025-06-09",
     image: "image/fluxusexe.jpg"
   },
   {
     id: "3",
     title: "KRNL Executor",
     description: "Free executor with wide script support.",
-    date: "2025-05-22",
+    date: "2025-06-17",
     image: "image/krnlexe.jpg"
   }
 ];
