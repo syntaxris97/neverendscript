@@ -4,7 +4,7 @@ const executors = [
     title: "TRIGON V676",
     author: "reaperscripts…",
     date: "2025-06-17",
-    image: "image/deltaexe.jpg",
+    image: "image/trigon617.jpg",
     description: "DELTA Executor Mobile and Emulator (FREE)",
     steps: [
       "Click DOWNLOAD button",
@@ -93,7 +93,7 @@ const executors = [
     id: "2",
     title: "FLUXUS V673",
     author: "shower head…",
-    date: "2025-06-09",
+    date: "2025-06-10",
     image: "image/fluxusexe.jpg",
     description: "FLUXUS Executor Mobile and Emulator",
     steps: [
