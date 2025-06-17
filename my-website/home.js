@@ -4,7 +4,6 @@ const scripts = [
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "BLOX FRUITS Script No Key",
     date: "2025-06-15",
-    image: "image/scriptroblox2.png"
     image: "image/fruitfinder.jpg"
   },
   {
