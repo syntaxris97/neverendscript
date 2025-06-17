@@ -53,7 +53,7 @@ const scripts = [
 const executors = [
   {
     id: "7",
-    title: "TRIGON V676",
+    title: "TRIGON Executor",
     description: "Popular and reliable Roblox script executor.",
     date: "2025-06-17",
     image: "image/trigon617.jpg"
