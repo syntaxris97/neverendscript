@@ -1,15 +1,5 @@
 const scripts = [
   {
-    id: "8",
-    title: "GROW A GARDEN Script – NAT Hub",
-    description: "Increases player movement speed.",
-    image: "image/nathub17.jpg",
-    code: `loadstring(game:HttpGet("https://get.nathub.xyz/loader"))()`,
-    features: ["****"],
-    steps: ["Copy the script", "Paste into your executor", "Execute"],
-    notes: ["Make sure you’re in-game before executing."]
-  },
-  {
     id: "7",
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "Increases player movement speed.",
