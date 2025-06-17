@@ -97,7 +97,7 @@ const executors = [
     id: "3",
     title: "KRNL Executor",
     description: "Free executor with wide script support.",
-    date: "2025-17-06",
+    date: "2025-06-17",
     image: "image/krnlexe.jpg"
   }
 ];
