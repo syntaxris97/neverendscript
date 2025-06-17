@@ -1,5 +1,12 @@
 const scripts = [
   {
+    id: "8",
+    title: "GROW A GARDEN Script – NAT Hub",
+    description: "BLOX FRUITS Script No Key",
+    date: "2025-06-17",
+    image: "image/fruitfinder.jpg"
+  },
+  {
     id: "7",
     title: "Vxeze Hub Fruit Finder – Blox Fruits Script (No Key)",
     description: "BLOX FRUITS Script No Key",
