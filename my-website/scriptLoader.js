@@ -1,5 +1,109 @@
 const scripts = [
   {
+    id: "16",
+    title: "TxZ Hub – Blox Fruits Script",
+    description: "Increases player movement speed.",
+    image: "image/bloxfruits190620257.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/DrTxZ/Mercure-Hub/refs/heads/main/Mercure%20Hub.lua"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "15",
+    title: "BLOX FRUITS – REDz Hub",
+    description: "Increases player movement speed.",
+    image: "image/bloxfruits190620256.jpg",
+    code: `local Settings = {
+    JoinTeam = "Pirates"; -- Pirates / Marines
+    Translator = true;   -- true / false
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Scripts/refs/heads/main/main.luau"))(Settings)`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "14",
+    title: "Blue X Hub Fruit Finder – Blox Fruits Script (No Key)",
+    description: "Increases player movement speed.",
+    image: "image/bloxfruits1906202525.jpg",
+    code: `getgenv().Config = {
+    ["Misc"] = {
+        ["RandomFruits"] = true,
+        ["BlackScreen"] = false,
+    }
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-BlueX/BlueX-Hub/refs/heads/main/FindFruits.lua"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "13",
+    title: "GROW A GARDEN Script – Pet Spawner Hub",
+    description: "Increases player movement speed.",
+    image: "image/growagarden19062025.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/sudaisontopxd/PanScriptXSudaisScript/refs/heads/main/PhantFluxReal.lua"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "12",
+    title: "Ego Hub – Blox Fruits Script",
+    description: "Increases player movement speed.",
+    image: "image/bloxfruits190620254.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/SuperIkka/Main/main/EgoLoaderMain", true))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "11",
+    title: "BLUE LOCK: RIVALS Script – Alchemy Hub",
+    description: "Increases player movement speed.",
+    image: "image/bluelockrivals190620253.jpg",
+    code: `loadstring(game:HttpGet("https://scripts.alchemyhub.xyz"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "10",
+    title: "BLUE LOCK: RIVALS Script – Sterling Hub",
+    description: "Increases player movement speed.",
+    image: "image/bluelockrivals190620252.jpg",
+    code: `local GuiService = game:GetService("GuiService")
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local player = Players.LocalPlayer
+local function onErrorMessageChanged(errorMessage)
+    if errorMessage and errorMessage ~= "" then
+        print("Error detected: " .. errorMessage)
+        if player then
+            wait()
+            TeleportService:Teleport(game.PlaceId, player)
+        end
+    end
+end
+GuiService.ErrorMessageChanged:Connect(onErrorMessageChanged)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Zayn31214/name/refs/heads/main/SterlingNew"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "9",
+    title: "BLUE LOCK: RIVALS Script – Dehism Hub",
+    description: "Increases player movement speed.",
+    image: "image/bluelockrivals190620251.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/dehism/Dehism/refs/heads/main/Inf%20Spins%20Auto%20Dehism",true))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
     id: "8",
     title: "GROW A GARDEN Script – NAT Hub",
     description: "Increases player movement speed.",
