@@ -1,5 +1,61 @@
 const scripts = [
   {
+    id: "16",
+    title: "TxZ Hub – Blox Fruits Script",
+    description: "BLOX FRUITS Script",
+    date: "2025-06-19",
+    image: "image/bloxfruits190620257.jpg"
+  },
+  {
+    id: "15",
+    title: "BLOX FRUITS – REDz Hub",
+    description: "BLOX FRUITS Script No Key",
+    date: "2025-06-19",
+    image: "image/bloxfruits190620256.jpg"
+  },
+  {
+    id: "14",
+    title: "Blue X Hub Fruit Finder – Blox Fruits Script (No Key)",
+    description: "BLOX FRUITS Script No Key",
+    date: "2025-06-19",
+    image: "image/bloxfruits1906202525.jpg"
+  },
+  {
+    id: "13",
+    title: "GROW A GARDEN Script – Pet Spawner Hub",
+    description: "GROW A GARDEN Script",
+    date: "2025-06-19",
+    image: "image/growagarden19062025.jpg"
+  },
+  {
+    id: "12",
+    title: "Ego Hub – Blox Fruits Script",
+    description: "BLOX FRUITS Script",
+    date: "2025-06-19",
+    image: "image/bloxfruits190620254.jpg"
+  },
+  {
+    id: "11",
+    title: "BLUE LOCK: RIVALS Script – Alchemy Hub",
+    description: "BLUE LOCK: RIVALS Script",
+    date: "2025-06-19",
+    image: "image/bluelockrivals190620253.jpg"
+  },
+  {
+    id: "10",
+    title: "BLUE LOCK: RIVALS Script – Sterling Hub",
+    description: "BLUE LOCK: RIVALS Script",
+    date: "2025-06-19",
+    image: "image/bluelockrivals190620252.jpg"
+  },
+  {
+    id: "9",
+    title: "BLUE LOCK: RIVALS Script – Dehism Hub",
+    description: "BLUE LOCK: RIVALS Script",
+    date: "2025-06-19",
+    image: "image/bluelockrivals190620251.jpg"
+  },
+  {
     id: "8",
     title: "GROW A GARDEN Script – NAT Hub",
     description: "BLOX FRUITS Script No Key",
