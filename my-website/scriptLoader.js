@@ -1,5 +1,15 @@
 const scripts = [
   {
+    id: "17",
+    title: "GROW A GARDEN Script – Speed Hub",
+    description: "Increases player movement speed.",
+    image: "image/speedhub.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/AhmadV99/Speed-Hub-X/main/Speed%20Hub%20X.lua", true))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
     id: "16",
     title: "TxZ Hub – Blox Fruits Script",
     description: "Increases player movement speed.",
