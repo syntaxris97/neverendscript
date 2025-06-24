@@ -1,5 +1,47 @@
 const scripts = [
   {
+    id: "25",
+    title: "CLIMB AND JUMP TOWER Script – Tora Hub",
+    description: "TORA HUB: CLIMB AND JUMP TOWER Script Pastebin 2025 AUTO FARM, AUTO WIN, BEANSTALK EVENT (NO KEY)",
+    date: "2025-06-24",
+    image: "image/tora240625.jpg"
+  },
+  {
+    id: "24",
+    title: "CLIMB AND JUMP TOWER Script – Polaris Hub",
+    description: "POLARIS HUB: CLIMB AND JUMP TOWER Script Pastebin 2025 AUTO FARM, AUTO WIN, BEANSTALK EVENT",
+    date: "2025-06-24",
+    image: "image/polaris240625.jpg"
+  },
+  {
+    id: "23",
+    title: "Butterfly Hub – Blox Fruits Script",
+    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO FARM, RAIN FRUIT, SEA EVENT, V4 DRACO (BEST TOP)",
+    date: "2025-06-24",
+    image: "image/butterfly240625.jpg"
+  },
+  {
+    id: "22",
+    title: "STEAL A BRAINROT Script – Dencrycode Hub",
+    description: "DELFI HUB: STEAL A BRAINROT Script Pastebin 2025 INSTANT STEAL, BASE TIMER, 2X SPEED, LOCK BASE (100% EZ STEAL",
+    date: "2025-06-24",
+    image: "image/delfi240625.jpg"
+  },
+  {
+    id: "21",
+    title: "STEAL A BRAINROT Script – Dencrycode Hub",
+    description: "DENCRYCODE HUB: STEAL A BRAINROT Script Pastebin 2025 INSTANT STEAL, NO HIT, 2X SPEED, LOCK BASE (100% EZ STEAL)",
+    date: "2025-06-24",
+    image: "image/Dencrycode240625.jpg"
+  },
+  {
+    id: "20",
+    title: "GROW A GARDEN Script – Lunor Hub",
+    description: "LUNOR HUB: GROW A GARDEN Script Pastebin 2025 DUPLICATE SEED, PATCH?, AUTO SUMMER EVENT",
+    date: "2025-06-24",
+    image: "image/lunor240625.jpg"
+  },
+  {
     id: "19",
     title: "GROW A GARDEN Script – No Lag Hub",
     description: "NO LAG HUB: GROW A GARDEN Script",
