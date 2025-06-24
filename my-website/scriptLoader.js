@@ -1,5 +1,65 @@
 const scripts = [
   {
+    id: "19",
+    title: "GROW A GARDEN Script – No Lag Hub",
+    description: "Increases player movement speed.",
+    image: "image/nolaghub.jpg",
+    code: `loadstring(game:HttpGet("https://rawscripts.net/raw/Grow-a-Garden-NoLag-Hub-no-key-38699"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "18",
+    title: "Xero Kaitun Hub – Blox Fruits Script (No Key)",
+    description: "Increases player movement speed.",
+    image: "image/xerohub.jpg",
+    code: `UserSettings():GetService("UserGameSettings").MasterVolume = 0
+settings().Rendering.GraphicsMode = 9
+script_key = ""
+getgenv().Shutdown = true
+getgenv().Configs = {
+    ["Team"] = "Marines",
+    ["Gun Farm"] = false,
+    ["FPS Boost"] = {
+        ["Enable"] = true,
+        ["FPS Cap"] = 60,
+    },
+    ["Farm Boss Drops"] = {
+        ["Enable"] = true,
+        ["When x2 Exp Expired"] = false
+    },
+    ["Hop"] = {
+        ["Enable"] = true,
+        ["Hop Find Tushita"] = true,
+        ["Hop Find Valkyrie Helm"] = true,
+        ["Hop Find Mirror Fractal"] = true
+    },
+    ["Farm Mastery"] = {
+        ["Enable"] = true,
+        ["Farm Mastery Weapons"] = {"Sword"},
+        ["Swords To Farm"] = {"Cursed Dual Katana"}
+    },
+    ["Auto Collect Berry"] = true,
+    ["Auto Evo Race"] = true,
+    ["Awaken Fruit"] = true,
+    ["Rainbow Haki"] = true,
+    ["Hop Player Near"] = true,
+    ["Skull Guitar"] = true,
+    ["Find Fruit"] = true,
+    ["Cursed Dual Katana"] = true,
+    ["Switch Melee"] = true,
+    ["Eat Fruit"] = "",
+    ["Snipe Fruit"] = "Kitsune Fruit",
+    ["Lock Fragment"] = 0,
+    ["Buy Stuffs"] = true
+}
+repeat task.wait(1) pcall(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/Xero2409/XeroHub/refs/heads/main/kaitun.lua"))() end) until getgenv().Check_Execute`,
+    features: ["No key"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
     id: "17",
     title: "GROW A GARDEN Script – Speed Hub",
     description: "Increases player movement speed.",
