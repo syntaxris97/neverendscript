@@ -1,5 +1,65 @@
 const scripts = [
   {
+    id: "25",
+    title: "CLIMB AND JUMP TOWER Script – Tora Hub",
+    description: "TORA HUB: CLIMB AND JUMP TOWER Script Pastebin 2025 AUTO FARM, AUTO WIN, BEANSTALK EVENT (NO KEY)",
+    image: "image/tora240625.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/gumanba/Scripts/refs/heads/main/ClimbandJump"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "24",
+    title: "CLIMB AND JUMP TOWER Script – Polaris Hub",
+    description: "POLARIS HUB: CLIMB AND JUMP TOWER Script Pastebin 2025 AUTO FARM, AUTO WIN, BEANSTALK EVENT",
+    image: "image/polaris240625.jpg",
+    code: `loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/d7be76c234d46ce6770101fded39760c.lua"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "23",
+    title: "Butterfly Hub – Blox Fruits Script",
+    description: "BLOX FRUITS Script No Key UPDATE GRAVITY AUTO FARM, RAIN FRUIT, SEA EVENT, V4 DRACO (BEST TOP)",
+    image: "image/butterfly240625.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/GoblinKun009/Script/refs/heads/main/ButterflyHub", true))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "22",
+    title: "STEAL A BRAINROT Script – Delfi Hub",
+    description: "DELFI HUB: STEAL A BRAINROT Script Pastebin 2025 INSTANT STEAL, BASE TIMER, 2X SPEED, LOCK BASE (100% EZ STEAL)",
+    image: "image/delfi240625.jpg",
+    code: `loadstring(game:HttpGet("https://pastefy.app/eCzs7DNQ/raw"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "21",
+    title: "STEAL A BRAINROT Script – Dencrycode Hub",
+    description: "DENCRYCODE HUB: STEAL A BRAINROT Script Pastebin 2025 INSTANT STEAL, NO HIT, 2X SPEED, LOCK BASE (100% EZ STEAL)",
+    image: "image/Dencrycode240625.jpg",
+    code: `loadstring(game:HttpGet("https://raw.githubusercontent.com/Estevansit0/KJJK/refs/heads/main/PusarX-loader.lua"))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
+    id: "20",
+    title: "GROW A GARDEN Script – Lunor Hub",
+    description: "LUNOR HUB: GROW A GARDEN Script Pastebin 2025 DUPLICATE SEED, PATCH?, AUTO SUMMER EVENT",
+    image: "image/lunor240625.jpg",
+    code: `loadstring(game:HttpGet('https://lunor.dev/loader'))()`,
+    features: ["****"],
+    steps: ["Copy the script", "Paste into your executor", "Execute"],
+    notes: ["Make sure you’re in-game before executing."]
+  },
+  {
     id: "19",
     title: "GROW A GARDEN Script – No Lag Hub",
     description: "Increases player movement speed.",
