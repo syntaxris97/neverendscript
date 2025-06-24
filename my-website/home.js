@@ -178,6 +178,13 @@ const scripts = [
 
 const executors = [
   {
+    id: "3",
+    title: "KRNL Executor",
+    description: "Free executor with wide script support.",
+    date: "2025-06-17",
+    image: "image/krnlexe.jpg"
+  },
+  {
     id: "7",
     title: "TRIGON Executor",
     description: "Popular and reliable Roblox script executor.",
@@ -211,13 +218,6 @@ const executors = [
     description: "Popular and reliable Roblox script executor.",
     date: "2025-06-17",
     image: "image/crypticexe.jpg"
-  },
-  {
-    id: "3",
-    title: "KRNL Executor",
-    description: "Free executor with wide script support.",
-    date: "2025-06-17",
-    image: "image/krnlexe.jpg"
   },
   {
     id: "2",
