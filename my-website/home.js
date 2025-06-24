@@ -1,5 +1,12 @@
 const scripts = [
   {
+    id: "17",
+    title: "GROW A GARDEN Script – Speed Hub",
+    description: "SPEED HUB: GROW A GARDEN Script",
+    date: "2025-06-24",
+    image: "image/speedhub.jpg"
+  },
+  {
     id: "16",
     title: "TxZ Hub – Blox Fruits Script",
     description: "BLOX FRUITS Script",
