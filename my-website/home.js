@@ -1,5 +1,19 @@
 const scripts = [
   {
+    id: "5",
+    title: "GROW A GARDEN Script – No Lag Hub",
+    description: "NO LAG HUB: GROW A GARDEN Script",
+    date: "2025-06-24",
+    image: "image/nolaghub.jpg"
+  },
+  {
+    id: "18",
+    title: "Xero Kaitun Hub – Blox Fruits Script (No Key)",
+    description: "BLOX FRUITS Script No Key",
+    date: "2025-06-24",
+    image: "image/xerohub.jpg"
+  },
+  {
     id: "17",
     title: "GROW A GARDEN Script – Speed Hub",
     description: "SPEED HUB: GROW A GARDEN Script",
